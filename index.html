@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Toolbox - Professional Surveying & Geodetics Suite</title>
+    
+    <!-- Meta SEO & Description -->
+    <meta name="description" content="Survey Toolbox: แอปพลิเคชันคำนวณงานวิศวกรรมสำรวจและโยธา 21 ฟังก์ชันครบวงจร ทำงานออฟไลน์ 100% ทั้งบน iOS และ Android">
+    <meta name="keywords" content="Survey Toolbox, ช่างสำรวจ, วิศวกรโยธา, คำนวณพิกัด, เสาเข็มเยื้องศูนย์, โค้งราบ, โค้งดิ่ง, รีเช็คชั่น, GeoUTM, LandXML, Total Station, ISO 17123-5">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome Icons 6.5.1 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Custom CSS Design Tokens -->
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- Tailwind Configuration Extension -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        survey: {
+                            orange: {
+                                50: '#FBE9E7',
+                                100: '#FFCCBC',
+                                500: '#FF5722',
+                                600: '#E64A19',
+                                700: '#D84315',
+                            },
+                            slate: {
+                                700: '#263238',
+                                800: '#1E293B',
+                                900: '#0F172A',
+                            },
+                            blue: {
+                                50: '#E3F2FD',
+                                500: '#1E88E5',
+                                600: '#1976D2',
+                            },
+                            cyan: {
+                                500: '#00A3E0',
+                                600: '#0082B3',
+                            }
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Sarabun', 'sans-serif'],
+                        heading: ['Prompt', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'Roboto Mono', 'Consolas', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body id="top" class="font-sans antialiased text-slate-600 bg-white overflow-x-hidden selection:bg-orange-500 selection:text-white">
+
+    <!-- ==========================================
+         Sticky Navigation Bar
+         ========================================== -->
+    <nav class="fixed top-0 left-0 w-full z-40 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm transition-all duration-300">
+        <div class="container mx-auto px-4 sm:px-6 py-3">
+            <div class="flex justify-between items-center">
+                
+                <!-- Logo & Brand Header -->
+                <div class="flex items-center space-x-3 cursor-pointer" onclick="scrollToSection('top')">
+                    <img 
+                        src="https://lh3.googleusercontent.com/d/1sgI54U4A9Pbb3hy7ahxayP-0X07mF8M5" 
+                        referrerpolicy="no-referrer" 
+                        alt="Survey Toolbox Logo" 
+                        class="h-10 w-10 rounded-xl shadow-md object-cover border border-slate-200"
+                    >
+                    <div>
+                        <span class="text-xl font-heading font-extrabold text-slate-900 tracking-tight block leading-none">
+                            Survey Toolbox
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation Menu -->
+                <div class="hidden lg:flex items-center space-x-6 text-sm font-medium text-slate-600">
+                    <a onclick="scrollToSection('top')" class="hover:text-[#FF5722] transition-colors cursor-pointer" data-i18n="nav_home">หน้าแรก</a>
+                    <a onclick="scrollToSection('manuals')" class="hover:text-[#FF5722] transition-colors cursor-pointer font-semibold text-slate-900" data-i18n="nav_manual">คู่มือการใช้งาน</a>
+                    <a onclick="scrollToSection('features')" class="hover:text-[#FF5722] transition-colors cursor-pointer" data-i18n="nav_features">จุดเด่น</a>
+                    <a onclick="scrollToSection('audience')" class="hover:text-[#FF5722] transition-colors cursor-pointer" data-i18n="nav_audience">กลุ่มผู้ใช้งาน</a>
+                    <a onclick="scrollToSection('video-showcase')" class="hover:text-[#FF5722] transition-colors cursor-pointer" data-i18n="nav_video">วิดีโอสาธิต</a>
+                    <a onclick="scrollToSection('faq')" class="hover:text-[#FF5722] transition-colors cursor-pointer" data-i18n="nav_faq">คำถามที่พบบ่อย</a>
+                </div>
+
+                <!-- Language Switcher & App Store Quick Action -->
+                <div class="flex items-center space-x-3">
+                    
+                    <!-- Bilingual Switcher Pills -->
+                    <div class="flex bg-slate-100 rounded-full p-1 border border-slate-200 shadow-inner">
+                        <button onclick="setLanguage('th')" id="btn-th" class="lang-btn active">TH</button>
+                        <button onclick="setLanguage('en')" id="btn-en" class="lang-btn">EN</button>
+                    </div>
+
+                    <!-- iOS App Store Button -->
+                    <a 
+                        href="https://apps.apple.com/th/app/survey-toolbox/id6754455677?l=th" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        class="hidden md:flex items-center justify-center bg-slate-900 text-white px-3.5 py-2 rounded-full font-semibold hover:bg-[#FF5722] transition-all shadow-sm transform hover:scale-105 text-xs gap-1.5"
+                    >
+                        <i class="fa-brands fa-apple text-sm"></i>
+                        <span class="hidden xl:inline">iOS</span>
+                    </a>
+                    
+                    <!-- Android Play Store Button -->
+                    <a 
+                        href="https://play.google.com/store/apps/details?id=com.kongkrit.surveytoolbox&pcampaignid=web_share" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        class="hidden md:flex items-center justify-center bg-emerald-600 text-white px-3.5 py-2 rounded-full font-semibold hover:bg-emerald-500 transition-all shadow-sm transform hover:scale-105 text-xs gap-1.5"
+                    >
+                        <i class="fa-brands fa-android text-sm"></i>
+                        <span class="hidden xl:inline">Android</span>
+                    </a>
+
+                    <!-- Mobile Hamburger Menu Button -->
+                    <button id="mobile-menu-btn" aria-label="Toggle Navigation Menu" class="lg:hidden text-slate-800 text-2xl focus:outline-none p-1">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation Drawer -->
+            <div id="mobile-menu" class="hidden lg:hidden pt-4 pb-2 border-t border-slate-100 mt-3 flex-col space-y-3 text-sm font-medium text-slate-700">
+                <a onclick="scrollToSection('top')" class="block hover:text-[#FF5722] py-1 cursor-pointer" data-i18n="nav_home">หน้าแรก</a>
+                <a onclick="scrollToSection('manuals')" class="block hover:text-[#FF5722] py-1 cursor-pointer font-bold text-[#FF5722]" data-i18n="nav_manual">คู่มือการใช้งาน</a>
+                <a onclick="scrollToSection('features')" class="block hover:text-[#FF5722] py-1 cursor-pointer" data-i18n="nav_features">จุดเด่น</a>
+                <a onclick="scrollToSection('audience')" class="block hover:text-[#FF5722] py-1 cursor-pointer" data-i18n="nav_audience">กลุ่มผู้ใช้งาน</a>
+                <a onclick="scrollToSection('video-showcase')" class="block hover:text-[#FF5722] py-1 cursor-pointer" data-i18n="nav_video">วิดีโอสาธิต</a>
+                <a onclick="scrollToSection('faq')" class="block hover:text-[#FF5722] py-1 cursor-pointer" data-i18n="nav_faq">คำถามที่พบบ่อย</a>
+                <div class="flex gap-2 pt-2">
+                    <a href="https://apps.apple.com/th/app/survey-toolbox/id6754455677?l=th" target="_blank" class="w-1/2 flex items-center justify-center bg-slate-900 text-white py-2 rounded-xl text-xs font-semibold gap-1.5">
+                        <i class="fa-brands fa-apple"></i> iOS
+                    </a>
+                    <a href="https://play.google.com/store/apps/details?id=com.kongkrit.surveytoolbox&pcampaignid=web_share" target="_blank" class="w-1/2 flex items-center justify-center bg-emerald-600 text-white py-2 rounded-xl text-xs font-semibold gap-1.5">
+                        <i class="fa-brands fa-android"></i> Android
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==========================================
+         Hero Section
+         ========================================== -->
+    <header class="relative pt-32 pb-20 lg:pt-44 lg:pb-28 bg-hero-pattern overflow-hidden text-white">
+        <div class="container mx-auto px-4 sm:px-6 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                
+                <!-- Hero Copywriting -->
+                <div class="lg:w-7/12 text-center lg:text-left" data-aos="fade-right">
+                    
+                    <!-- Official Badge -->
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 mb-6 border border-orange-500/30 rounded-full bg-slate-800/80 backdrop-blur-sm shadow-inner">
+                        <span class="w-2 h-2 rounded-full bg-[#FF5722] animate-ping"></span>
+                        <span class="text-orange-400 text-xs sm:text-sm font-semibold tracking-wide uppercase" data-i18n="hero_badge">
+                            เครื่องมืออันดับ 1 สำหรับช่างสำรวจ
+                        </span>
+                    </div>
+
+                    <!-- Two-Tier Headline -->
+                    <h1 class="font-heading text-3xl sm:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight tracking-tight">
+                        <span class="text-white block" data-i18n="hero_title_1">ยกระดับงานสำรวจสู่มาตรฐานสากล</span>
+                        <span class="text-gradient-orange-cyan block mt-1" data-i18n="hero_title_2">แม่นยำ รวดเร็ว ตอบโจทย์ทุกงานสำรวจ</span>
+                    </h1>
+
+                    <!-- Descriptive Subtitle -->
+                    <p class="text-slate-300 text-sm sm:text-base lg:text-lg mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal" data-i18n="hero_desc">
+                        เปลี่ยนสมาร์ทโฟนและแท็บเล็ตของคุณให้เป็นเครื่องคำนวณงานสำรวจภาคสนาม ครอบคลุมตั้งแต่งานตรวจสอบเสาเข็มเยื้องศูนย์ วางแนวโค้งถนน แปลงพิกัด GeoUTM งานระดับ จนถึงการสอบเทียบกล้องตามมาตรฐาน ISO 17123-5 ทำงานออฟไลน์ 100% ไร้กังวลแม้ไม่มีสัญญาณเน็ต
+                    </p>
+
+                    <!-- CTAs -->
+                    <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+                        <button 
+                            onclick="scrollToSection('manuals')" 
+                            class="px-8 py-3.5 bg-[#FF5722] hover:bg-[#E64A19] text-white font-bold rounded-2xl shadow-xl shadow-orange-500/20 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2 text-sm"
+                        >
+                            <i class="fa-solid fa-book-open"></i>
+                            <span data-i18n="hero_btn_explore">สำรวจคู่มือการใช้งาน</span>
+                        </button>
+                        <button 
+                            onclick="scrollToSection('download-cta')" 
+                            class="px-8 py-3.5 bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white font-bold rounded-2xl border border-slate-700 shadow-md transition-all flex items-center justify-center gap-2 text-sm"
+                        >
+                            <i class="fa-solid fa-mobile-screen"></i>
+                            <span data-i18n="hero_btn_download">ดาวน์โหลดแอปฟรี</span>
+                        </button>
+                    </div>
+
+                </div>
+
+                <!-- Hero Mockup & Visuals -->
+                <div class="lg:w-5/12 relative" data-aos="fade-left">
+                    <div class="relative w-full max-w-md mx-auto float-element">
+                        <div class="rounded-3xl shadow-2xl overflow-hidden border-4 border-slate-700/80 bg-slate-900 relative z-20">
+                            <img 
+                                src="https://lh3.googleusercontent.com/d/1OikbC0nKGt63DV0C8d5z_MfLfjDNoWs8" 
+                                referrerpolicy="no-referrer" 
+                                alt="Survey Toolbox Mobile App Showcase" 
+                                class="w-full h-auto object-cover"
+                            >
+                        </div>
+                        <div class="absolute -top-10 -right-10 w-64 h-64 bg-blue-500/20 rounded-full blur-3xl -z-10"></div>
+                        <div class="absolute -bottom-10 -left-10 w-64 h-64 bg-orange-500/20 rounded-full blur-3xl -z-10"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- 4 Stats Ribbon -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 shadow-2xl">
+                <div class="text-center p-2">
+                    <div class="font-mono text-2xl sm:text-3xl font-extrabold text-white" data-i18n="stat_tools_num">21</div>
+                    <div class="text-xs text-slate-400 mt-1 font-medium" data-i18n="stat_tools_label">เครื่องมือคำนวณครบครัน</div>
+                </div>
+                <div class="text-center p-2 border-l border-white/10">
+                    <div class="font-mono text-2xl sm:text-3xl font-extrabold text-emerald-400" data-i18n="stat_offline_num">100%</div>
+                    <div class="text-xs text-slate-400 mt-1 font-medium" data-i18n="stat_offline_label">ทำงานออฟไลน์ไม่ง้อเน็ต</div>
+                </div>
+                <div class="text-center p-2 border-l border-white/10">
+                    <div class="font-heading text-xl sm:text-2xl font-extrabold text-sky-400" data-i18n="stat_precision_num">พิกัด & ระยะ</div>
+                    <div class="text-xs text-slate-400 mt-1 font-medium" data-i18n="stat_precision_label">คำนวณพิกัดและระยะทางความแม่นยำสูง</div>
+                </div>
+                <div class="text-center p-2 border-l border-white/10">
+                    <div class="font-heading text-xl sm:text-2xl font-extrabold text-amber-400" data-i18n="stat_iso_num">รายงานสรุป</div>
+                    <div class="text-xs text-slate-400 mt-1 font-medium" data-i18n="stat_iso_label">รายงานสรุปผลการคำนวณและตรวจสอบ</div>
+                </div>
+            </div>
+
+        </div>
+        
+        <!-- Bottom Curve Divider -->
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none pointer-events-none">
+            <svg class="relative block w-full h-12 sm:h-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="fill-white"></path>
+            </svg>
+        </div>
+    </header>
+
+    <!-- ==========================================
+         Manuals Hub: 21 Survey Tools Catalog
+         ========================================== -->
+    <section id="manuals" class="py-20 bg-white relative">
+        <div class="container mx-auto px-4 sm:px-6">
+            
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-10" data-aos="fade-up">
+                <span class="text-[#FF5722] font-heading font-bold tracking-widest uppercase text-xs sm:text-sm" data-i18n="manual_badge">
+                    GUIDES & DOCUMENTATION
+                </span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 tracking-tight" data-i18n="manual_title">
+                    คู่มือการใช้งาน 21 เครื่องมือสำรวจ
+                </h2>
+                <div class="w-16 h-1.5 bg-[#FF5722] mx-auto mt-4 rounded-full"></div>
+                <p class="text-slate-500 text-sm sm:text-base mt-4" data-i18n="manual_subtitle">
+                    เอกสารคู่มือทางเทคนิค คำอธิบายฟังก์ชัน พารามิเตอร์ และขั้นตอนการทำงาน
+                </p>
+            </div>
+
+            <!-- Instant Live Search Bar -->
+            <div class="max-w-2xl mx-auto mb-8 relative" data-aos="fade-up">
+                <div class="relative flex items-center">
+                    <i class="fa-solid fa-magnifying-glass absolute left-4 text-slate-400 text-base"></i>
+                    <input 
+                        type="text" 
+                        id="tool-search-input"
+                        placeholder="ค้นหาเครื่องมือสำรวจ (เช่น รีเช็คชั่น, โค้งราบ, Azimuth, พิกัด, Collimation, #1 - #21)..." 
+                        class="w-full pl-12 pr-28 py-3.5 bg-slate-50 border border-slate-200 rounded-2xl shadow-sm text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#FF5722] focus:bg-white transition-all font-medium"
+                    >
+                    <button 
+                        id="search-clear-btn" 
+                        class="hidden absolute right-3 px-3 py-1 bg-slate-200 hover:bg-slate-300 text-slate-700 text-xs font-semibold rounded-lg transition-colors"
+                        data-i18n="search_clear"
+                    >
+                        ล้าง
+                    </button>
+                </div>
+                <div class="flex items-center justify-between text-xs text-slate-400 mt-2 px-2 font-medium">
+                    <span id="search-count-chip">แสดง 21 เครื่องมือสำรวจ</span>
+                    <span data-i18n="search_hint">คลิกการ์ดเพื่อดูคู่มือการใช้งาน</span>
+                </div>
+            </div>
+
+            <!-- Category Filter Pills Bar (Horizontal scroll on mobile) -->
+            <div class="mb-10 overflow-x-auto no-scrollbar py-2" data-aos="fade-up">
+                <div id="category-pills-container" class="flex items-center justify-start lg:justify-center gap-2 sm:gap-3 min-w-max px-2">
+                    <!-- Populated dynamically by app.js -->
+                </div>
+            </div>
+
+            <!-- Empty Search Results State -->
+            <div id="tools-empty-state" class="hidden text-center py-16 bg-slate-50 border border-dashed border-slate-300 rounded-2xl p-8 max-w-lg mx-auto">
+                <div class="w-16 h-16 rounded-full bg-slate-200 text-slate-400 flex items-center justify-center text-2xl mx-auto mb-4">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <h3 class="font-heading font-bold text-slate-800 text-lg mb-2" data-i18n="search_empty_title">ไม่พบเครื่องมือที่ค้นหา</h3>
+                <p class="text-xs text-slate-500 mb-6 leading-relaxed" data-i18n="search_empty_desc">ลองค้นหาด้วยคำอื่น หรือเลือกหมวดหมู่ "ทั้งหมด" เพื่อดูเครื่องมือครบทั้ง 21 รายการ</p>
+                <button onclick="selectCategory('all'); document.getElementById('search-clear-btn').click();" class="px-5 py-2.5 bg-[#FF5722] text-white text-xs font-bold rounded-xl shadow-sm hover:bg-[#E64A19] transition-all">
+                    กลับไปดูทั้งหมด 21 เครื่องมือ
+                </button>
+            </div>
+
+            <!-- 21 Tool Cards Responsive Grid -->
+            <div id="tools-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Injected dynamically by app.js -->
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==========================================
+         Video Showcase Section
+         ========================================== -->
+    <section id="video-showcase" class="py-20 bg-slate-900 text-white relative overflow-hidden border-t border-slate-800">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-orange-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="container mx-auto px-4 sm:px-6 relative z-10 text-center">
+            
+            <div class="max-w-3xl mx-auto mb-10" data-aos="fade-up">
+                <span class="text-orange-400 font-heading font-bold tracking-widest uppercase text-xs">VIDEO SHOWCASE</span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-extrabold mt-2 tracking-tight text-white" data-i18n="video_title">
+                    วิดีโอแนะนำและสาธิตการใช้งาน Survey Toolbox
+                </h2>
+                <div class="w-16 h-1.5 bg-[#FF5722] mx-auto mt-4 rounded-full"></div>
+                <p class="text-slate-400 text-sm mt-3" data-i18n="video_desc">
+                    ชมตัวอย่างการคำนวณหน้างานจริง สะดวก รวดเร็ว แม่นยำทุกขั้นตอน ใช้งานได้ทุกที่แม้ไม่มีอินเทอร์เน็ต
+                </p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto rounded-3xl overflow-hidden shadow-2xl border-4 border-slate-700 bg-black" data-aos="zoom-in">
+                <div class="relative w-full" style="padding-bottom: 56.25%;">
+                    <iframe 
+                        class="absolute top-0 left-0 w-full h-full" 
+                        src="https://www.youtube.com/embed/j4anR0CmI0A?rel=0&modestbranding=1" 
+                        title="Survey Toolbox Promo & Field Workflow" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen
+                    ></iframe>
+                </div>
+            </div>
+            
+            <!-- Video Fallback Link & Feature Badges -->
+            <div class="mt-8 space-y-4">
+                <div class="flex flex-wrap justify-center gap-3 text-xs">
+                    <span class="px-3.5 py-1.5 rounded-full bg-slate-800 border border-slate-700 text-slate-300 flex items-center gap-1.5">
+                        <i class="fa-solid fa-play text-orange-400"></i> สาธิตการใช้งานจริงในสนาม
+                    </span>
+                    <span class="px-3.5 py-1.5 rounded-full bg-slate-800 border border-slate-700 text-slate-300 flex items-center gap-1.5">
+                        <i class="fa-solid fa-calculator text-blue-400"></i> เทคนิคการตั้งค่าพิกัด
+                    </span>
+                    <span class="px-3.5 py-1.5 rounded-full bg-slate-800 border border-slate-700 text-slate-300 flex items-center gap-1.5">
+                        <i class="fa-solid fa-file-pdf text-emerald-400"></i> การส่งออกรายงาน A4 PDF
+                    </span>
+                </div>
+                <div>
+                    <a 
+                        href="https://youtu.be/j4anR0CmI0A" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        class="inline-flex items-center text-xs text-orange-400 hover:text-white transition-colors underline"
+                        data-i18n="video_fallback"
+                    >
+                        <i class="fa-brands fa-youtube mr-2 text-sm"></i> หากดูวิดีโอไม่ได้ คลิกที่นี่เพื่อชมบน YouTube
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==========================================
+         Features Section
+         ========================================== -->
+    <section id="features" class="py-20 bg-slate-50 relative">
+        <div class="container mx-auto px-4 sm:px-6">
+            
+            <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
+                <span class="text-[#FF5722] font-heading font-bold tracking-widest uppercase text-xs" data-i18n="feat_header">
+                    FEATURE HIGHLIGHTS
+                </span>
+                <h2 class="font-heading text-3xl font-extrabold text-slate-900 mt-2" data-i18n="feat_title">
+                    ฟังก์ชันทรงพลังสำหรับมืออาชีพ
+                </h2>
+                <div class="w-16 h-1.5 bg-[#FF5722] mx-auto mt-3 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Feature 1 -->
+                <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-12 h-12 bg-orange-50 rounded-xl flex items-center justify-center mb-5 group-hover:bg-[#FF5722] transition-colors">
+                        <i class="fa-solid fa-compass text-xl text-[#FF5722] group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="font-heading text-lg font-bold text-slate-900 mb-2" data-i18n="f1_title">Azimuth & Distance</h3>
+                    <p class="text-slate-500 text-xs leading-relaxed" data-i18n="f1_desc">คำนวณหาทิศทางและระยะทางอย่างแม่นยำ (Inverse Geometry) สลับหน่วย DMS ทศนิยม</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-5 group-hover:bg-[#1E88E5] transition-colors">
+                        <i class="fa-solid fa-check-double text-xl text-[#1E88E5] group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="font-heading text-lg font-bold text-slate-900 mb-2" data-i18n="f2_title">Deviation Check</h3>
+                    <p class="text-slate-500 text-xs leading-relaxed" data-i18n="f2_desc">ตรวจสอบค่าความคลาดเคลื่อนเทียบกับแบบ (Design vs Actual) พร้อมแยกแนวแกนและไฮไลต์เตือนสีแดง</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-12 h-12 bg-purple-50 rounded-xl flex items-center justify-center mb-5 group-hover:bg-purple-600 transition-colors">
+                        <i class="fa-solid fa-route text-xl text-purple-600 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="font-heading text-lg font-bold text-slate-900 mb-2" data-i18n="f3_title">Smart Field Geometry</h3>
+                    <p class="text-slate-500 text-xs leading-relaxed" data-i18n="f3_desc">วางโค้งราบ H-Curve, โค้งดิ่ง V-Curve, รีเช็คชั่น 2 จุด และออฟเซ็ตผังคอกอย่างรวดเร็ว</p>
+                </div>
+                <!-- Feature 4 -->
+                <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 group" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center mb-5 group-hover:bg-emerald-600 transition-colors">
+                        <i class="fa-solid fa-file-circle-check text-xl text-emerald-600 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="font-heading text-lg font-bold text-slate-900 mb-2" data-i18n="f4_title">Export & Compliance</h3>
+                    <p class="text-slate-500 text-xs leading-relaxed" data-i18n="f4_desc">ส่งออกรายงาน PDF พร้อมบล็อกลงนาม 3 ฝ่าย, แผนภาพ CAD และใบรับรองสอบเทียบ ISO 17123-5</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==========================================
+         Audience & Value Propositions
+         ========================================== -->
+    <section id="audience" class="py-20 bg-white relative overflow-hidden">
+        <div class="container mx-auto px-4 sm:px-6 relative z-10">
+            
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2" data-aos="fade-right">
+                    <span class="text-[#FF5722] font-heading font-bold tracking-widest uppercase text-xs">WHO IT'S FOR</span>
+                    <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 mb-4 leading-tight" data-i18n="aud_title">
+                        Survey Toolbox เหมาะกับใคร?
+                    </h2>
+                    <p class="text-slate-500 mb-8 text-sm sm:text-base leading-relaxed" data-i18n="aud_subtitle">
+                        ออกแบบเพื่อรองรับทุกลำดับขั้นในงานวิศวกรรมสำรวจและก่อสร้าง ไม่ว่าจะเป็นงานภาคสนามหรือควบคุมงาน
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <!-- Card 1 -->
+                        <div class="flex items-start bg-slate-50 p-4 sm:p-5 rounded-2xl border-l-4 border-[#FF5722] border-t border-r border-b border-slate-200">
+                            <div class="bg-orange-100 p-2.5 rounded-xl mr-4 text-[#FF5722] shrink-0">
+                                <i class="fa-solid fa-helmet-safety text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-heading font-bold text-slate-900 text-sm sm:text-base" data-i18n="p1_title">ช่างสำรวจภาคสนาม (Field Surveyors)</h4>
+                                <p class="text-xs text-slate-500 mt-1 leading-relaxed" data-i18n="p1_desc">ลดภาระการพกสมุดจด ตรวจสอบค่าได้ทันทีหน้างาน ไม่ต้องเสี่ยงกับการกดเครื่องคิดเลขผิดพลาดกลางแดดร้อน รังวัดเสร็จ ตรวจสอบความคลาดเคลื่อนและเซ็นอนุมัติส่งงานได้ทันที</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="flex items-start bg-slate-50 p-4 sm:p-5 rounded-2xl border-l-4 border-blue-500 border-t border-r border-b border-slate-200">
+                            <div class="bg-blue-100 p-2.5 rounded-xl mr-4 text-blue-600 shrink-0">
+                                <i class="fa-solid fa-clipboard-check text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-heading font-bold text-slate-900 text-sm sm:text-base" data-i18n="p2_title">วิศวกรและผู้ควบคุมงาน</h4>
+                                <p class="text-xs text-slate-500 mt-1 leading-relaxed" data-i18n="p2_desc">ตรวจสอบงานวางผังเสาเข็ม งานระดับดิน และแนวสายทาง LandXML ได้ด้วยตนเอง ไม่ต้องรอไฟล์ CAD พร้อมรายงาน PDF มาตรฐานสำหรับแนบส่งตรวจ</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="flex items-start bg-slate-50 p-4 sm:p-5 rounded-2xl border-l-4 border-emerald-500 border-t border-r border-b border-slate-200">
+                            <div class="bg-emerald-100 p-2.5 rounded-xl mr-4 text-emerald-600 shrink-0">
+                                <i class="fa-solid fa-graduation-cap text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-heading font-bold text-slate-900 text-sm sm:text-base" data-i18n="p3_title">นักศึกษา</h4>
+                                <p class="text-xs text-slate-500 mt-1 leading-relaxed" data-i18n="p3_desc">เครื่องมือจำลองและเรียนรู้ทฤษฎีเรขาคณิตสำรวจ การฉายแผนที่ WGS84/UTM และกระบวนการสอบเทียบเครื่องมือวัดตามมาตรฐานสากล ISO</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial & App Interface Snapshot -->
+                <div class="lg:w-1/2 flex justify-center" data-aos="fade-left">
+                    <div class="relative w-full max-w-sm rounded-3xl shadow-2xl overflow-hidden border-8 border-slate-100 bg-slate-900">
+                        <img 
+                            src="https://lh3.googleusercontent.com/d/141n8Bb95ppb4IJb5rcTJjlRQOWRv0gX2" 
+                            referrerpolicy="no-referrer" 
+                            alt="Survey Toolbox Mobile User Interface" 
+                            class="w-full h-auto object-cover"
+                        >
+                        <div class="absolute bottom-0 w-full bg-slate-900/90 backdrop-blur-md p-4 text-white border-t border-slate-800">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 bg-[#FF5722] rounded-full flex items-center justify-center text-white font-bold shrink-0">
+                                    <i class="fa-solid fa-quote-left text-sm"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs italic text-slate-200 leading-snug">"ใช้งานง่าย แม่นยำ ตรวจสอบเสาเข็มเยื้องศูนย์และออกรายงาน PDF ได้ทันทีหน้างาน"</p>
+                                    <p class="text-[10px] text-orange-400 font-bold mt-1">ผู้ใช้งานวิศวกรสำรวจภาคสนาม • Survey Toolbox</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==========================================
+         FAQ Section
+         ========================================== -->
+    <section id="faq" class="py-20 bg-slate-50 border-t border-slate-200">
+        <div class="container mx-auto px-4 sm:px-6 max-w-3xl">
+            
+            <div class="text-center mb-12" data-aos="fade-up">
+                <span class="text-[#FF5722] font-heading font-bold tracking-widest uppercase text-xs" data-i18n="faq_header">FAQ</span>
+                <h2 class="font-heading text-3xl font-extrabold text-slate-900 mt-2" data-i18n="faq_title">คำถามที่พบบ่อย</h2>
+                <div class="w-16 h-1 bg-[#FF5722] mx-auto mt-3 rounded-full"></div>
+            </div>
+
+            <div class="space-y-4" data-aos="fade-up">
+                <!-- Question 1 -->
+                <details class="group bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden" open>
+                    <summary class="flex justify-between items-center font-heading font-bold text-slate-900 cursor-pointer list-none p-5 sm:p-6 text-sm sm:text-base">
+                        <span data-i18n="q1">แอปพลิเคชันต้องเชื่อมต่ออินเทอร์เน็ตหรือไม่?</span>
+                        <span class="transition-transform group-open:rotate-180 text-[#FF5722] ml-2"><i class="fa-solid fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="text-slate-600 px-5 sm:px-6 pb-6 text-xs sm:text-sm leading-relaxed border-t border-slate-100 pt-4" data-i18n="a1">
+                        ไม่จำเป็นครับ ฟังก์ชันการคำนวณทางเรขาคณิตและวิศวกรรมทั้ง 21 ฟังก์ชันถูกออกแบบมาให้ทำงานแบบ Offline 100% ในตัวอุปกรณ์ เพื่อรองรับการทำงานในพื้นที่ห่างไกล ชายป่า ไซส์งานอุโมงค์ หรือพื้นที่อับสัญญาณ อินเทอร์เน็ตจำเป็นเฉพาะการเปิดโหลดแผนที่ดาวเทียมออนไลน์เท่านั้น
+                    </div>
+                </details>
+
+                <!-- Question 2 -->
+                <details class="group bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                    <summary class="flex justify-between items-center font-heading font-bold text-slate-900 cursor-pointer list-none p-5 sm:p-6 text-sm sm:text-base">
+                        <span data-i18n="q2">มีเวอร์ชันสำหรับระบบปฏิบัติการใดบ้าง?</span>
+                        <span class="transition-transform group-open:rotate-180 text-[#FF5722] ml-2"><i class="fa-solid fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="text-slate-600 px-5 sm:px-6 pb-6 text-xs sm:text-sm leading-relaxed border-t border-slate-100 pt-4" data-i18n="a2">
+                        Survey Toolbox รองรับทั้งระบบ iOS (iPhone & iPad บน App Store) และ Android (สมาร์ทโฟนและแท็บเล็ตบน Google Play Store) โดยมีฟังก์ชันและการคำนวณเหมือนกันทุกประการ
+                    </div>
+                </details>
+
+                <!-- Question 3 -->
+                <details class="group bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                    <summary class="flex justify-between items-center font-heading font-bold text-slate-900 cursor-pointer list-none p-5 sm:p-6 text-sm sm:text-base">
+                        <span data-i18n="q3">สามารถส่งออกข้อมูล (Export) เป็นไฟล์อะไรได้บ้าง?</span>
+                        <span class="transition-transform group-open:rotate-180 text-[#FF5722] ml-2"><i class="fa-solid fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="text-slate-600 px-5 sm:px-6 pb-6 text-xs sm:text-sm leading-relaxed border-t border-slate-100 pt-4" data-i18n="a3">
+                        รองรับการส่งออก 3 รูปแบบหลัก: 1) เอกสาร PDF ขนาด A4 คุณภาพสูง พร้อมตารางสรุป ภาพร่าง CAD และบล็อกลงนาม 3 ฝ่าย, 2) ไฟล์ CSV สำหรับเปิดใน Microsoft Excel, และ 3) สำรองโครงการ JSON Backup
+                    </div>
+                </details>
+
+                <!-- Question 4 -->
+                <details class="group bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                    <summary class="flex justify-between items-center font-heading font-bold text-slate-900 cursor-pointer list-none p-5 sm:p-6 text-sm sm:text-base">
+                        <span data-i18n="q4">มีความแม่นยำและถูกต้องตามหลักวิศวกรรมแค่ไหน?</span>
+                        <span class="transition-transform group-open:rotate-180 text-[#FF5722] ml-2"><i class="fa-solid fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="text-slate-600 px-5 sm:px-6 pb-6 text-xs sm:text-sm leading-relaxed border-t border-slate-100 pt-4" data-i18n="a4">
+                        ทุกสมการคำนวณพัฒนาขึ้นตรงตามมาตรฐานวิศวกรรมสำรวจสากล อ้างอิงทรงรี WGS84, ทฤษฎี Redfearn Series สำหรับการแปลงพิกัด UTM, การปรับแก้สมดุลเส้นโครงสร้าง Compass Rule และเกณฑ์การทดสอบเครื่องมือวัดตามมาตรฐาน ISO 17123-5 รับประกันความถูกต้องระดับมิลลิเมตร
+                    </div>
+                </details>
+
+                <!-- Question 5 -->
+                <details class="group bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                    <summary class="flex justify-between items-center font-heading font-bold text-slate-900 cursor-pointer list-none p-5 sm:p-6 text-sm sm:text-base">
+                        <span data-i18n="q5">ฟังก์ชันฟรีและฟังก์ชัน Pro แตกต่างกันอย่างไร?</span>
+                        <span class="transition-transform group-open:rotate-180 text-[#FF5722] ml-2"><i class="fa-solid fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="text-slate-600 px-5 sm:px-6 pb-6 text-xs sm:text-sm leading-relaxed border-t border-slate-100 pt-4" data-i18n="a5">
+                        ฟังก์ชันพื้นฐาน เช่น Azimuth & Distance, Resection, Online Offset, Finder, และ Equipment List เปิดให้ใช้งานได้ฟรีตลอดชีพ ส่วนฟังก์ชันขั้นสูง เช่น โค้งราบ H-Curve, โค้งดิ่ง V-Curve, แปลงพิกัด GeoUTM, LandXML Alignment, สมุดสนาม 2 หน้ากล้อง, และการออกใบเซอร์ ISO 17123-5 สามารถปลดล็อกได้ผ่านการสมัครสมาชิก Pro
+                    </div>
+                </details>
+
+                <!-- Question 6 -->
+                <details class="group bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                    <summary class="flex justify-between items-center font-heading font-bold text-slate-900 cursor-pointer list-none p-5 sm:p-6 text-sm sm:text-base">
+                        <span data-i18n="q6">ข้อมูลพิกัดโครงการมีความปลอดภัยหรือไม่?</span>
+                        <span class="transition-transform group-open:rotate-180 text-[#FF5722] ml-2"><i class="fa-solid fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="text-slate-600 px-5 sm:px-6 pb-6 text-xs sm:text-sm leading-relaxed border-t border-slate-100 pt-4" data-i18n="a6">
+                        ปลอดภัย 100% ครับ แอปพลิเคชันไม่มีระบบเก็บข้อมูลขึ้นคลาวด์ภายนอก ข้อมูลโครงการและพิกัดรังวัดทั้งหมดจะถูกจัดเก็บอยู่ภายในหน่วยความจำของโทรศัพท์คุณเท่านั้น และไม่มีการติดตามข้อมูลส่วนบุคคลใดๆ
+                    </div>
+                </details>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==========================================
+         Mobile App Download Callout Section
+         ========================================== -->
+    <section id="download-cta" class="py-20 bg-white">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 text-white rounded-3xl p-8 sm:p-14 shadow-2xl relative overflow-hidden border border-slate-700" data-aos="zoom-in">
+                
+                <div class="absolute -top-24 -right-24 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div class="flex flex-col lg:flex-row items-center justify-between gap-10 relative z-10">
+                    <div class="lg:w-7/12 text-center lg:text-left">
+                        <h2 class="font-heading text-3xl sm:text-4xl font-extrabold mb-4 tracking-tight leading-tight" data-i18n="cta_title">
+                            พร้อมยกระดับงานสำรวจของคุณแล้วหรือยัง?
+                        </h2>
+                        <p class="text-slate-300 text-sm sm:text-base mb-8 max-w-xl leading-relaxed" data-i18n="cta_desc">
+                            ดาวน์โหลด Survey Toolbox วันนี้ ทั้งบน iOS และ Android แล้วสัมผัสความเร็ว แม่นยำ และเป็นมืออาชีพในทุกไซต์งาน
+                        </p>
+
+                        <!-- Download Badges -->
+                        <div class="flex flex-wrap justify-center lg:justify-start gap-4">
+                            <!-- Apple App Store -->
+                            <a 
+                                href="https://apps.apple.com/th/app/survey-toolbox/id6754455677?l=th" 
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="flex items-center gap-3 bg-white text-slate-900 px-6 py-3 rounded-2xl font-bold shadow-lg hover:bg-orange-500 hover:text-white transition-all transform hover:scale-105"
+                            >
+                                <i class="fa-brands fa-apple text-2xl"></i>
+                                <div class="text-left leading-tight">
+                                    <span class="text-[10px] block font-normal uppercase opacity-75">Download on the</span>
+                                    <span class="text-sm font-extrabold font-heading">App Store</span>
+                                </div>
+                            </a>
+
+                            <!-- Google Play Store -->
+                            <a 
+                                href="https://play.google.com/store/apps/details?id=com.kongkrit.surveytoolbox&pcampaignid=web_share" 
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="flex items-center gap-3 bg-emerald-600 text-white px-6 py-3 rounded-2xl font-bold shadow-lg hover:bg-emerald-500 transition-all transform hover:scale-105"
+                            >
+                                <i class="fa-brands fa-google-play text-2xl"></i>
+                                <div class="text-left leading-tight">
+                                    <span class="text-[10px] block font-normal uppercase opacity-75">Get it on</span>
+                                    <span class="text-sm font-extrabold font-heading">Google Play</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Direct App QR Code Scan -->
+                    <div class="lg:w-5/12 flex flex-col items-center justify-center">
+                        <div class="bg-white p-3 rounded-2xl shadow-xl flex items-center justify-center border-4 border-slate-700">
+                            <img src="https://img2.pic.in.th/IMG_1936.png" alt="LINE Support QR" class="w-28 h-28 object-cover rounded-lg">
+                        </div>
+                        <span class="text-xs text-slate-400 mt-3 font-medium flex items-center gap-1.5" data-i18n="cta_qr_label">
+                            <i class="fa-solid fa-qrcode text-orange-400"></i> ติดต่อซัพพอร์ต
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         Legal Privacy & Terms
+         ========================================== -->
+    <section id="legal" class="py-16 bg-slate-50 border-t border-slate-200 text-xs text-slate-600">
+        <div class="container mx-auto px-4 sm:px-6 max-w-4xl space-y-10">
+            
+            <!-- Privacy Policy -->
+            <div id="privacy" class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-lg">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="font-heading text-lg font-bold text-slate-900" data-i18n="privacy_title">นโยบายความเป็นส่วนตัว (Privacy Policy)</h3>
+                </div>
+                <p class="font-bold text-slate-800 mb-2" data-i18n="privacy_h1">Survey Toolbox ไม่ได้เก็บ บันทึก หรือแชร์ข้อมูลส่วนบุคคลของผู้ใช้</p>
+                <ul class="list-disc pl-5 space-y-1.5 leading-relaxed text-slate-600">
+                    <li data-i18n="privacy_li1">แอปนี้ถูกออกแบบเพื่อการคำนวณงานสำรวจและวิศวกรรมแบบออฟไลน์ 100%</li>
+                    <li data-i18n="privacy_li2">ไม่มีระบบล็อกอิน การวิเคราะห์พฤติกรรมผู้ใช้ หรือการติดตามจากบุคคลที่สาม</li>
+                    <li data-i18n="privacy_li3">ข้อมูลพิกัดและรายงานโครงการทั้งหมดจัดเก็บภายในเครื่องของผู้ใช้งานเท่านั้น</li>
+                </ul>
+            </div>
+
+            <!-- Terms of Use -->
+            <div id="terms" class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center text-lg">
+                        <i class="fa-solid fa-file-contract"></i>
+                    </div>
+                    <h3 class="font-heading text-lg font-bold text-slate-900" data-i18n="terms_title">ข้อตกลงการใช้งาน (EULA)</h3>
+                </div>
+                <p class="mb-3 text-slate-700 font-medium" data-i18n="terms_intro">เมื่อผู้ใช้ใช้งานแอปพลิเคชัน Survey Toolbox ถือว่าผู้ใช้ยอมรับข้อตกลงดังต่อไปนี้:</p>
+                <ol class="list-decimal pl-5 space-y-1.5 leading-relaxed text-slate-600">
+                    <li data-i18n="term_1">แอปและเนื้อหาทั้งหมดเป็นทรัพย์สินทางปัญญาของผู้พัฒนา</li>
+                    <li data-i18n="term_2">ฟังก์ชันขั้นสูงบางส่วน (Survey Toolbox Pro) ต้องสมัครสมาชิกแบบต่ออายุอัตโนมัติ</li>
+                    <li data-i18n="term_3">การชำระเงินและการจัดการการสมัครสมาชิกทั้งหมดดำเนินการผ่านระบบของ Apple/Google อย่างปลอดภัย</li>
+                    <li data-i18n="term_4">ผลการคำนวณทางวิศวกรรมควรได้รับการตรวจสอบและรับรองโดยวิศวกรผู้เชี่ยวชาญก่อนนำไปใช้ในการก่อสร้างจริง</li>
+                </ol>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==========================================
+         Footer
+         ========================================== -->
+    <footer class="bg-slate-950 text-slate-400 py-14 border-t border-slate-900 text-xs">
+        <div class="container mx-auto px-4 sm:px-6">
+            
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-10 pb-8 border-b border-slate-800">
+                <div>
+                    <div class="flex items-center space-x-3 mb-2">
+                        <img 
+                            src="https://lh3.googleusercontent.com/d/1sgI54U4A9Pbb3hy7ahxayP-0X07mF8M5" 
+                            referrerpolicy="no-referrer" 
+                            alt="Survey Toolbox Footer Logo" 
+                            class="h-8 w-8 rounded-lg shadow-sm opacity-90 border border-slate-700"
+                        >
+                        <span class="text-xl font-heading font-extrabold text-white">Survey Toolbox</span>
+                    </div>
+                    <p class="text-slate-400" data-i18n="footer_tag">Professional Engineering Tools for iOS & Android</p>
+                </div>
+
+                <div class="flex flex-wrap items-center gap-4 sm:gap-6">
+                    <!-- Feedback Form -->
+                    <a 
+                        href="https://docs.google.com/forms/d/1FvWeoEembNsGc-zDJtgqUQufl44BhDf29OKPV_Hll5s/edit?usp=drivesdk" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        class="flex items-center text-xs text-slate-300 hover:text-[#FF5722] transition-colors border border-slate-700 rounded-full px-4 py-2 hover:border-[#FF5722]"
+                    >
+                        <i class="fa-regular fa-comment-dots mr-2 text-sm"></i>
+                        <span data-i18n="btn_feedback">แจ้งปัญหา / แนะนำติชม</span>
+                    </a>
+
+                    <!-- Social Icons -->
+                    <div class="flex space-x-3">
+                        <a href="https://www.facebook.com/profile.php?id=61580648713614" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center text-white hover:bg-[#1877F2] transition-all">
+                            <i class="fa-brands fa-facebook-f text-sm"></i>
+                        </a>
+                        <a href="https://lin.ee/zKbPNUD" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center text-white hover:bg-[#06C755] transition-all">
+                            <i class="fa-brands fa-line text-base"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@survey.toolbox?_r=1&_t=ZS-92lh3eUAopV" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center text-white hover:bg-black hover:text-cyan-400 transition-all">
+                            <i class="fa-brands fa-tiktok text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="text-center text-slate-500" data-i18n="copyright">
+                &copy; 2026 Survey Toolbox. All rights reserved. Developed with Engineering Precision.
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- ==========================================
+         3-Tab Tool Detail Modal / Sliding Drawer
+         ========================================== -->
+    <div id="tool-modal" class="hidden fixed inset-0 z-50 modal-backdrop bg-slate-950/75 items-center justify-center p-3 sm:p-6 overflow-y-auto" role="dialog" aria-modal="true">
+        <div id="modal-box" class="relative bg-white w-full max-w-4xl rounded-3xl shadow-2xl border border-slate-200 flex flex-col max-h-[92vh] overflow-hidden my-auto animate-fadeIn">
+            
+            <!-- Sticky Modal Header -->
+            <div class="px-4 py-3 sm:px-6 sm:py-4 border-b border-slate-100 flex items-center justify-between bg-slate-50/80 shrink-0">
+                <div class="flex items-center gap-3 min-w-0">
+                    <span id="modal-tool-num" class="font-mono text-xs font-bold text-slate-500 bg-slate-200 px-2.5 py-1 rounded-md shrink-0">#01</span>
+                    <span id="modal-tool-cat" class="text-xs font-semibold px-2.5 py-0.5 rounded-full border bg-blue-50 text-blue-700 border-blue-200 shrink-0">หมวด</span>
+                    <div id="modal-tool-tier" class="shrink-0"></div>
+                    <div class="min-w-0">
+                        <h3 id="modal-tool-title" class="font-heading font-extrabold text-slate-900 text-base sm:text-lg truncate">ชื่อเครื่องมือ</h3>
+                        <p id="modal-tool-subtitle" class="text-xs text-slate-400 truncate">Subtitle in English</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-2 modal-header-actions shrink-0">
+                    <!-- In-Modal Language Switcher -->
+                    <div class="flex bg-slate-200/80 rounded-lg p-0.5 border border-slate-300/70 text-[11px]">
+                        <button type="button" onclick="setLanguage('th')" id="modal-btn-th" class="px-2 py-1 rounded-md transition-colors bg-white text-slate-900 shadow-xs font-bold">TH</button>
+                        <button type="button" onclick="setLanguage('en')" id="modal-btn-en" class="px-2 py-1 rounded-md transition-colors text-slate-600 hover:text-slate-900 font-medium">EN</button>
+                    </div>
+
+                    <button 
+                        onclick="printToolManual()" 
+                        class="p-2 text-slate-500 hover:text-slate-800 rounded-xl hover:bg-slate-200/60 transition-colors"
+                        title="พิมพ์คู่มือ / พิมพ์รายงาน A4 PDF"
+                    >
+                        <i class="fa-solid fa-print text-sm"></i>
+                    </button>
+                    <button 
+                        id="modal-close-btn" 
+                        class="p-2 text-slate-400 hover:text-slate-800 rounded-xl hover:bg-slate-200/60 transition-colors"
+                        title="ปิดหน้าต่าง (ESC)"
+                    >
+                        <i class="fa-solid fa-xmark text-lg"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Horizontal Tab Navigation Bar -->
+            <div class="modal-tab-nav flex border-b border-slate-200 bg-slate-100/60 px-4 overflow-x-auto no-scrollbar text-xs font-semibold shrink-0">
+                <button onclick="switchModalTab('overview')" data-tab="overview" class="modal-tab-btn active px-4 py-3 whitespace-nowrap shrink-0" data-i18n="modal_tab_overview">
+                    ข้อ 1. คำอธิบายฟังก์ชัน
+                </button>
+                <button onclick="switchModalTab('params')" data-tab="params" class="modal-tab-btn px-4 py-3 whitespace-nowrap shrink-0" data-i18n="modal_tab_params">
+                    ข้อ 2. พารามิเตอร์ (Input/Output)
+                </button>
+                <button onclick="switchModalTab('steps')" data-tab="steps" class="modal-tab-btn px-4 py-3 whitespace-nowrap shrink-0" data-i18n="modal_tab_steps">
+                    ข้อ 3. ขั้นตอนการทำงาน (Step-by-Step)
+                </button>
+            </div>
+
+            <!-- Modal Content Body -->
+            <div id="modal-tab-body" class="p-4 sm:p-6 overflow-y-auto flex-1 min-h-0 modal-content-container">
+                <!-- Tab contents injected dynamically -->
+            </div>
+
+            <!-- Modal Footer Action Bar -->
+            <div class="modal-footer-bar px-4 py-3 sm:px-6 sm:py-3.5 bg-slate-50 border-t border-slate-100 flex items-center justify-between text-xs shrink-0">
+                <button 
+                    onclick="closeToolModal()" 
+                    class="px-4 py-2 bg-slate-200 hover:bg-slate-300 text-slate-700 font-semibold rounded-xl transition-colors"
+                    data-i18n="modal_btn_close"
+                >
+                    ปิดหน้าต่าง
+                </button>
+                <div class="flex items-center gap-2">
+                    <a 
+                        href="https://apps.apple.com/th/app/survey-toolbox/id6754455677?l=th" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        class="px-4 py-2 bg-slate-900 hover:bg-black text-white font-semibold rounded-xl shadow-sm transition-all flex items-center gap-1.5"
+                    >
+                        <i class="fa-brands fa-apple"></i>
+                        <span>iOS</span>
+                    </a>
+                    <a 
+                        href="https://play.google.com/store/apps/details?id=com.kongkrit.surveytoolbox&pcampaignid=web_share" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold rounded-xl shadow-sm transition-all flex items-center gap-1.5"
+                    >
+                        <i class="fa-brands fa-android"></i>
+                        <span>Android</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Toast Notification Element -->
+    <div id="toast-notification" class="toast-msg bg-slate-900 text-white px-5 py-3 rounded-2xl shadow-2xl flex items-center gap-3 border border-slate-700">
+        <i class="fa-solid fa-circle-check text-emerald-400 text-base"></i>
+        <span id="toast-notification-text" class="text-xs font-semibold">สำเร็จ</span>
+    </div>
+
+    <!-- Application JavaScript Engine -->
+    <script src="./js/tools-data.js"></script>
+    <script src="./js/app.js"></script>
+</body>
+</html>
