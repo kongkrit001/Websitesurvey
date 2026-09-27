@@ -72,28 +72,28 @@
             <div class="flex justify-between items-center">
                 
                 <!-- Logo & Brand Header -->
-                <div class="flex items-center space-x-3 cursor-pointer" onclick="scrollToSection('top')">
+                <a href="#top" onclick="scrollToSection('top', event)" class="flex items-center space-x-3 cursor-pointer group" aria-label="Survey Toolbox Home">
                     <img 
                         src="https://lh3.googleusercontent.com/d/1sgI54U4A9Pbb3hy7ahxayP-0X07mF8M5" 
                         referrerpolicy="no-referrer" 
                         alt="Survey Toolbox Logo" 
-                        class="h-10 w-10 rounded-xl shadow-md object-cover border border-slate-200"
+                        class="h-10 w-10 rounded-xl shadow-md object-cover border border-slate-200 group-hover:scale-105 transition-transform"
                     >
                     <div>
-                        <span class="text-xl font-heading font-extrabold text-slate-900 tracking-tight block leading-none">
+                        <span class="text-xl font-heading font-extrabold text-slate-900 tracking-tight block leading-none group-hover:text-[#FF5722] transition-colors">
                             Survey Toolbox
                         </span>
                     </div>
-                </div>
+                </a>
 
                 <!-- Desktop Navigation Menu -->
                 <div class="hidden lg:flex items-center space-x-6 text-sm font-medium text-slate-600">
-                    <a onclick="scrollToSection('top')" class="hover:text-[#FF5722] transition-colors cursor-pointer" data-i18n="nav_home">หน้าแรก</a>
-                    <a onclick="scrollToSection('manuals')" class="hover:text-[#FF5722] transition-colors cursor-pointer font-semibold text-slate-900" data-i18n="nav_manual">คู่มือการใช้งาน</a>
-                    <a onclick="scrollToSection('features')" class="hover:text-[#FF5722] transition-colors cursor-pointer" data-i18n="nav_features">จุดเด่น</a>
-                    <a onclick="scrollToSection('audience')" class="hover:text-[#FF5722] transition-colors cursor-pointer" data-i18n="nav_audience">กลุ่มผู้ใช้งาน</a>
-                    <a onclick="scrollToSection('video-showcase')" class="hover:text-[#FF5722] transition-colors cursor-pointer" data-i18n="nav_video">วิดีโอสาธิต</a>
-                    <a onclick="scrollToSection('faq')" class="hover:text-[#FF5722] transition-colors cursor-pointer" data-i18n="nav_faq">คำถามที่พบบ่อย</a>
+                    <a href="#top" onclick="scrollToSection('top', event)" class="hover:text-[#FF5722] transition-colors cursor-pointer" data-i18n="nav_home">หน้าแรก</a>
+                    <a href="#manuals" onclick="scrollToSection('manuals', event)" class="hover:text-[#FF5722] transition-colors cursor-pointer font-semibold text-slate-900" data-i18n="nav_manual">คู่มือการใช้งาน</a>
+                    <a href="#features" onclick="scrollToSection('features', event)" class="hover:text-[#FF5722] transition-colors cursor-pointer" data-i18n="nav_features">จุดเด่น</a>
+                    <a href="#audience" onclick="scrollToSection('audience', event)" class="hover:text-[#FF5722] transition-colors cursor-pointer" data-i18n="nav_audience">กลุ่มผู้ใช้งาน</a>
+                    <a href="#video-showcase" onclick="scrollToSection('video-showcase', event)" class="hover:text-[#FF5722] transition-colors cursor-pointer" data-i18n="nav_video">วิดีโอสาธิต</a>
+                    <a href="#faq" onclick="scrollToSection('faq', event)" class="hover:text-[#FF5722] transition-colors cursor-pointer" data-i18n="nav_faq">คำถามที่พบบ่อย</a>
                 </div>
 
                 <!-- Language Switcher & App Store Quick Action -->
@@ -136,12 +136,14 @@
 
             <!-- Mobile Navigation Drawer -->
             <div id="mobile-menu" class="hidden lg:hidden pt-4 pb-2 border-t border-slate-100 mt-3 flex-col space-y-3 text-sm font-medium text-slate-700">
-                <a onclick="scrollToSection('top')" class="block hover:text-[#FF5722] py-1 cursor-pointer" data-i18n="nav_home">หน้าแรก</a>
-                <a onclick="scrollToSection('manuals')" class="block hover:text-[#FF5722] py-1 cursor-pointer font-bold text-[#FF5722]" data-i18n="nav_manual">คู่มือการใช้งาน</a>
-                <a onclick="scrollToSection('features')" class="block hover:text-[#FF5722] py-1 cursor-pointer" data-i18n="nav_features">จุดเด่น</a>
-                <a onclick="scrollToSection('audience')" class="block hover:text-[#FF5722] py-1 cursor-pointer" data-i18n="nav_audience">กลุ่มผู้ใช้งาน</a>
-                <a onclick="scrollToSection('video-showcase')" class="block hover:text-[#FF5722] py-1 cursor-pointer" data-i18n="nav_video">วิดีโอสาธิต</a>
-                <a onclick="scrollToSection('faq')" class="block hover:text-[#FF5722] py-1 cursor-pointer" data-i18n="nav_faq">คำถามที่พบบ่อย</a>
+                <a href="#top" onclick="scrollToSection('top', event)" class="block hover:text-[#FF5722] py-1 cursor-pointer" data-i18n="nav_home">หน้าแรก</a>
+                <a href="#manuals" onclick="scrollToSection('manuals', event)" class="block hover:text-[#FF5722] py-1 cursor-pointer font-bold text-[#FF5722]" data-i18n="nav_manual">คู่มือการใช้งาน</a>
+                <a href="#features" onclick="scrollToSection('features', event)" class="block hover:text-[#FF5722] py-1 cursor-pointer" data-i18n="nav_features">จุดเด่น</a>
+                <a href="#audience" onclick="scrollToSection('audience', event)" class="block hover:text-[#FF5722] py-1 cursor-pointer" data-i18n="nav_audience">กลุ่มผู้ใช้งาน</a>
+                <a href="#video-showcase" onclick="scrollToSection('video-showcase', event)" class="block hover:text-[#FF5722] py-1 cursor-pointer" data-i18n="nav_video">วิดีโอสาธิต</a>
+                <a href="#faq" onclick="scrollToSection('faq', event)" class="block hover:text-[#FF5722] py-1 cursor-pointer" data-i18n="nav_faq">คำถามที่พบบ่อย</a>
+                <a href="#privacy" onclick="scrollToSection('privacy', event)" class="block hover:text-[#FF5722] py-1 cursor-pointer" data-i18n="nav_privacy">นโยบายความเป็นส่วนตัว</a>
+                <a href="#terms" onclick="scrollToSection('terms', event)" class="block hover:text-[#FF5722] py-1 cursor-pointer" data-i18n="nav_terms">ข้อตกลงการใช้งาน</a>
                 <div class="flex gap-2 pt-2">
                     <a href="https://apps.apple.com/th/app/survey-toolbox/id6754455677?l=th" target="_blank" class="w-1/2 flex items-center justify-center bg-slate-900 text-white py-2 rounded-xl text-xs font-semibold gap-1.5">
                         <i class="fa-brands fa-apple"></i> iOS
@@ -655,8 +657,8 @@
                         <div class="bg-white p-3 rounded-2xl shadow-xl flex items-center justify-center border-4 border-slate-700">
                             <img src="https://img2.pic.in.th/IMG_1936.png" alt="LINE Support QR" class="w-28 h-28 object-cover rounded-lg">
                         </div>
-                        <span class="text-xs text-slate-400 mt-3 font-medium flex items-center gap-1.5" data-i18n="cta_qr_label">
-                            <i class="fa-solid fa-qrcode text-orange-400"></i> ติดต่อซัพพอร์ต
+                        <span class="text-xs text-slate-400 mt-3 font-medium flex items-center gap-1.5">
+                            <i class="fa-solid fa-qrcode text-orange-400"></i> <span data-i18n="cta_qr_label">สแกนเพื่อติดตั้งบนมือถือ</span>
                         </span>
                     </div>
                 </div>
@@ -672,23 +674,18 @@
         <div class="container mx-auto px-4 sm:px-6 max-w-4xl space-y-10">
             
             <!-- Privacy Policy -->
-            <div id="privacy" class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm">
+            <div id="privacy" class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm scroll-mt-24">
                 <div class="flex items-center gap-3 mb-4">
                     <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-lg">
                         <i class="fa-solid fa-shield-halved"></i>
                     </div>
                     <h3 class="font-heading text-lg font-bold text-slate-900" data-i18n="privacy_title">นโยบายความเป็นส่วนตัว (Privacy Policy)</h3>
                 </div>
-                <p class="font-bold text-slate-800 mb-2" data-i18n="privacy_h1">Survey Toolbox ไม่ได้เก็บ บันทึก หรือแชร์ข้อมูลส่วนบุคคลของผู้ใช้</p>
-                <ul class="list-disc pl-5 space-y-1.5 leading-relaxed text-slate-600">
-                    <li data-i18n="privacy_li1">แอปนี้ถูกออกแบบเพื่อการคำนวณงานสำรวจและวิศวกรรมแบบออฟไลน์ 100%</li>
-                    <li data-i18n="privacy_li2">ไม่มีระบบล็อกอิน การวิเคราะห์พฤติกรรมผู้ใช้ หรือการติดตามจากบุคคลที่สาม</li>
-                    <li data-i18n="privacy_li3">ข้อมูลพิกัดและรายงานโครงการทั้งหมดจัดเก็บภายในเครื่องของผู้ใช้งานเท่านั้น</li>
-                </ul>
+                <p class="text-slate-700 leading-relaxed text-sm sm:text-base font-normal" data-i18n="privacy_h1">เพื่อปรับปรุงประสิทธิภาพและพัฒนาฟังก์ชันการทำงานของแอปพลิเคชัน แอปจะมีการเก็บรวบรวมข้อมูลการใช้งานเชิงเทคนิคแบบไม่ระบุตัวตน (Anonymous Data) เช่น สถิติการเปิดใช้งานเครื่องมือต่างๆ รุ่นของอุปกรณ์ และเวอร์ชันของแอปพลิเคชัน โดยข้อมูลดังกล่าวจะถูกนำไปใช้เพื่อการวิเคราะห์และพัฒนาแอปพลิเคชันเท่านั้น</p>
             </div>
 
             <!-- Terms of Use -->
-            <div id="terms" class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm">
+            <div id="terms" class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm scroll-mt-24">
                 <div class="flex items-center gap-3 mb-4">
                     <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center text-lg">
                         <i class="fa-solid fa-file-contract"></i>
@@ -728,6 +725,13 @@
                 </div>
 
                 <div class="flex flex-wrap items-center gap-4 sm:gap-6">
+                    <!-- Quick Legal Links -->
+                    <div class="flex items-center gap-3 text-xs text-slate-400">
+                        <a href="#privacy" onclick="scrollToSection('privacy', event)" class="hover:text-[#FF5722] transition-colors cursor-pointer" data-i18n="nav_privacy">นโยบายความเป็นส่วนตัว</a>
+                        <span class="text-slate-700">•</span>
+                        <a href="#terms" onclick="scrollToSection('terms', event)" class="hover:text-[#FF5722] transition-colors cursor-pointer" data-i18n="nav_terms">ข้อตกลงการใช้งาน</a>
+                    </div>
+
                     <!-- Feedback Form -->
                     <a 
                         href="https://docs.google.com/forms/d/1FvWeoEembNsGc-zDJtgqUQufl44BhDf29OKPV_Hll5s/edit?usp=drivesdk" 
@@ -824,13 +828,24 @@
 
             <!-- Modal Footer Action Bar -->
             <div class="modal-footer-bar px-4 py-3 sm:px-6 sm:py-3.5 bg-slate-50 border-t border-slate-100 flex items-center justify-between text-xs shrink-0">
-                <button 
-                    onclick="closeToolModal()" 
-                    class="px-4 py-2 bg-slate-200 hover:bg-slate-300 text-slate-700 font-semibold rounded-xl transition-colors"
-                    data-i18n="modal_btn_close"
-                >
-                    ปิดหน้าต่าง
-                </button>
+                <div class="flex items-center gap-3">
+                    <button 
+                        onclick="closeToolModal()" 
+                        class="px-4 py-2 bg-slate-200 hover:bg-slate-300 text-slate-700 font-semibold rounded-xl transition-colors"
+                        data-i18n="modal_btn_close"
+                    >
+                        ปิดหน้าต่าง
+                    </button>
+                    <a 
+                        href="#privacy" 
+                        onclick="closeToolModal(); scrollToSection('privacy', event)" 
+                        class="text-slate-500 hover:text-[#FF5722] transition-colors cursor-pointer text-xs hidden sm:inline-flex items-center gap-1.5"
+                        data-i18n="nav_privacy"
+                    >
+                        <i class="fa-solid fa-shield-halved text-xs text-emerald-600"></i>
+                        <span>นโยบายความเป็นส่วนตัว</span>
+                    </a>
+                </div>
                 <div class="flex items-center gap-2">
                     <a 
                         href="https://apps.apple.com/th/app/survey-toolbox/id6754455677?l=th" 

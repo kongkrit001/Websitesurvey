@@ -118,10 +118,8 @@ const translations = {
     cta_qr_label: "สแกนเพื่อติดตั้งบนมือถือ",
 
     privacy_title: "นโยบายความเป็นส่วนตัว (Privacy Policy)",
-    privacy_h1: "Survey Toolbox ไม่ได้เก็บ บันทึก หรือแชร์ข้อมูลส่วนบุคคลของผู้ใช้",
-    privacy_li1: "แอปนี้ถูกออกแบบเพื่อการคำนวณงานสำรวจและวิศวกรรมแบบออฟไลน์ 100%",
-    privacy_li2: "ไม่มีระบบล็อกอิน การวิเคราะห์พฤติกรรมผู้ใช้ หรือการติดตามจากบุคคลที่สาม",
-    privacy_li3: "ข้อมูลพิกัดและรายงานโครงการทั้งหมดจัดเก็บภายในเครื่องของผู้ใช้งานเท่านั้น",
+    privacy_h1: "เพื่อปรับปรุงประสิทธิภาพและพัฒนาฟังก์ชันการทำงานของแอปพลิเคชัน แอปจะมีการเก็บรวบรวมข้อมูลการใช้งานเชิงเทคนิคแบบไม่ระบุตัวตน (Anonymous Data) เช่น สถิติการเปิดใช้งานเครื่องมือต่างๆ รุ่นของอุปกรณ์ และเวอร์ชันของแอปพลิเคชัน โดยข้อมูลดังกล่าวจะถูกนำไปใช้เพื่อการวิเคราะห์และพัฒนาแอปพลิเคชันเท่านั้น",
+    privacy_desc: "เพื่อปรับปรุงประสิทธิภาพและพัฒนาฟังก์ชันการทำงานของแอปพลิเคชัน แอปจะมีการเก็บรวบรวมข้อมูลการใช้งานเชิงเทคนิคแบบไม่ระบุตัวตน (Anonymous Data) เช่น สถิติการเปิดใช้งานเครื่องมือต่างๆ รุ่นของอุปกรณ์ และเวอร์ชันของแอปพลิเคชัน โดยข้อมูลดังกล่าวจะถูกนำไปใช้เพื่อการวิเคราะห์และพัฒนาแอปพลิเคชันเท่านั้น",
 
     terms_title: "ข้อตกลงการใช้งาน (EULA)",
     terms_intro: "เมื่อผู้ใช้ใช้งานแอปพลิเคชัน Survey Toolbox ถือว่าผู้ใช้ยอมรับข้อตกลงดังต่อไปนี้:",
@@ -239,10 +237,8 @@ const translations = {
     cta_qr_label: "Scan to install on mobile",
 
     privacy_title: "Privacy Policy",
-    privacy_h1: "Survey Toolbox does not collect, store, or share any personal user data.",
-    privacy_li1: "The app is strictly built for offline engineering calculations.",
-    privacy_li2: "No user logins, behavioral tracking, or third-party telemetry.",
-    privacy_li3: "All survey coordinates and reports remain exclusively on your device.",
+    privacy_h1: "To improve performance and enhance application features, the app collects anonymous technical usage data (such as tool usage statistics, device model, and app version). This data is used exclusively for analysis and application development.",
+    privacy_desc: "To improve performance and enhance application features, the app collects anonymous technical usage data (such as tool usage statistics, device model, and app version). This data is used exclusively for analysis and application development.",
 
     terms_title: "Terms of Use (EULA)",
     terms_intro: "By using Survey Toolbox, you agree to the following conditions:",

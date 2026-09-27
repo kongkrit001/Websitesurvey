@@ -32,6 +32,18 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function initApp() {
+  try {
+    const savedLang = localStorage.getItem('surveytoolbox_lang');
+    if (savedLang === 'en' || savedLang === 'th') {
+      state.currentLang = savedLang;
+      document.documentElement.lang = savedLang;
+    }
+  } catch (e) {
+    // Graceful fallback if localStorage is disabled or restricted
+  }
+
+  syncLangButtons(state.currentLang);
+
   renderCategoryPills();
   renderToolCards();
   setupSearch();
@@ -256,6 +268,9 @@ function openToolModal(toolId) {
 
   const modal = document.getElementById('tool-modal');
   if (!modal) return;
+
+  // Sync language buttons inside modal
+  syncLangButtons(state.currentLang);
 
   // Render Modal Header
   renderModalHeader();
@@ -784,8 +799,30 @@ function setupModalEvents() {
 function setLanguage(lang) {
   if (lang !== 'th' && lang !== 'en') return;
   state.currentLang = lang;
+  document.documentElement.lang = lang;
 
-  // Toggle button styles
+  try {
+    localStorage.setItem('surveytoolbox_lang', lang);
+  } catch (e) {
+    // Graceful fallback if localStorage is restricted
+  }
+
+  syncLangButtons(lang);
+  updateI18n();
+  renderCategoryPills();
+  renderToolCards();
+
+  if (state.activeTool) {
+    renderModalHeader();
+    renderModalTabContent();
+  }
+}
+
+/**
+ * Synchronize all UI language buttons across navbar and modal header
+ */
+function syncLangButtons(lang) {
+  // Toggle navbar button styles
   const btnTh = document.getElementById('btn-th');
   const btnEn = document.getElementById('btn-en');
   if (btnTh && btnEn) {
@@ -798,13 +835,17 @@ function setLanguage(lang) {
     }
   }
 
-  updateI18n();
-  renderCategoryPills();
-  renderToolCards();
-
-  if (state.activeTool) {
-    renderModalHeader();
-    renderModalTabContent();
+  // Sync in-modal language buttons if present
+  const mBtnTh = document.getElementById('modal-btn-th');
+  const mBtnEn = document.getElementById('modal-btn-en');
+  if (mBtnTh && mBtnEn) {
+    if (lang === 'th') {
+      mBtnTh.className = 'px-2 py-1 rounded-md transition-colors bg-white text-slate-900 shadow-xs font-bold';
+      mBtnEn.className = 'px-2 py-1 rounded-md transition-colors text-slate-600 hover:text-slate-900 font-medium';
+    } else {
+      mBtnEn.className = 'px-2 py-1 rounded-md transition-colors bg-white text-slate-900 shadow-xs font-bold';
+      mBtnTh.className = 'px-2 py-1 rounded-md transition-colors text-slate-600 hover:text-slate-900 font-medium';
+    }
   }
 }
 
@@ -841,7 +882,14 @@ function setupNavigation() {
   }
 }
 
-function scrollToSection(id) {
+function scrollToSection(id, e) {
+  if (e && e.preventDefault) e.preventDefault();
+
+  // If a modal drawer is currently open, dismiss it cleanly first
+  if (state.activeTool) {
+    closeToolModal();
+  }
+
   const targetElement = document.getElementById(id);
   if (targetElement) {
     const nav = document.querySelector('nav');
