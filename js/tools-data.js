@@ -115,7 +115,7 @@ const translations = {
 
     cta_title: "พร้อมยกระดับงานสำรวจของคุณแล้วหรือยัง?",
     cta_desc: "ดาวน์โหลด Survey Toolbox วันนี้ ทั้งบน iOS และ Android แล้วสัมผัสความเร็ว แม่นยำ และเป็นมืออาชีพในทุกไซต์งาน",
-    cta_qr_label: "สแกนเพื่อติดตั้งบนมือถือ",
+    cta_qr_label: "สแกนเพื่อติดต่อ/สอบถามผ่าน LINE",
 
     privacy_title: "นโยบายความเป็นส่วนตัว (Privacy Policy)",
     privacy_h1: "เพื่อปรับปรุงประสิทธิภาพและพัฒนาฟังก์ชันการทำงานของแอปพลิเคชัน แอปจะมีการเก็บรวบรวมข้อมูลการใช้งานเชิงเทคนิคแบบไม่ระบุตัวตน (Anonymous Data) เช่น สถิติการเปิดใช้งานเครื่องมือต่างๆ รุ่นของอุปกรณ์ และเวอร์ชันของแอปพลิเคชัน โดยข้อมูลดังกล่าวจะถูกนำไปใช้เพื่อการวิเคราะห์และพัฒนาแอปพลิเคชันเท่านั้น",
@@ -234,7 +234,7 @@ const translations = {
 
     cta_title: "Ready to Elevate Your Surveying Workflow?",
     cta_desc: "Download Survey Toolbox today on iOS and Android. Experience unmatched field precision on every construction site.",
-    cta_qr_label: "Scan to install on mobile",
+    cta_qr_label: "Scan to chat & support via LINE",
 
     privacy_title: "Privacy Policy",
     privacy_h1: "To improve performance and enhance application features, the app collects anonymous technical usage data (such as tool usage statistics, device model, and app version). This data is used exclusively for analysis and application development.",
@@ -274,8 +274,6 @@ const surveyToolsData = [
     keywords: ["deviate", "ne", "เสาเข็ม", "เยื้องศูนย์", "พิกัด", "offset", "pile", "as-built", "gridline", "chainage"],
     overviewTh: "ในงานก่อสร้างอาคารสูง สะพาน และฐานรากเสาเข็มเจาะ การหาผลต่างพิกัดราบ (ΔN, ΔE) เพียงอย่างเดียวไม่เพียงพอต่อการตรวจสอบทางวิศวกรรมโครงสร้าง เพราะวิศวกรต้องการทราบว่าเสาเข็มเบี่ยงเบนไปตามแนวแกนอาคาร (Chainage: CH) เท่าใด และเบี่ยงเบนออกด้านข้างตั้งฉากกับแนวแกน (Offset: O/S) เท่าใด เครื่องมือนี้ทำการหมุนเวกเตอร์ความคลาดเคลื่อนเข้าสู่แนวแกนอาคารโดยอัตโนมัติ และแจ้งเตือนทันทีหากเกินเกณฑ์มาตรฐาน 50 มม.",
     overviewEn: "In building construction and bored pile inspections, raw coordinate deltas (ΔN, ΔE) are insufficient. Structural engineers require deviations decomposed relative to building gridlines: longitudinal chainage (CH) and transverse offset (O/S). This module rotates the 2D error vector onto the structural azimuth and automatically flags non-conformance exceeding 50 mm.",
-    standardTh: "มาตรฐาน วสท. และกรมโยธาธิการและผังเมือง (ความคลาดเคลื่อนยอมรับได้ของเสาเข็มคอนกรีตไม่เกิน 50 มม.)",
-    standardEn: "EIT Structural Guidelines & Thai Civil Building Code (Bored pile deviation tolerance <= 50 mm).",
     inputs: [
       { id: "structAz", labelTh: "ทิศทางโครงสร้าง (องศา)", labelEn: "Structure Azimuth (Deg)", unit: "deg", type: "number", default: 45.0, min: 0, max: 360, step: 0.1 },
       { id: "desN", labelTh: "พิกัดแบบ N (Design N)", labelEn: "Design Northing (N)", unit: "m", type: "number", default: 1000.000, step: 0.001 },
@@ -366,8 +364,6 @@ const surveyToolsData = [
     keywords: ["deviate", "angle", "polar", "มุมราบ", "ระยะทาง", "total station", "backsight", "station"],
     overviewTh: "ออกแบบมาสำหรับช่างสำรวจที่ใช้กล้อง Total Station ยิงตรวจสอบตำแหน่งเสาเข็มหรือเสาตอม่อโดยตรงด้วยค่ามุมราบ (Horizontal Angle) และระยะทางราบ (Distance) โดยไม่ต้องเปิดฟังก์ชัน Stakeout ในตัวกล้อง ช่วยให้คำนวณพิกัดจริงและหมุนค่าเยื้องศูนย์ตามแนวแกนโครงสร้างได้ทันทีหน้างาน",
     overviewEn: "Designed for surveyors measuring as-built columns or piles directly using raw polar angles and distances from a Total Station setup. It derives coordinates on-the-fly and decomposes deviations relative to structural axes.",
-    standardTh: "มาตรฐานงานสำรวจภาคสนามและการรังวัดแบบโพลาร์ (Polar Surveying Standards)",
-    standardEn: "ISO / FIG Guidelines for Polar Total Station Measurements",
     inputs: [
       { id: "staN", labelTh: "พิกัดจุดตั้งกล้อง N (Station N)", labelEn: "Station Northing (N)", unit: "m", type: "number", default: 1000.000, step: 0.001 },
       { id: "staE", labelTh: "พิกัดจุดตั้งกล้อง E (Station E)", labelEn: "Station Easting (E)", unit: "m", type: "number", default: 500.000, step: 0.001 },
@@ -467,8 +463,6 @@ const surveyToolsData = [
     keywords: ["azimuth", "distance", "inverse", "bearing", "dms", "ทิศทาง", "ระยะทาง", "พิกัด"],
     overviewTh: "การคำนวณย้อนกลับ (Inverse Computation) เป็นหัวใจพื้นฐานที่สุดของงานวิศวกรรมสำรวจ เมื่อทราบพิกัดของจุดสองจุด โปรแกรมจะคำนวณหาทิศทางภาคของทิศ (Azimuth 0°-360° เวียนขวาจากทิศเหนือ) และระยะทางราบระหว่างหมุดทั้งสองอย่างแม่นยำระดับมิลลิเมตร ใช้สำหรับตั้งกล้องเล็งหลัง ตรวจสอบแนวเขตที่ดิน และตรวจสอบผลการวางผัง",
     overviewEn: "Inverse calculation is the bedrock of plane surveying. Given coordinates of two points, it determines clockwise grid azimuth (0°-360°) and true horizontal distance to millimetric precision. Essential for backsight orientation, boundary checks, and traverse verification.",
-    standardTh: "มาตรฐานการคำนวณงานรังวัดที่ดินและวิศวกรรมสำรวจ (Plane Surveying Inverse Problem)",
-    standardEn: "Plane Surveying Standard Inverse Formulae",
     inputs: [
       { id: "stN", labelTh: "จุดเริ่มต้น N (Start N)", labelEn: "Start Northing (N)", unit: "m", type: "number", default: 1000.000, step: 0.001 },
       { id: "stE", labelTh: "จุดเริ่มต้น E (Start E)", labelEn: "Start Easting (E)", unit: "m", type: "number", default: 500.000, step: 0.001 },
@@ -554,8 +548,6 @@ const surveyToolsData = [
     keywords: ["curve", "h-curve", "โค้งราบ", "pc", "pi", "pt", "radius", "deflection", "chord", "ถนน", "สายทาง"],
     overviewTh: "งานก่อสร้างถนน ทางรถไฟ และระบบสาธารณูปโภคจำเป็นต้องวางแนวโค้งราบวงกลมเชื่อมต่อระหว่างเส้นตรงสองแนว โปรแกรมนี้คำนวณองค์ประกอบโค้งทั้งหมด (L, R, Delta, Mo) และคำนวณมุมเบี่ยงเบน (Deflection Angle) คอร์ดย่อย (Sub-chord) พร้อมพิกัด N, E ทุกช่วงสเตชั่น โดยมีระบบปรับแก้สมดุล Compass Rule เข้าหาจุด PT ที่ทราบค่าจริง",
     overviewEn: "Highway and rail alignments require circular horizontal curves. This module computes all curve elements (L, R, Delta, Mo), generating stakeout schedules with deflection angles, sub-chords, and coordinates adjusted onto PT via the Compass Rule.",
-    standardTh: "มาตรฐานงานทาง กรมทางหลวง และกรมทางหลวงชนบท (Horizontal Curve Design Standards)",
-    standardEn: "AASHTO / Highway Engineering Horizontal Circular Curve Standards",
     inputs: [
       { id: "pcSta", labelTh: "สเตชั่น PC (m)", labelEn: "PC Station (m)", unit: "m", type: "number", default: 100.0, step: 1.0 },
       { id: "pcN", labelTh: "พิกัด PC (N)", labelEn: "PC Northing (N)", unit: "m", type: "number", default: 1000.000, step: 0.001 },
@@ -646,8 +638,6 @@ const surveyToolsData = [
     keywords: ["v-curve", "vertical", "โค้งดิ่ง", "pvi", "pvc", "pvt", "lvc", "grade", "crest", "sag", "ระดับหลังทาง"],
     overviewTh: "โค้งดิ่งพาราโบลาใช้เชื่อมต่อความลาดชันสองแนว (g1, g2) ในแนวดิ่งของถนนและทางรถไฟ เพื่อให้ผู้ขับขี่มองเห็นระยะปลอดภัยและมีความนุ่มนวลในการขับขี่ โปรแกรมนี้คำนวณระดับหลังทางที่จุด PVC, PVI, PVT และทุกสเตชั่นย่อย พร้อมวิเคราะห์จุดสูงสุด/ต่ำสุดของโค้งดิ่ง",
     overviewEn: "Parabolic vertical curves connect entry and exit grades (g1, g2) on highway profiles to ensure stopping sight distance and ride comfort. This tool calculates elevations at PVC, PVI, PVT, and intermediate chainages.",
-    standardTh: "มาตรฐานเรขาคณิตสายทาง กรมทางหลวง (AASHTO Parabolic Vertical Curves)",
-    standardEn: "AASHTO Geometric Design Guidelines for Vertical Curves",
     inputs: [
       { id: "pviSta", labelTh: "สเตชั่น PVI (m)", labelEn: "PVI Station (m)", unit: "m", type: "number", default: 500.0, step: 1.0 },
       { id: "pviElev", labelTh: "ระดับ PVI (m)", labelEn: "PVI Elevation (m)", unit: "m", type: "number", default: 100.000, step: 0.001 },
@@ -736,8 +726,6 @@ const surveyToolsData = [
     keywords: ["offset", "axial", "ผังคอก", "ฐานราก", "ตอม่อ", "สี่เหลี่ยม", "batter board", "grid"],
     overviewTh: "เมื่อต้องขุดดินเปิดหน้างานสำหรับฐานรากหรือตอม่อสะพาน หมุดจุดศูนย์กลางจะสูญหายทันที ช่างสำรวจจึงต้องทำ 'ผังคอก' หรือหมุดออฟเซ็ตแกนออกไป 4 ทิศทาง (หน้า, หลัง, ซ้าย, ขวา) นอกเขตก่อสร้าง เครื่องมือนี้คำนวณพิกัดของหมุดทั้ง 4 จุดตามแนวแกนเอียงของอาคาร พร้อมสร้างภาพร่างผังคอกที่หมุนตามทิศเหนือจริง",
     overviewEn: "During deep foundation excavation, center points are destroyed. Surveyors establish offset batter boards in 4 directions (Front, Rear, Left, Right) outside excavation lines. This tool calculates these 4 reference marks along any structural orientation.",
-    standardTh: "มาตรฐานงานวางผังอาคารและงานวิศวกรรมฐานราก (Building Batter Board Standards)",
-    standardEn: "Building Setting Out & Batter Board Alignment Codes",
     inputs: [
       { id: "cenN", labelTh: "พิกัดกึ่งกลาง N (Center N)", labelEn: "Center Northing (N)", unit: "m", type: "number", default: 1000.000, step: 0.001 },
       { id: "cenE", labelTh: "พิกัดกึ่งกลาง E (Center E)", labelEn: "Center Easting (E)", unit: "m", type: "number", default: 500.000, step: 0.001 },
@@ -825,8 +813,6 @@ const surveyToolsData = [
     keywords: ["corner", "offset", "ขอบมุม", "ตอม่อ", "ฐานราก", "แบบหล่อ", "ตีเต๊า", "footing", "pad"],
     overviewTh: "ในขณะที่ Tool 6 คำนวณหมุดอ้างอิงบนแกน Tool 7 นี้คำนวณพิกัดของ 'มุมทั้ง 4 จุด' ของโครงสร้างสี่เหลี่ยมผืนผ้าจริง (บนซ้าย, บนขวา, ล่างขวา, ล่างซ้าย) โดยรองรับมุมเอียงของอาคารใดๆ ช่วยให้ช่างสำรวจวางหมุดตีเต๊าสำหรับติดตั้งแบบหล่อคอนกรีตได้ตรงเป๊ะ",
     overviewEn: "While Tool 6 computes axial projection marks, Tool 7 computes the physical 4 corner coordinates of rectangular footings or piers oriented along any azimuth. Essential for formwork and concrete setting.",
-    standardTh: "มาตรฐานงานคอนกรีตโครงสร้างและแบบหล่อ (ACI Formwork Placement Tolerances)",
-    standardEn: "ACI Concrete Formwork Alignment Standards",
     inputs: [
       { id: "cenN", labelTh: "พิกัดกึ่งกลาง N", labelEn: "Center Northing (N)", unit: "m", type: "number", default: 1000.000, step: 0.001 },
       { id: "cenE", labelTh: "พิกัดกึ่งกลาง E", labelEn: "Center Easting (E)", unit: "m", type: "number", default: 500.000, step: 0.001 },
@@ -924,8 +910,6 @@ const surveyToolsData = [
     keywords: ["online", "offset", "แนวเส้น", "ท่อระบายน้ำ", "ขอบทาง", "baseline", "station", "chainage"],
     overviewTh: "เหมาะสำหรับงานวางแนวสาธารณูปโภค เช่น ท่อระบายน้ำ ขอบคันหิน แนวรั้ว หรือแถวเสาเข็ม โดยกำหนดเส้นฐาน (Baseline) จากพิกัดสองจุดหรือจาก Azimuth จากนั้นระบุระยะทางตามแนวเส้น และระยะเยื้องฉากไปทางซ้ายหรือขวา โปรแกรมจะคำนวณพิกัดของจุด Centerline และจุด Offset ซ้าย/ขวาให้ทันที",
     overviewEn: "Ideal for utilities, pipelines, curbs, or pile rows. Given a baseline defined by two points or an azimuth, it computes target coordinates at any station distance along the line and perpendicular left/right offsets.",
-    standardTh: "มาตรฐานงานสำรวจเส้นทางและวางท่อสาธารณูปโภค (Pipeline & Route Setting Out)",
-    standardEn: "Linear Utility Staking Specifications",
     inputs: [
       { id: "stN", labelTh: "จุดเริ่มต้นเส้นฐาน N", labelEn: "Baseline Start N", unit: "m", type: "number", default: 1000.000, step: 0.001 },
       { id: "stE", labelTh: "จุดเริ่มต้นเส้นฐาน E", labelEn: "Baseline Start E", unit: "m", type: "number", default: 500.000, step: 0.001 },
@@ -1009,8 +993,6 @@ const surveyToolsData = [
     keywords: ["traverse", "fieldbook", "สมุดสนาม", "วงรอบ", "2 หน้ากล้อง", "face left", "face right", "collimation"],
     overviewTh: "สมุดสนามอิเล็กทรอนิกส์สำหรับการรังวัดมุมราบโครงข่ายหมุดควบคุมวงรอบ บันทึกค่าอ่านจานองศาหน้าซ้าย (Face Left) และหน้าขวา (Face Right) เพื่อหักล้างความคลาดเคลื่อน Collimation Error และ Trunnion Axis Tilt ตามหลักวิศวกรรม พร้อมคำนวณมุมเฉลี่ยและออกรายงานสมุดสนามมาตรฐาน 8 คอลัมน์",
     overviewEn: "Electronic field book for geodetic control traverses. Records Face Left and Face Right circle readings to eliminate systematic collimation and tilt errors, computing set averages and mean station angles.",
-    standardTh: "มาตรฐานงานวงรอบ กรมแผนที่ทหาร และกรมที่ดิน (Control Traverse Specifications)",
-    standardEn: "Federal Geodetic Control Committee (FGCC) Traverse Standards",
     inputs: [
       { id: "bsL", labelTh: "ค่าอ่าน BS หน้าซ้าย (องศา)", labelEn: "BS Face Left (Deg)", unit: "deg", type: "number", default: 0.0, step: 0.001 },
       { id: "fsL", labelTh: "ค่าอ่าน FS หน้าซ้าย (องศา)", labelEn: "FS Face Left (Deg)", unit: "deg", type: "number", default: 85.5111, step: 0.001 },
@@ -1100,8 +1082,6 @@ const surveyToolsData = [
     keywords: ["resection", "free station", "รีเช็คชั่น", "จุดตั้งกล้อง", "ไตรเลเทอเรชัน", "trilateration", "cosine law"],
     overviewTh: "การหาพิกัดจุดตั้งกล้องอิสระ (Free Station) โดยวัดระยะทางไปยังหมุดควบคุมที่ทราบพิกัด 2 จุดโดยไม่ต้องส่องมุม ช่วยให้ตั้งกล้องในตำแหน่งที่มองเห็นหน้างานได้กว้างไกลที่สุด หลบเลี่ยงสิ่งกีดขวาง ใช้ทฤษฎีกฎของโคไซน์ในการแก้สามเหลี่ยมเพื่อหาพิกัดของกล้องอย่างแม่นยำ",
     overviewEn: "Free stationing allows setting up an instrument where sightlines are unobstructed without occupying control marks. By measuring EDM distances to two known control points, the law of cosines solves the triangle yielding true instrument coordinates.",
-    standardTh: "มาตรฐานงานรังวัดสามเหลี่ยมและจุดตั้งกล้องอิสระ (Trilateration Free Station)",
-    standardEn: "Trilateration & Resection Geodetic Standards",
     inputs: [
       { id: "p1N", labelTh: "หมุดที่ 1 N", labelEn: "Point 1 Northing (N)", unit: "m", type: "number", default: 1000.000, step: 0.001 },
       { id: "p1E", labelTh: "หมุดที่ 1 E", labelEn: "Point 1 Easting (E)", unit: "m", type: "number", default: 1000.000, step: 0.001 },
@@ -1213,8 +1193,6 @@ const surveyToolsData = [
     keywords: ["geoutm", "แปลงพิกัด", "lat", "long", "utm", "wgs84", "zone 47", "zone 48", "redfearn", "geodetic"],
     overviewTh: "การแปลงค่าพิกัดระหว่างพิกัดภูมิศาสตร์ (WGS84 Latitude / Longitude) กับพิกัดกริดแผนที่ Universal Transverse Mercator (UTM Zone 47N และ 48N สำหรับประเทศไทย) คำนวณด้วยอนุกรม Redfearn Series ขยายกำลัง 6 รองรับความแม่นยำระดับต่ำกว่ามิลลิเมตร",
     overviewEn: "Bidirectional coordinate transformation between WGS84 ellipsoidal Lat/Long and UTM grid projections (Zone 47N and 48N covering Thailand). Incorporates Redfearn's 6th-order series for sub-millimeter closure.",
-    standardTh: "มาตรฐานการทำแผนที่ กรมแผนที่ทหาร (RTSD UTM WGS84 Transformation)",
-    standardEn: "WGS84 Ellipsoid & UTM Projection Standards",
     inputs: [
       { id: "lat", labelTh: "ละติจูด (Latitude N)", labelEn: "Latitude (Deg N)", unit: "deg", type: "number", default: 13.756331, step: 0.000001 },
       { id: "lon", labelTh: "ลองจิจูด (Longitude E)", labelEn: "Longitude (Deg E)", unit: "deg", type: "number", default: 100.501765, step: 0.000001 }
@@ -1306,8 +1284,6 @@ const surveyToolsData = [
     keywords: ["gnss", "gps", "static", "ดาวเทียม", "โครงข่าย", "ibl", "base", "rover", "session", "รังวัด"],
     overviewTh: "การรังวัดโครงข่ายหมุดควบคุมด้วยดาวเทียม GNSS สถิต (Static Survey) ต้องมีการวางแผนรอบรังวัด (Observation Sessions) ให้เป็นไปตามกฎเวกเตอร์อิสระ (Independent Baseline: IBL = N - 1) และตรวจสอบว่าหมุดทุกต้นได้รับการส่องซ้ำอย่างน้อย 2 รอบเวลาที่ต่างกัน (Repeat Occupations >= 2) เพื่อรับประกันความแม่นยำทางยีโอเดซี",
     overviewEn: "Planning static geodetic GNSS campaigns requires strict session design adhering to the independent baseline rule (IBL = N - 1) and ensuring all control monuments receive at least 2 independent occupations at differing satellite geometries.",
-    standardTh: "มาตรฐานงานรังวัดดาวเทียม กรมแผนที่ทหาร (Static GNSS Control Standards)",
-    standardEn: "Federal Geodetic Control Subcommittee (FGCS) GNSS Guidelines",
     inputs: [
       { id: "numPoints", labelTh: "จำนวนหมุดในโครงข่าย", labelEn: "Total Network Points", unit: "points", type: "number", default: 6, min: 3, max: 50, step: 1 },
       { id: "numReceivers", labelTh: "จำนวนเครื่องรับสัญญาณ", labelEn: "Available GNSS Receivers", unit: "units", type: "number", default: 4, min: 2, max: 20, step: 1 },
@@ -1387,8 +1363,6 @@ const surveyToolsData = [
     keywords: ["finder", "marker", "หมุด", "ค้นหา", "เข็มทิศ", "hud", "recovery", "gps", "proximity"],
     overviewTh: "ช่วยช่างสำรวจในการค้นหาหมุดควบคุมเดิม หมุดหลักเขตที่ดิน หรือหลุมเจาะดินที่ถูกหญ้าหรือดินกลบฝัง โดยระบบจะเปรียบเทียบพิกัดปัจจุบันจาก GNSS กับพิกัดเป้าหมาย แสดงลูกศรนำทางบนเข็มทิศดิจิทัล พร้อมระบบเสียงบี๊บเตือนความถี่สูงที่จะดังถี่ขึ้นเรื่อยๆ เมื่อเดินเข้าใกล้หมุดในระยะ 30 เมตร",
     overviewEn: "Assists survey crews in recovering buried, overgrown, or obscured boundary monuments. It compares real-time GNSS fixes to target coordinates, rendering a HUD direction needle and acoustic beeping that accelerates within 30 meters.",
-    standardTh: "มาตรฐานงานค้นหาหลักเขตที่ดินและหมุดควบคุม (Cadastral Monument Recovery)",
-    standardEn: "Land Survey Monument Recovery & Recovery HUD Guidelines",
     inputs: [
       { id: "curN", labelTh: "พิกัดปัจจุบัน N (Current N)", labelEn: "Current Northing (N)", unit: "m", type: "number", default: 1000.000, step: 0.001 },
       { id: "curE", labelTh: "พิกัดปัจจุบัน E (Current E)", labelEn: "Current Easting (E)", unit: "m", type: "number", default: 500.000, step: 0.001 },
@@ -1471,8 +1445,6 @@ const surveyToolsData = [
     keywords: ["1+2 week", "programme", "gantt", "แผนงาน", "น้ำมัน", "บุคลากร", "rolling plan", "schedule"],
     overviewTh: "ระบบบริหารแผนงานสำรวจแบบหมุนเวียน 3 สัปดาห์ (1 สัปดาห์ปัจจุบัน + 2 สัปดาห์ล่วงหน้า) ตามมาตรฐานผู้รับเหมาก่อสร้างชั้นนำ ช่วยจัดสรรทีมสำรวจ รถสำรวจ น้ำมันดีเซล และอุปกรณ์ ให้สอดคล้องกับแผนงานเทคอนกรีตและงานดิน โดยเว้นวรรควันหยุดโครงการและวันอาทิตย์อัตโนมัติ",
     overviewEn: "3-week rolling project management conforming to major civil contracting standards. Coordinates survey crews, vehicles, daily diesel fuel allowances, and hardware against concrete pours and earthworks, auto-skipping project holidays.",
-    standardTh: "มาตรฐานการบริหารโครงการก่อสร้าง (Civil Construction Project Planning)",
-    standardEn: "Construction Project Rolling Schedule Methodology",
     inputs: [
       { id: "numTeams", labelTh: "จำนวนทีมสำรวจภาคสนาม", labelEn: "Survey Field Crews", unit: "teams", type: "number", default: 3, min: 1, max: 20, step: 1 },
       { id: "fuelPerTeam", labelTh: "อัตราน้ำมันต่อทีม/วัน", labelEn: "Diesel Rate per Team/Day", unit: "L/day", type: "number", default: 15.0, step: 1.0 },
@@ -1549,8 +1521,6 @@ const surveyToolsData = [
     keywords: ["leveling", "elevation", "ระดับ", "bm", "hi", "bs", "fs", "tolerance", "ถ่ายระดับ", "หมุดระดับ"],
     overviewTh: "งานระดับความสูงในการก่อสร้างถนน โครงสร้างอาคาร และงานเทคอนกรีตพื้น ช่างระดับจะอ่านไม้หลัง (BS) บนหมุดอ้างอิง BM เพื่อหาความสูงแนวเล็งกล้อง (HI) จากนั้นส่องอ่านไม้หน้า (IFS/FS) บนจุดก่อสร้างจริง โปรแกรมจะคำนวณระดับความสูง เปรียบเทียบกับค่าออกแบบ และตรวจเช็คค่าความคลาดเคลื่อนระดับมิลลิเมตร",
     overviewEn: "Site elevation grading and slab leveling. The instrument reads backsight (BS) onto a benchmark (BM) establishing height of instrument (HI), then observes intermediate foresights (IFS). Deviations against design elevations are verified to millimeter tolerances.",
-    standardTh: "มาตรฐานงานระดับชั้นที่ 3 และ 4 กรมแผนที่ทหาร และ วสท. (Differential Leveling Standards)",
-    standardEn: "Differential Leveling Specifications (FGCC 3rd/4th Order)",
     inputs: [
       { id: "bmElev", labelTh: "ระดับหมุดอ้างอิง BM (m)", labelEn: "Benchmark Elevation (m)", unit: "m", type: "number", default: 50.000, step: 0.001 },
       { id: "bsReading", labelTh: "ค่าอ่านไม้หลัง BS (m)", labelEn: "Backsight Reading (BS)", unit: "m", type: "number", default: 1.450, step: 0.001 },
@@ -1634,8 +1604,6 @@ const surveyToolsData = [
     keywords: ["alignment", "landxml", "civil3d", "spiral", "clothoid", "สายทาง", "สเตชั่น", "ออฟเซ็ต", "โค้งก้นหอย"],
     overviewTh: "นำเข้าข้อมูลแนวสายทางมาตรฐานสากล LandXML จากโปรแกรม Autodesk Civil 3D หรือ 12d Model เพื่อคำนวณพิกัดสเตชั่นและระยะออฟเซ็ตบนแนวโค้งก้นหอยคลอทอยด์ (Clothoid Transition Spiral) และโค้งวงกลมได้อย่างแม่นยำระดับมิลลิเมตร พร้อมแผนภาพจำลอง 2D บนหน้าจอ",
     overviewEn: "Ingests LandXML route data from Autodesk Civil 3D. Computes coordinates along complex alignments including straight tangents, circular curves, and clothoid transition spirals with 2D vector graphic plots.",
-    standardTh: "มาตรฐาน LandXML 1.2 สมาคมวิศวกรรมทางหลวงสากล",
-    standardEn: "LandXML 1.2 Open Industry Standard for Civil Alignment Geometry",
     inputs: [
       { id: "startN", labelTh: "พิกัดเริ่มต้น N (m)", labelEn: "Start Northing (N)", unit: "m", type: "number", default: 1000.000, step: 0.001 },
       { id: "startE", labelTh: "พิกัดเริ่มต้น E (m)", labelEn: "Start Easting (E)", unit: "m", type: "number", default: 500.000, step: 0.001 },
@@ -1715,8 +1683,6 @@ const surveyToolsData = [
     keywords: ["calendar", "schedule", "ปฏิทิน", "นัดหมาย", "ส่งมอบ", "diary", "ภารกิจ"],
     overviewTh: "ปฏิทินบันทึกภารกิจและนัดหมายเฉพาะทางสำหรับหัวหน้าชุดสำรวจ จัดการวันนัดรังวัดตรวจสอบแปลงที่ดินกับเจ้าหน้าที่ที่ดิน วันนัดตรวจงานร่วมกับวิศวกรผู้ว่าจ้าง และวันครบกำหนดส่งมอบแบบ As-Built แสดงผลทั้งปี พ.ศ. และ ค.ศ. พร้อมระบบแจ้งเตือนภารกิจล่วงหน้า",
     overviewEn: "Field mission planner tailored for survey party chiefs. Manages boundary inspection appointments with land officers, consultant walkthroughs, and As-Built drawing deliverables with bilingual calendar indexing.",
-    standardTh: "แนวทางปฏิบัติการบริหารงานสำรวจภาคสนาม",
-    standardEn: "Survey Project Execution & Milestone Diary Protocols",
     inputs: [
       { id: "eventsMonth", labelTh: "จำนวนภารกิจในเดือนนี้", labelEn: "Missions This Month", unit: "events", type: "number", default: 8, step: 1 },
       { id: "daysRemaining", labelTh: "วันคงเหลือก่อนส่งมอบงาน", labelEn: "Days until Milestone", unit: "days", type: "number", default: 12, step: 1 }
@@ -1785,8 +1751,6 @@ const surveyToolsData = [
     keywords: ["location", "gps", "gnss", "พิกัดปัจจุบัน", "ที่นี่", "utm", "wgs84", "เข็มทิศ", "accuracy"],
     overviewTh: "อ่านค่าพิกัดจากชิปดาวเทียม GNSS ของอุปกรณ์โดยตรง แปลงค่าเป็นพิกัดกริด UTM ทันที พร้อมแสดงระดับความแม่นยำ (Accuracy ± m) ทิศทางการหันของอุปกรณ์ และโหมดสุ่มเก็บตัวอย่างเฉลี่ย (Multi-sample averaging) เพื่อกรองสัญญาณหลุดและเพิ่มความถูกต้องของพิกัด",
     overviewEn: "Directly accesses mobile multi-GNSS receiver hardware. Provides instantaneous WGS84 geographic and UTM grid readouts, accuracy radius indicators, compass heading, and multi-sample averaging mode to filter satellite multipath noise.",
-    standardTh: "มาตรฐานการหาตำแหน่งด้วยดาวเทียม GNSS บนอุปกรณ์เคลื่อนที่",
-    standardEn: "Mobile GNSS Positioning Standards",
     inputs: [
       { id: "sampleCount", labelTh: "จำนวนรอบเฉลี่ยตัวอย่าง", labelEn: "Averaging Samples", unit: "samples", type: "number", default: 10, min: 1, max: 100, step: 5 },
       { id: "targetZone", labelTh: "โซน UTM ที่ต้องการแสดง", labelEn: "Target UTM Zone", unit: "zone", type: "number", default: 47, step: 1 }
@@ -1853,8 +1817,6 @@ const surveyToolsData = [
     keywords: ["bubble", "level", "ระดับน้ำ", "ฟองกลม", "ไม้บรรทัด", "ความลาดเอียง", "slope", "tilt", "ruler"],
     overviewTh: "จำลองลูกน้ำฟองกลม (Circular Bullseye) และหลอดระดับฟองยาว (Tubular Level) โดยใช้เซนเซอร์ Gyroscope และ Accelerometer ในโทรศัพท์ แสดงค่าความลาดเอียงเป็นองศาและหน่วยความลาดชันวิศวกรรม (mm/m) พร้อมไม้บรรทัดมาตราส่วนจริงขอบจอสำหรับวัดชิ้นงาน",
     overviewEn: "Emulates 2D circular bullseye and dual-axis tubular vials using phone gyroscopes. Displays tilt in degrees and engineering slope in mm/m alongside a calibrated on-screen millimeter scale.",
-    standardTh: "มาตรฐานเครื่องมือวัดความลาดเอียงทางวิศวกรรม",
-    standardEn: "Electronic Inclinometer & Spirit Level Benchmarks",
     inputs: [
       { id: "pitchAngle", labelTh: "มุมเอียงแนวแกน Pitch (องศา)", labelEn: "Pitch Angle (Deg)", unit: "deg", type: "number", default: 0.4, step: 0.1 },
       { id: "rollAngle", labelTh: "มุมเอียงแนวแกน Roll (องศา)", labelEn: "Roll Angle (Deg)", unit: "deg", type: "number", default: 0.3, step: 0.1 }
@@ -1925,8 +1887,6 @@ const surveyToolsData = [
     keywords: ["equipment", "อุปกรณ์", "สอบเทียบ", "calibration", "ใบเซอร์", "ทะเบียนคุม", "total station", "iso"],
     overviewTh: "ระบบบริหารจัดการทะเบียนคุมเครื่องมือสำรวจ (Total Station, GNSS, กล้องระดับ) ตามมาตรฐานระบบคุณภาพ ISO 9001 ติดตามรอบกำหนดสอบเทียบ (Calibration Due Dates) ส่งสัญญาณเตือนล่วงหน้า 30 วัน พร้อมจัดเก็บภาพถ่ายตัวเครื่องและเอกสารใบรับรอง",
     overviewEn: "Field equipment asset management conforming to ISO 9001 QA/QC standards. Tracks calibration intervals, fires 30-day advance expiry notifications, and archives digital copies of calibration certificates.",
-    standardTh: "มาตรฐานระบบบริหารงานคุณภาพ ISO 9001:2015 ข้อกำหนดการควบคุมอุปกรณ์ตรวจวัด",
-    standardEn: "ISO 9001:2015 Monitoring and Measuring Resources Compliance",
     inputs: [
       { id: "calibInterval", labelTh: "รอบการสอบเทียบ (เดือน)", labelEn: "Calibration Interval", unit: "months", type: "number", default: 12, min: 1, max: 24, step: 1 },
       { id: "monthsPassed", labelTh: "จำนวนเดือนที่ใช้งานมาแล้ว", labelEn: "Months Since Calibration", unit: "months", type: "number", default: 11, min: 0, max: 36, step: 1 }
@@ -2004,8 +1964,6 @@ const surveyToolsData = [
     keywords: ["collimation", "total station", "สอบเทียบ", "iso 17123-5", "แกนเล็ง", "มุมดิ่ง", "edm", "ระยะทาง", "ใบเซอร์"],
     overviewTh: "ขั้นตอนการตรวจสอบและสอบเทียบกล้อง Total Station ภาคสนามตามมาตรฐานสากล ISO 17123-5 ครอบคลุมการตรวจเช็คหลอดระดับ ฟองกลม กล้องส่องหมุด ความคลาดเคลื่อนดัชนีมุมดิ่ง (Vertical Index Error: V_err <= 10\"), ความคลาดเคลื่อนแกนเล็งราบ (Horizontal Collimation Error: C_err <= 10\") และการวัดระยะทาง 2 ช่วงเทียบระยะรวม พร้อมออกใบรับรองผลพร้อมลายน้ำ ISO",
     overviewEn: "Field procedure to test and verify electronic tacheometers (Total Stations) per ISO 17123-5 international standards. Checks plate level, optical plummet, vertical index error (<= 10\"), horizontal collimation error (<= 10\"), and two-stage EDM baseline repeatability.",
-    standardTh: "มาตรฐานสากล ISO 17123-5: Optics and optical instruments — Field procedures for testing geodetic and surveying instruments (Total Stations)",
-    standardEn: "ISO 17123-5 Geodetic Total Station Verification Standards",
     inputs: [
       { id: "vFL", labelTh: "มุมดิ่งหน้าซ้าย (V_FL องศา)", labelEn: "Vertical Angle FL (Deg)", unit: "deg", type: "number", default: 89.9986, step: 0.0001 },
       { id: "vFR", labelTh: "มุมดิ่งหน้าขวา (V_FR องศา)", labelEn: "Vertical Angle FR (Deg)", unit: "deg", type: "number", default: 270.0039, step: 0.0001 },

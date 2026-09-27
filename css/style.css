@@ -53,6 +53,12 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   font-variant-numeric: tabular-nums;
 }
 
+/* Fallback for ordered lists and legal section typography */
+#legal ol, .list-decimal {
+  list-style-type: decimal;
+  padding-left: 1.25rem;
+}
+
 /* Background mesh patterns */
 .bg-hero-pattern {
   background-color: var(--dark-slate-900);
@@ -244,6 +250,21 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   border-color: var(--primary-orange);
   box-shadow: 0 0 0 3px rgba(255, 87, 34, 0.15);
   outline: none;
+}
+
+/* Legal Section & EULA List Fallback */
+#legal {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+#legal ol, .list-decimal {
+  list-style-type: decimal;
+  padding-left: 1.25rem;
+}
+
+#legal li {
+  word-break: break-word;
 }
 
 /* Print Stylesheet for A4 PDF Report Generation */

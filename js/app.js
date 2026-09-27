@@ -378,16 +378,6 @@ function renderModalTabContent() {
             </p>
           </div>
 
-          <div>
-            <h4 class="font-heading font-bold text-slate-800 text-base mb-2 flex items-center gap-2">
-              <i class="fa-solid fa-certificate text-amber-500"></i>
-              ${lang === 'th' ? 'มาตรฐานอ้างอิงทางวิศวกรรม' : 'Authoritative Engineering Standard'}
-            </h4>
-            <div class="bg-amber-50 border border-amber-200 p-4 rounded-xl text-xs text-amber-900 font-medium">
-              ${lang === 'th' ? tool.standardTh : tool.standardEn}
-            </div>
-          </div>
-
           ${(() => {
             const rawPrimary = lang === 'th' ? tool.highlightsTh : tool.highlightsEn;
             const rawFallback = lang === 'th' ? tool.highlightsEn : tool.highlightsTh;

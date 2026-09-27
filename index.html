@@ -652,14 +652,25 @@
                         </div>
                     </div>
 
-                    <!-- Direct App QR Code Scan -->
+                    <!-- LINE Official Account Support QR Code -->
                     <div class="lg:w-5/12 flex flex-col items-center justify-center">
-                        <div class="bg-white p-3 rounded-2xl shadow-xl flex items-center justify-center border-4 border-slate-700">
-                            <img src="https://img2.pic.in.th/IMG_1936.png" alt="LINE Support QR" class="w-28 h-28 object-cover rounded-lg">
-                        </div>
-                        <span class="text-xs text-slate-400 mt-3 font-medium flex items-center gap-1.5">
-                            <i class="fa-solid fa-qrcode text-orange-400"></i> <span data-i18n="cta_qr_label">สแกนเพื่อติดตั้งบนมือถือ</span>
-                        </span>
+                        <a 
+                            href="https://lin.ee/zKbPNUD" 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            class="bg-white p-3 rounded-2xl shadow-xl flex items-center justify-center border-4 border-slate-700 hover:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 focus:ring-offset-slate-900 transition-colors group cursor-pointer"
+                            title="LINE Official Account Support"
+                        >
+                            <img src="https://img2.pic.in.th/IMG_1936.png" alt="LINE Support QR" title="LINE Official Account Support" width="112" height="112" loading="lazy" class="w-28 h-28 object-cover rounded-lg group-hover:opacity-95 transition-opacity">
+                        </a>
+                        <a 
+                            href="https://lin.ee/zKbPNUD" 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            class="text-xs text-slate-400 hover:text-emerald-400 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 focus:ring-offset-slate-900 rounded-md mt-3 font-medium flex items-center gap-1.5 transition-colors"
+                        >
+                            <i class="fa-brands fa-line text-emerald-500" aria-hidden="true"></i> <span data-i18n="cta_qr_label">สแกนเพื่อติดต่อ/สอบถามผ่าน LINE</span>
+                        </a>
                     </div>
                 </div>
 
@@ -670,14 +681,14 @@
     <!-- ==========================================
          Legal Privacy & Terms
          ========================================== -->
-    <section id="legal" class="py-16 bg-slate-50 border-t border-slate-200 text-xs text-slate-600">
+    <section id="legal" class="py-16 bg-slate-50 border-t border-slate-200" aria-label="นโยบายความเป็นส่วนตัวและข้อตกลงการใช้งาน">
         <div class="container mx-auto px-4 sm:px-6 max-w-4xl space-y-10">
             
             <!-- Privacy Policy -->
             <div id="privacy" class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm scroll-mt-24">
                 <div class="flex items-center gap-3 mb-4">
-                    <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-lg">
-                        <i class="fa-solid fa-shield-halved"></i>
+                    <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-lg shrink-0">
+                        <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
                     </div>
                     <h3 class="font-heading text-lg font-bold text-slate-900" data-i18n="privacy_title">นโยบายความเป็นส่วนตัว (Privacy Policy)</h3>
                 </div>
@@ -687,13 +698,13 @@
             <!-- Terms of Use -->
             <div id="terms" class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm scroll-mt-24">
                 <div class="flex items-center gap-3 mb-4">
-                    <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center text-lg">
-                        <i class="fa-solid fa-file-contract"></i>
+                    <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center text-lg shrink-0">
+                        <i class="fa-solid fa-file-contract" aria-hidden="true"></i>
                     </div>
                     <h3 class="font-heading text-lg font-bold text-slate-900" data-i18n="terms_title">ข้อตกลงการใช้งาน (EULA)</h3>
                 </div>
-                <p class="mb-3 text-slate-700 font-medium" data-i18n="terms_intro">เมื่อผู้ใช้ใช้งานแอปพลิเคชัน Survey Toolbox ถือว่าผู้ใช้ยอมรับข้อตกลงดังต่อไปนี้:</p>
-                <ol class="list-decimal pl-5 space-y-1.5 leading-relaxed text-slate-600">
+                <p class="text-slate-700 leading-relaxed text-sm sm:text-base font-medium mb-3" data-i18n="terms_intro">เมื่อผู้ใช้ใช้งานแอปพลิเคชัน Survey Toolbox ถือว่าผู้ใช้ยอมรับข้อตกลงดังต่อไปนี้:</p>
+                <ol class="list-decimal pl-5 space-y-2 leading-relaxed text-slate-700 text-sm sm:text-base font-normal">
                     <li data-i18n="term_1">แอปและเนื้อหาทั้งหมดเป็นทรัพย์สินทางปัญญาของผู้พัฒนา</li>
                     <li data-i18n="term_2">ฟังก์ชันขั้นสูงบางส่วน (Survey Toolbox Pro) ต้องสมัครสมาชิกแบบต่ออายุอัตโนมัติ</li>
                     <li data-i18n="term_3">การชำระเงินและการจัดการการสมัครสมาชิกทั้งหมดดำเนินการผ่านระบบของ Apple/Google อย่างปลอดภัย</li>
@@ -745,13 +756,13 @@
 
                     <!-- Social Icons -->
                     <div class="flex space-x-3">
-                        <a href="https://www.facebook.com/profile.php?id=61580648713614" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center text-white hover:bg-[#1877F2] transition-all">
+                        <a href="https://www.facebook.com/profile.php?id=61580648713614" target="_blank" rel="noopener noreferrer" aria-label="Facebook Page" title="Facebook Page" class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center text-white hover:bg-[#1877F2] transition-all">
                             <i class="fa-brands fa-facebook-f text-sm"></i>
                         </a>
-                        <a href="https://lin.ee/zKbPNUD" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center text-white hover:bg-[#06C755] transition-all">
+                        <a href="https://lin.ee/zKbPNUD" target="_blank" rel="noopener noreferrer" aria-label="LINE Official Account" title="LINE Official Account" class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center text-white hover:bg-[#06C755] transition-all">
                             <i class="fa-brands fa-line text-base"></i>
                         </a>
-                        <a href="https://www.tiktok.com/@survey.toolbox?_r=1&_t=ZS-92lh3eUAopV" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center text-white hover:bg-black hover:text-cyan-400 transition-all">
+                        <a href="https://www.tiktok.com/@survey.toolbox?_r=1&_t=ZS-92lh3eUAopV" target="_blank" rel="noopener noreferrer" aria-label="TikTok Channel" title="TikTok Channel" class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center text-white hover:bg-black hover:text-cyan-400 transition-all">
                             <i class="fa-brands fa-tiktok text-sm"></i>
                         </a>
                     </div>
@@ -840,10 +851,18 @@
                         href="#privacy" 
                         onclick="closeToolModal(); scrollToSection('privacy', event)" 
                         class="text-slate-500 hover:text-[#FF5722] transition-colors cursor-pointer text-xs hidden sm:inline-flex items-center gap-1.5"
-                        data-i18n="nav_privacy"
                     >
-                        <i class="fa-solid fa-shield-halved text-xs text-emerald-600"></i>
-                        <span>นโยบายความเป็นส่วนตัว</span>
+                        <i class="fa-solid fa-shield-halved text-xs text-emerald-600" aria-hidden="true"></i>
+                        <span data-i18n="nav_privacy">นโยบายความเป็นส่วนตัว</span>
+                    </a>
+                    <span class="text-slate-300 hidden sm:inline">•</span>
+                    <a 
+                        href="#terms" 
+                        onclick="closeToolModal(); scrollToSection('terms', event)" 
+                        class="text-slate-500 hover:text-[#FF5722] transition-colors cursor-pointer text-xs hidden sm:inline-flex items-center gap-1.5"
+                    >
+                        <i class="fa-solid fa-file-contract text-xs text-blue-600" aria-hidden="true"></i>
+                        <span data-i18n="nav_terms">ข้อตกลงการใช้งาน</span>
                     </a>
                 </div>
                 <div class="flex items-center gap-2">
