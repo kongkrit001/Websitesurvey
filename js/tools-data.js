@@ -127,6 +127,7 @@ const translations = {
     term_2: "ฟังก์ชันขั้นสูงบางส่วน (Survey Toolbox Pro) ต้องสมัครสมาชิกแบบต่ออายุอัตโนมัติ",
     term_3: "การชำระเงินและการจัดการการสมัครสมาชิกทั้งหมดดำเนินการผ่านระบบของ Apple/Google อย่างปลอดภัย",
     term_4: "ผลการคำนวณทางวิศวกรรมควรได้รับการตรวจสอบและรับรองโดยวิศวกรผู้เชี่ยวชาญก่อนนำไปใช้ในการก่อสร้างจริง",
+    term_5: "ผู้พัฒนาขอสงวนสิทธิ์ในการเปลี่ยนแปลงข้อตกลง เงื่อนไข หรือฟังก์ชันการใช้งานโดยไม่ต้องแจ้งให้ทราบล่วงหน้า",
 
     footer_tag: "Professional Engineering Tools for iOS & Android",
     footer_standards: "",
@@ -246,6 +247,7 @@ const translations = {
     term_2: "Pro features require an active auto-renewing subscription managed via Apple/Google.",
     term_3: "All subscription transactions are securely processed through official store platforms.",
     term_4: "Engineering results must be reviewed and certified by licensed professionals prior to physical execution.",
+    term_5: "The developer reserves the right to modify terms, conditions, or features without prior notice.",
 
     footer_tag: "Professional Engineering Tools for iOS & Android",
     footer_standards: "",
