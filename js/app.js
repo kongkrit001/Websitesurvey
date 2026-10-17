@@ -71,16 +71,16 @@ function renderCategoryPills() {
     return `
       <button 
         onclick="selectCategory('${cat.id}')"
-        class="cat-pill px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold border flex items-center gap-2 transition-all ${
+        class="cat-pill px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold border flex items-center gap-2.5 transition-all ${
           isActive 
-            ? 'active bg-slate-900 text-white border-transparent shadow-md' 
-            : 'bg-white text-slate-700 border-slate-200 hover:border-slate-300 hover:bg-slate-50'
+            ? 'active bg-[#0E1013] text-[#FAF8F5] border-[#0E1013] shadow-md' 
+            : 'bg-white text-[#5C5852] border-[#E6E0D6] hover:border-[#0E1013] hover:text-[#0E1013]'
         }"
         id="cat-pill-${cat.id}"
       >
         <i class="${cat.icon} text-xs"></i>
         <span>${name}</span>
-        <span class="px-1.5 py-0.5 rounded-full text-[10px] ${isActive ? 'bg-white/20 text-white' : 'bg-slate-100 text-slate-500'} font-mono">${cat.count}</span>
+        <span class="px-2 py-0.5 rounded-full text-[10px] ${isActive ? 'bg-white/20 text-white' : 'bg-[#FAF8F5] text-[#8C857B]'} font-mono">${cat.count}</span>
       </button>
     `;
   }).join('');
@@ -193,8 +193,8 @@ function renderToolCards() {
     const subtitle = lang === 'th' ? tool.subtitleTh : tool.subtitleEn;
     const summary = lang === 'th' ? tool.summaryTh : tool.summaryEn;
     const badgeTier = tool.isPro 
-      ? `<span class="badge-pro text-[11px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1"><i class="fa-solid fa-crown text-[10px]"></i> PRO</span>`
-      : `<span class="badge-free text-[11px] font-bold px-2 py-0.5 rounded-full">FREE</span>`;
+      ? `<span class="badge-pro text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full flex items-center gap-1"><i class="fa-solid fa-crown text-[9px]"></i> PRO</span>`
+      : `<span class="badge-free text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full">FREE</span>`;
 
     // Category badge color
     const catClass = `cat-tag-${tool.category}`;
@@ -203,49 +203,46 @@ function renderToolCards() {
 
     return `
       <div 
-        class="tool-card bg-white rounded-2xl border border-slate-200 p-6 flex flex-col justify-between group cursor-pointer relative overflow-hidden"
+        class="tool-card bg-white rounded-3xl border border-[#E6E0D6] p-6 sm:p-7 flex flex-col justify-between group cursor-pointer relative overflow-hidden"
         onclick="openToolModal('${tool.id}')"
         data-tool-id="${tool.id}"
       >
-        <!-- Top accent category line -->
-        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-500 to-amber-400 opacity-80 group-hover:opacity-100 transition-opacity"></div>
-
         <div>
           <!-- Header: Num, Category Tag, Pro/Free Badge -->
-          <div class="flex items-center justify-between gap-2 mb-4">
-            <span class="font-mono text-xs font-bold text-slate-500 bg-slate-100 px-2.5 py-1 rounded-md">#${numFmt}</span>
-            <div class="flex items-center gap-2">
+          <div class="flex items-center justify-between gap-2 mb-5 pb-3.5 border-b border-[#FAF8F5]">
+            <span class="font-mono text-xs font-extrabold text-[#0E1013] bg-[#FAF8F5] border border-[#E6E0D6] px-2.5 py-1 rounded-full">#${numFmt}</span>
+            <div class="flex items-center gap-1.5">
               <span class="text-[11px] font-semibold px-2.5 py-0.5 rounded-full border ${catClass}">${catLabel}</span>
               ${badgeTier}
             </div>
           </div>
 
           <!-- Icon & Titles -->
-          <div class="flex items-start gap-4 mb-3">
-            <div class="w-12 h-12 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center text-slate-700 text-lg group-hover:bg-[#FF5722] group-hover:text-white transition-colors duration-200 shrink-0">
+          <div class="flex items-start gap-4 mb-4">
+            <div class="w-12 h-12 rounded-2xl bg-[#FAF8F5] border border-[#E6E0D6] flex items-center justify-center text-[#0E1013] text-lg group-hover:bg-[#0E1013] group-hover:border-[#0E1013] group-hover:text-[#FAF8F5] transition-all duration-300 shrink-0">
               <i class="${tool.icon}"></i>
             </div>
             <div class="min-w-0">
-              <h3 class="font-heading font-bold text-slate-900 text-base sm:text-lg group-hover:text-[#FF5722] transition-colors leading-snug truncate">
+              <h3 class="font-heading font-extrabold text-[#0E1013] text-base sm:text-lg group-hover:text-[#E04F26] transition-colors leading-snug truncate">
                 ${title}
               </h3>
-              <p class="text-xs text-slate-400 font-medium truncate mt-0.5">
+              <p class="text-xs text-[#8C857B] font-medium truncate mt-0.5">
                 ${subtitle}
               </p>
             </div>
           </div>
 
           <!-- Summary Body -->
-          <p class="text-xs text-slate-600 leading-relaxed mb-5 line-clamp-3">
+          <p class="text-xs text-[#5C5852] leading-relaxed mb-6 line-clamp-3">
             ${summary}
           </p>
         </div>
 
         <!-- Footer Trigger Button -->
-        <div class="pt-4 border-t border-slate-100">
+        <div class="pt-4 border-t border-[#FAF8F5]">
           <button 
             type="button"
-            class="w-full py-2.5 px-4 bg-slate-50 group-hover:bg-[#FF5722] text-slate-700 group-hover:text-white font-semibold text-xs rounded-xl transition-all duration-200 flex items-center justify-between border border-slate-200 group-hover:border-transparent"
+            class="w-full py-3 px-5 bg-[#FAF8F5] group-hover:bg-[#0E1013] text-[#0E1013] group-hover:text-[#FAF8F5] font-semibold text-xs rounded-full transition-all duration-300 flex items-center justify-between border border-[#E6E0D6] group-hover:border-[#0E1013]"
           >
             <span>${translations[lang].card_view_manual}</span>
             <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
@@ -347,11 +344,11 @@ function renderModalHeader() {
   const mBtnEn = document.getElementById('modal-btn-en');
   if (mBtnTh && mBtnEn) {
     if (lang === 'th') {
-      mBtnTh.className = 'px-2 py-1 rounded-md transition-colors bg-white text-slate-900 shadow-xs font-bold';
-      mBtnEn.className = 'px-2 py-1 rounded-md transition-colors text-slate-600 hover:text-slate-900 font-medium';
+      mBtnTh.className = 'px-2.5 py-1 rounded-full transition-colors bg-[#0E1013] text-white font-bold';
+      mBtnEn.className = 'px-2.5 py-1 rounded-full transition-colors text-[#5C5852] hover:text-[#0E1013] font-medium';
     } else {
-      mBtnEn.className = 'px-2 py-1 rounded-md transition-colors bg-white text-slate-900 shadow-xs font-bold';
-      mBtnTh.className = 'px-2 py-1 rounded-md transition-colors text-slate-600 hover:text-slate-900 font-medium';
+      mBtnEn.className = 'px-2.5 py-1 rounded-full transition-colors bg-[#0E1013] text-white font-bold';
+      mBtnTh.className = 'px-2.5 py-1 rounded-full transition-colors text-[#5C5852] hover:text-[#0E1013] font-medium';
     }
   }
 }
@@ -429,8 +426,6 @@ function renderModalTabContent() {
                     <th class="p-3">#</th>
                     <th class="p-3">${lang === 'th' ? 'ชื่อพารามิเตอร์' : 'Parameter'}</th>
                     <th class="p-3">${lang === 'th' ? 'หน่วย' : 'Unit'}</th>
-                    <th class="p-3">${lang === 'th' ? 'ชนิดข้อมูล' : 'Type'}</th>
-                    <th class="p-3">${lang === 'th' ? 'คำอธิบาย' : 'Description'}</th>
                   </tr>
                 </thead>
                 <tbody class="divide-y divide-slate-100">
@@ -439,8 +434,6 @@ function renderModalTabContent() {
                       <td class="p-3 font-mono text-slate-400">${idx + 1}</td>
                       <td class="p-3 font-semibold text-slate-800">${lang === 'th' ? inp.labelTh : inp.labelEn}</td>
                       <td class="p-3 font-mono text-blue-600">${inp.unit || '-'}</td>
-                      <td class="p-3 font-mono text-slate-500">${inp.type || 'number'}</td>
-                      <td class="p-3 text-slate-500">${inp.id} (default: ${inp.default !== undefined ? inp.default : '-'})</td>
                     </tr>
                   `).join('')}
                 </tbody>
@@ -460,7 +453,6 @@ function renderModalTabContent() {
                     <th class="p-3">#</th>
                     <th class="p-3">${lang === 'th' ? 'ผลลัพธ์' : 'Output'}</th>
                     <th class="p-3">${lang === 'th' ? 'หน่วย' : 'Unit'}</th>
-                    <th class="p-3">${lang === 'th' ? 'รหัสตัวแปร' : 'Variable ID'}</th>
                   </tr>
                 </thead>
                 <tbody class="divide-y divide-slate-100">
@@ -469,7 +461,6 @@ function renderModalTabContent() {
                       <td class="p-3 font-mono text-slate-400">${idx + 1}</td>
                       <td class="p-3 font-semibold text-slate-800">${lang === 'th' ? out.labelTh : out.labelEn}</td>
                       <td class="p-3 font-mono text-emerald-600">${out.unit || '-'}</td>
-                      <td class="p-3 font-mono text-slate-500">${out.id}</td>
                     </tr>
                   `).join('')}
                 </tbody>
@@ -830,11 +821,11 @@ function syncLangButtons(lang) {
   const mBtnEn = document.getElementById('modal-btn-en');
   if (mBtnTh && mBtnEn) {
     if (lang === 'th') {
-      mBtnTh.className = 'px-2 py-1 rounded-md transition-colors bg-white text-slate-900 shadow-xs font-bold';
-      mBtnEn.className = 'px-2 py-1 rounded-md transition-colors text-slate-600 hover:text-slate-900 font-medium';
+      mBtnTh.className = 'px-2.5 py-1 rounded-full transition-colors bg-[#0E1013] text-white font-bold';
+      mBtnEn.className = 'px-2.5 py-1 rounded-full transition-colors text-[#5C5852] hover:text-[#0E1013] font-medium';
     } else {
-      mBtnEn.className = 'px-2 py-1 rounded-md transition-colors bg-white text-slate-900 shadow-xs font-bold';
-      mBtnTh.className = 'px-2 py-1 rounded-md transition-colors text-slate-600 hover:text-slate-900 font-medium';
+      mBtnEn.className = 'px-2.5 py-1 rounded-full transition-colors bg-[#0E1013] text-white font-bold';
+      mBtnTh.className = 'px-2.5 py-1 rounded-full transition-colors text-[#5C5852] hover:text-[#0E1013] font-medium';
     }
   }
 }
@@ -899,3 +890,95 @@ function scrollToSection(id, e) {
 function printToolManual() {
   window.print();
 }
+
+/**
+ * Interactive Origin / Feature Showcase Switcher (Awwwards Video Style)
+ * Dynamically transitions full-bleed background color, watermark, and centerpiece icon.
+ */
+const featureOrigins = [
+  { bg: '#8B3A2B', watermark: 'AZIMUTH', icon: 'fa-solid fa-compass text-4xl sm:text-5xl text-amber-300', rot: '-6deg' },
+  { bg: '#2B3542', watermark: 'DEVIATION', icon: 'fa-solid fa-check-double text-4xl sm:text-5xl text-sky-300', rot: '4deg' },
+  { bg: '#0F5252', watermark: 'GEOMETRY', icon: 'fa-solid fa-route text-4xl sm:text-5xl text-emerald-300', rot: '-4deg' },
+  { bg: '#1E3A7A', watermark: 'COMPLIANCE', icon: 'fa-solid fa-file-circle-check text-4xl sm:text-5xl text-amber-200', rot: '5deg' }
+];
+
+function setFeatureOrigin(idx) {
+  const item = featureOrigins[idx];
+  if (!item) return;
+
+  const section = document.getElementById('features');
+  if (section) {
+    section.style.backgroundColor = item.bg;
+    section.setAttribute('data-watermark', item.watermark);
+  }
+
+  const iconEl = document.getElementById('feature-spotlight-icon');
+  if (iconEl) {
+    iconEl.className = item.icon;
+  }
+
+  const artifactEl = document.getElementById('feature-spotlight-artifact');
+  if (artifactEl) {
+    artifactEl.style.transform = `rotate(${item.rot}) scale(1.04)`;
+  }
+
+  document.querySelectorAll('.origin-feature-card').forEach((card, i) => {
+    if (i === idx) {
+      card.classList.add('active-feature');
+    } else {
+      card.classList.remove('active-feature');
+    }
+  });
+
+  for (let i = 0; i < 4; i++) {
+    const dot = document.getElementById(`origin-dot-${i}`);
+    if (dot) {
+      dot.className = i === idx
+        ? 'w-8 h-2.5 rounded-full bg-white transition-all duration-300'
+        : 'w-2.5 h-2.5 rounded-full bg-white/40 hover:bg-white/70 transition-all duration-300';
+    }
+  }
+}
+
+/**
+ * Interactive Storefront / Audience Persona Widget Switcher
+ * Smoothly shifts persona card focus and visual frame lighting.
+ */
+const personaMoods = [
+  { frameBg: '#0E1013', filter: 'brightness(1) contrast(1.02)' },
+  { frameBg: '#152238', filter: 'brightness(1.04) contrast(1.05) saturate(1.08)' },
+  { frameBg: '#0F2922', filter: 'brightness(0.98) contrast(1.06) sepia(0.08)' }
+];
+
+function setAudiencePersona(idx) {
+  const mood = personaMoods[idx];
+  if (!mood) return;
+
+  document.querySelectorAll('.persona-card-item').forEach((card, i) => {
+    if (i === idx) {
+      card.classList.add('active-persona');
+    } else {
+      card.classList.remove('active-persona');
+    }
+  });
+
+  const frame = document.getElementById('audience-visual-frame');
+  if (frame) {
+    frame.style.backgroundColor = mood.frameBg;
+  }
+
+  const img = document.getElementById('audience-scene-img');
+  if (img) {
+    img.style.filter = mood.filter;
+  }
+
+  for (let i = 0; i < 3; i++) {
+    const dot = document.getElementById(`aud-dot-${i}`);
+    if (dot) {
+      dot.className = i === idx
+        ? 'w-6 h-2 rounded-full bg-[#0E1013] transition-all'
+        : 'w-2 h-2 rounded-full bg-[#0E1013]/25 hover:bg-[#0E1013]/50 transition-all';
+    }
+  }
+}
+

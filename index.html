@@ -32,14 +32,14 @@
                             orange: {
                                 50: '#FBE9E7',
                                 100: '#FFCCBC',
-                                500: '#FF5722',
-                                600: '#E64A19',
-                                700: '#D84315',
+                                500: '#E04F26',
+                                600: '#C83E18',
+                                700: '#B23310',
                             },
                             slate: {
-                                700: '#263238',
-                                800: '#1E293B',
-                                900: '#0F172A',
+                                700: '#252A32',
+                                800: '#171A1F',
+                                900: '#0E1013',
                             },
                             blue: {
                                 50: '#E3F2FD',
@@ -53,8 +53,9 @@
                         }
                     },
                     fontFamily: {
-                        sans: ['Sarabun', 'sans-serif'],
-                        heading: ['Prompt', 'sans-serif'],
+                        sans: ['Sarabun', 'Plus Jakarta Sans', 'sans-serif'],
+                        heading: ['Plus Jakarta Sans', 'Prompt', 'sans-serif'],
+                        serif: ['Instrument Serif', 'Prompt', 'serif'],
                         mono: ['JetBrains Mono', 'Roboto Mono', 'Consolas', 'monospace']
                     }
                 }
@@ -62,45 +63,45 @@
         }
     </script>
 </head>
-<body id="top" class="font-sans antialiased text-slate-600 bg-white overflow-x-hidden selection:bg-orange-500 selection:text-white">
+<body id="top" class="font-sans antialiased text-[#5C5852] bg-[#FAF8F5] overflow-x-hidden selection:bg-[#E04F26] selection:text-white noise-overlay">
 
     <!-- ==========================================
-         Sticky Navigation Bar
+         Sticky Navigation Bar (Minimalist Luxury Header)
          ========================================== -->
-    <nav class="fixed top-0 left-0 w-full z-40 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm transition-all duration-300">
-        <div class="container mx-auto px-4 sm:px-6 py-3">
+    <nav id="main-nav" class="fixed top-0 left-0 w-full z-40 bg-[#090A0C]/85 backdrop-blur-xl border-b border-white/10 transition-all duration-500">
+        <div class="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12 py-4">
             <div class="flex justify-between items-center">
                 
                 <!-- Logo & Brand Header -->
-                <a href="#top" onclick="scrollToSection('top', event)" class="flex items-center space-x-3 cursor-pointer group" aria-label="Survey Toolbox Home">
+                <a href="#top" onclick="scrollToSection('top', event)" class="flex items-center space-x-3.5 cursor-pointer group" aria-label="Survey Toolbox Home">
                     <img 
                         src="https://lh3.googleusercontent.com/d/1sgI54U4A9Pbb3hy7ahxayP-0X07mF8M5" 
                         referrerpolicy="no-referrer" 
                         alt="Survey Toolbox Logo" 
-                        class="h-10 w-10 rounded-xl shadow-md object-cover border border-slate-200 group-hover:scale-105 transition-transform"
+                        class="h-10 w-10 rounded-full shadow-md object-cover border border-white/20 group-hover:scale-105 transition-transform duration-500"
                     >
                     <div>
-                        <span class="text-xl font-heading font-extrabold text-slate-900 tracking-tight block leading-none group-hover:text-[#FF5722] transition-colors">
+                        <span class="text-xl font-heading font-extrabold text-[#FAF8F5] tracking-tight block leading-none group-hover:text-[#E04F26] transition-colors duration-300">
                             Survey Toolbox
                         </span>
                     </div>
                 </a>
 
                 <!-- Desktop Navigation Menu -->
-                <div class="hidden lg:flex items-center space-x-6 text-sm font-medium text-slate-600">
-                    <a href="#top" onclick="scrollToSection('top', event)" class="hover:text-[#FF5722] transition-colors cursor-pointer" data-i18n="nav_home">หน้าแรก</a>
-                    <a href="#manuals" onclick="scrollToSection('manuals', event)" class="hover:text-[#FF5722] transition-colors cursor-pointer font-semibold text-slate-900" data-i18n="nav_manual">คู่มือการใช้งาน</a>
-                    <a href="#features" onclick="scrollToSection('features', event)" class="hover:text-[#FF5722] transition-colors cursor-pointer" data-i18n="nav_features">จุดเด่น</a>
-                    <a href="#audience" onclick="scrollToSection('audience', event)" class="hover:text-[#FF5722] transition-colors cursor-pointer" data-i18n="nav_audience">กลุ่มผู้ใช้งาน</a>
-                    <a href="#video-showcase" onclick="scrollToSection('video-showcase', event)" class="hover:text-[#FF5722] transition-colors cursor-pointer" data-i18n="nav_video">วิดีโอสาธิต</a>
-                    <a href="#faq" onclick="scrollToSection('faq', event)" class="hover:text-[#FF5722] transition-colors cursor-pointer" data-i18n="nav_faq">คำถามที่พบบ่อย</a>
+                <div class="hidden lg:flex items-center space-x-8 text-xs uppercase tracking-[0.12em] font-medium text-white/70">
+                    <a href="#top" onclick="scrollToSection('top', event)" class="hover:text-white transition-colors cursor-pointer" data-i18n="nav_home">หน้าแรก</a>
+                    <a href="#manuals" onclick="scrollToSection('manuals', event)" class="hover:text-white transition-colors cursor-pointer font-bold text-white" data-i18n="nav_manual">คู่มือการใช้งาน</a>
+                    <a href="#features" onclick="scrollToSection('features', event)" class="hover:text-white transition-colors cursor-pointer" data-i18n="nav_features">จุดเด่น</a>
+                    <a href="#audience" onclick="scrollToSection('audience', event)" class="hover:text-white transition-colors cursor-pointer" data-i18n="nav_audience">กลุ่มผู้ใช้งาน</a>
+                    <a href="#video-showcase" onclick="scrollToSection('video-showcase', event)" class="hover:text-white transition-colors cursor-pointer" data-i18n="nav_video">วิดีโอสาธิต</a>
+                    <a href="#faq" onclick="scrollToSection('faq', event)" class="hover:text-white transition-colors cursor-pointer" data-i18n="nav_faq">คำถามที่พบบ่อย</a>
                 </div>
 
                 <!-- Language Switcher & App Store Quick Action -->
                 <div class="flex items-center space-x-3">
                     
                     <!-- Bilingual Switcher Pills -->
-                    <div class="flex bg-slate-100 rounded-full p-1 border border-slate-200 shadow-inner">
+                    <div class="flex bg-white/10 rounded-full p-1 border border-white/15 backdrop-blur-md">
                         <button onclick="setLanguage('th')" id="btn-th" class="lang-btn active">TH</button>
                         <button onclick="setLanguage('en')" id="btn-en" class="lang-btn">EN</button>
                     </div>
@@ -110,7 +111,7 @@
                         href="https://apps.apple.com/th/app/survey-toolbox/id6754455677?l=th" 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        class="hidden md:flex items-center justify-center bg-slate-900 text-white px-3.5 py-2 rounded-full font-semibold hover:bg-[#FF5722] transition-all shadow-sm transform hover:scale-105 text-xs gap-1.5"
+                        class="hidden md:flex items-center justify-center bg-[#FAF8F5] text-[#0E1013] px-4 py-2 rounded-full font-bold hover:bg-[#E04F26] hover:text-white transition-all duration-300 text-xs gap-1.5"
                     >
                         <i class="fa-brands fa-apple text-sm"></i>
                         <span class="hidden xl:inline">iOS</span>
@@ -121,34 +122,34 @@
                         href="https://play.google.com/store/apps/details?id=com.kongkrit.surveytoolbox&pcampaignid=web_share" 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        class="hidden md:flex items-center justify-center bg-emerald-600 text-white px-3.5 py-2 rounded-full font-semibold hover:bg-emerald-500 transition-all shadow-sm transform hover:scale-105 text-xs gap-1.5"
+                        class="hidden md:flex items-center justify-center bg-white/10 text-white border border-white/20 px-4 py-2 rounded-full font-bold hover:bg-emerald-600 hover:border-emerald-500 transition-all duration-300 text-xs gap-1.5"
                     >
                         <i class="fa-brands fa-android text-sm"></i>
                         <span class="hidden xl:inline">Android</span>
                     </a>
 
                     <!-- Mobile Hamburger Menu Button -->
-                    <button id="mobile-menu-btn" aria-label="Toggle Navigation Menu" class="lg:hidden text-slate-800 text-2xl focus:outline-none p-1">
+                    <button id="mobile-menu-btn" aria-label="Toggle Navigation Menu" class="lg:hidden text-white text-2xl focus:outline-none p-1">
                         <i class="fa-solid fa-bars"></i>
                     </button>
                 </div>
             </div>
 
             <!-- Mobile Navigation Drawer -->
-            <div id="mobile-menu" class="hidden lg:hidden pt-4 pb-2 border-t border-slate-100 mt-3 flex-col space-y-3 text-sm font-medium text-slate-700">
-                <a href="#top" onclick="scrollToSection('top', event)" class="block hover:text-[#FF5722] py-1 cursor-pointer" data-i18n="nav_home">หน้าแรก</a>
-                <a href="#manuals" onclick="scrollToSection('manuals', event)" class="block hover:text-[#FF5722] py-1 cursor-pointer font-bold text-[#FF5722]" data-i18n="nav_manual">คู่มือการใช้งาน</a>
-                <a href="#features" onclick="scrollToSection('features', event)" class="block hover:text-[#FF5722] py-1 cursor-pointer" data-i18n="nav_features">จุดเด่น</a>
-                <a href="#audience" onclick="scrollToSection('audience', event)" class="block hover:text-[#FF5722] py-1 cursor-pointer" data-i18n="nav_audience">กลุ่มผู้ใช้งาน</a>
-                <a href="#video-showcase" onclick="scrollToSection('video-showcase', event)" class="block hover:text-[#FF5722] py-1 cursor-pointer" data-i18n="nav_video">วิดีโอสาธิต</a>
-                <a href="#faq" onclick="scrollToSection('faq', event)" class="block hover:text-[#FF5722] py-1 cursor-pointer" data-i18n="nav_faq">คำถามที่พบบ่อย</a>
-                <a href="#privacy" onclick="scrollToSection('privacy', event)" class="block hover:text-[#FF5722] py-1 cursor-pointer" data-i18n="nav_privacy">นโยบายความเป็นส่วนตัว</a>
-                <a href="#terms" onclick="scrollToSection('terms', event)" class="block hover:text-[#FF5722] py-1 cursor-pointer" data-i18n="nav_terms">ข้อตกลงการใช้งาน</a>
+            <div id="mobile-menu" class="hidden lg:hidden pt-4 pb-3 border-t border-white/10 mt-3 flex-col space-y-3 text-sm font-medium text-white/80">
+                <a href="#top" onclick="scrollToSection('top', event)" class="block hover:text-white py-1 cursor-pointer" data-i18n="nav_home">หน้าแรก</a>
+                <a href="#manuals" onclick="scrollToSection('manuals', event)" class="block hover:text-[#E04F26] py-1 cursor-pointer font-bold text-[#E04F26]" data-i18n="nav_manual">คู่มือการใช้งาน</a>
+                <a href="#features" onclick="scrollToSection('features', event)" class="block hover:text-white py-1 cursor-pointer" data-i18n="nav_features">จุดเด่น</a>
+                <a href="#audience" onclick="scrollToSection('audience', event)" class="block hover:text-white py-1 cursor-pointer" data-i18n="nav_audience">กลุ่มผู้ใช้งาน</a>
+                <a href="#video-showcase" onclick="scrollToSection('video-showcase', event)" class="block hover:text-white py-1 cursor-pointer" data-i18n="nav_video">วิดีโอสาธิต</a>
+                <a href="#faq" onclick="scrollToSection('faq', event)" class="block hover:text-white py-1 cursor-pointer" data-i18n="nav_faq">คำถามที่พบบ่อย</a>
+                <a href="#privacy" onclick="scrollToSection('privacy', event)" class="block hover:text-white py-1 cursor-pointer" data-i18n="nav_privacy">นโยบายความเป็นส่วนตัว</a>
+                <a href="#terms" onclick="scrollToSection('terms', event)" class="block hover:text-white py-1 cursor-pointer" data-i18n="nav_terms">ข้อตกลงการใช้งาน</a>
                 <div class="flex gap-2 pt-2">
-                    <a href="https://apps.apple.com/th/app/survey-toolbox/id6754455677?l=th" target="_blank" class="w-1/2 flex items-center justify-center bg-slate-900 text-white py-2 rounded-xl text-xs font-semibold gap-1.5">
+                    <a href="https://apps.apple.com/th/app/survey-toolbox/id6754455677?l=th" target="_blank" class="w-1/2 flex items-center justify-center bg-[#FAF8F5] text-[#0E1013] py-2.5 rounded-full text-xs font-semibold gap-1.5">
                         <i class="fa-brands fa-apple"></i> iOS
                     </a>
-                    <a href="https://play.google.com/store/apps/details?id=com.kongkrit.surveytoolbox&pcampaignid=web_share" target="_blank" class="w-1/2 flex items-center justify-center bg-emerald-600 text-white py-2 rounded-xl text-xs font-semibold gap-1.5">
+                    <a href="https://play.google.com/store/apps/details?id=com.kongkrit.surveytoolbox&pcampaignid=web_share" target="_blank" class="w-1/2 flex items-center justify-center bg-emerald-600 text-white py-2.5 rounded-full text-xs font-semibold gap-1.5">
                         <i class="fa-brands fa-android"></i> Android
                     </a>
                 </div>
@@ -157,31 +158,35 @@
     </nav>
 
     <!-- ==========================================
-         Hero Section
+         Hero Section (Full-Screen Immersive Awwwards Editorial Layout)
          ========================================== -->
-    <header class="relative pt-32 pb-20 lg:pt-44 lg:pb-28 bg-hero-pattern overflow-hidden text-white">
-        <div class="container mx-auto px-4 sm:px-6 relative z-10">
-            <div class="flex flex-col lg:flex-row items-center gap-12">
+    <header class="relative min-h-screen flex flex-col justify-between pt-32 pb-16 lg:pt-40 lg:pb-20 bg-hero-pattern overflow-hidden text-[#FAF8F5]">
+        <!-- Ambient Luxury Lighting Orbs -->
+        <div class="absolute top-1/4 right-1/4 w-[32rem] h-[32rem] bg-[#E04F26]/15 rounded-full blur-[130px] pointer-events-none"></div>
+        <div class="absolute bottom-10 left-10 w-[28rem] h-[28rem] bg-amber-500/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div class="max-w-[1440px] w-full mx-auto px-5 sm:px-8 lg:px-12 relative z-10 my-auto">
+            <div class="flex flex-col lg:flex-row items-center lg:items-end justify-between gap-12 lg:gap-16">
                 
                 <!-- Hero Copywriting -->
                 <div class="lg:w-7/12 text-center lg:text-left" data-aos="fade-right">
                     
                     <!-- Official Badge -->
-                    <div class="inline-flex items-center gap-2 px-4 py-1.5 mb-6 border border-orange-500/30 rounded-full bg-slate-800/80 backdrop-blur-sm shadow-inner">
-                        <span class="w-2 h-2 rounded-full bg-[#FF5722] animate-ping"></span>
-                        <span class="text-orange-400 text-xs sm:text-sm font-semibold tracking-wide uppercase" data-i18n="hero_badge">
+                    <div class="inline-flex items-center gap-2.5 px-4 py-1.5 mb-7 border border-white/15 rounded-full bg-white/[0.04] backdrop-blur-md">
+                        <span class="w-2 h-2 rounded-full bg-[#E04F26] animate-ping"></span>
+                        <span class="text-amber-300/90 text-xs sm:text-sm font-mono font-semibold tracking-[0.18em] uppercase" data-i18n="hero_badge">
                             เครื่องมืออันดับ 1 สำหรับช่างสำรวจ
                         </span>
                     </div>
 
                     <!-- Two-Tier Headline -->
-                    <h1 class="font-heading text-3xl sm:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight tracking-tight">
-                        <span class="text-white block" data-i18n="hero_title_1">ยกระดับงานสำรวจสู่มาตรฐานสากล</span>
-                        <span class="text-gradient-orange-cyan block mt-1" data-i18n="hero_title_2">แม่นยำ รวดเร็ว ตอบโจทย์ทุกงานสำรวจ</span>
+                    <h1 class="font-heading text-4xl sm:text-6xl lg:text-[4.35rem] font-extrabold mb-7 leading-[1.06] tracking-[-0.035em]">
+                        <span class="text-[#FAF8F5] block" data-i18n="hero_title_1">ยกระดับงานสำรวจสู่มาตรฐานสากล</span>
+                        <span class="text-gradient-orange-cyan block mt-2" data-i18n="hero_title_2">แม่นยำ รวดเร็ว ตอบโจทย์ทุกงานสำรวจ</span>
                     </h1>
 
                     <!-- Descriptive Subtitle -->
-                    <p class="text-slate-300 text-sm sm:text-base lg:text-lg mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal" data-i18n="hero_desc">
+                    <p class="text-white/65 text-sm sm:text-base lg:text-lg mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light" data-i18n="hero_desc">
                         เปลี่ยนสมาร์ทโฟนและแท็บเล็ตของคุณให้เป็นเครื่องคำนวณงานสำรวจภาคสนาม ครอบคลุมตั้งแต่งานตรวจสอบเสาเข็มเยื้องศูนย์ วางแนวโค้งถนน แปลงพิกัด GeoUTM งานระดับ จนถึงการสอบเทียบกล้องตามมาตรฐาน ISO 17123-5 ทำงานออฟไลน์ 100% ไร้กังวลแม้ไม่มีสัญญาณเน็ต
                     </p>
 
@@ -189,14 +194,14 @@
                     <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
                         <button 
                             onclick="scrollToSection('manuals')" 
-                            class="px-8 py-3.5 bg-[#FF5722] hover:bg-[#E64A19] text-white font-bold rounded-2xl shadow-xl shadow-orange-500/20 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2 text-sm"
+                            class="px-9 py-4 bg-[#FAF8F5] hover:bg-[#E04F26] text-[#0E1013] hover:text-white font-bold rounded-full shadow-2xl transition-all duration-500 transform hover:-translate-y-0.5 flex items-center justify-center gap-3 text-sm"
                         >
                             <i class="fa-solid fa-book-open"></i>
                             <span data-i18n="hero_btn_explore">สำรวจคู่มือการใช้งาน</span>
                         </button>
                         <button 
                             onclick="scrollToSection('download-cta')" 
-                            class="px-8 py-3.5 bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white font-bold rounded-2xl border border-slate-700 shadow-md transition-all flex items-center justify-center gap-2 text-sm"
+                            class="px-9 py-4 bg-white/[0.06] hover:bg-white/[0.15] text-[#FAF8F5] font-bold rounded-full border border-white/25 backdrop-blur-md transition-all duration-500 flex items-center justify-center gap-3 text-sm"
                         >
                             <i class="fa-solid fa-mobile-screen"></i>
                             <span data-i18n="hero_btn_download">ดาวน์โหลดแอปฟรี</span>
@@ -208,110 +213,104 @@
                 <!-- Hero Mockup & Visuals -->
                 <div class="lg:w-5/12 relative" data-aos="fade-left">
                     <div class="relative w-full max-w-md mx-auto float-element">
-                        <div class="rounded-3xl shadow-2xl overflow-hidden border-4 border-slate-700/80 bg-slate-900 relative z-20">
+                        <div class="rounded-[2rem] shadow-[0_35px_90px_-15px_rgba(0,0,0,0.85)] overflow-hidden border border-white/20 bg-[#0E1013] relative z-20 p-2">
                             <img 
                                 src="https://lh3.googleusercontent.com/d/1OikbC0nKGt63DV0C8d5z_MfLfjDNoWs8" 
                                 referrerpolicy="no-referrer" 
                                 alt="Survey Toolbox Mobile App Showcase" 
-                                class="w-full h-auto object-cover"
+                                class="w-full h-auto object-cover rounded-[1.5rem]"
                             >
                         </div>
-                        <div class="absolute -top-10 -right-10 w-64 h-64 bg-blue-500/20 rounded-full blur-3xl -z-10"></div>
-                        <div class="absolute -bottom-10 -left-10 w-64 h-64 bg-orange-500/20 rounded-full blur-3xl -z-10"></div>
+                        <div class="absolute -top-10 -right-10 w-64 h-64 bg-[#E04F26]/20 rounded-full blur-3xl -z-10"></div>
+                        <div class="absolute -bottom-10 -left-10 w-64 h-64 bg-amber-500/15 rounded-full blur-3xl -z-10"></div>
                     </div>
                 </div>
 
             </div>
 
             <!-- 4 Stats Ribbon -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 shadow-2xl">
-                <div class="text-center p-2">
-                    <div class="font-mono text-2xl sm:text-3xl font-extrabold text-white" data-i18n="stat_tools_num">21</div>
-                    <div class="text-xs text-slate-400 mt-1 font-medium" data-i18n="stat_tools_label">เครื่องมือคำนวณครบครัน</div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-0 mt-16 lg:mt-20 border-t border-b border-white/15 bg-white/[0.02] backdrop-blur-md">
+                <div class="text-center lg:text-left py-6 px-4 sm:px-6">
+                    <div class="font-mono text-3xl sm:text-4xl font-extrabold text-[#FAF8F5]" data-i18n="stat_tools_num">21</div>
+                    <div class="text-xs text-white/55 mt-1.5 font-medium" data-i18n="stat_tools_label">เครื่องมือคำนวณครบครัน</div>
                 </div>
-                <div class="text-center p-2 border-l border-white/10">
-                    <div class="font-mono text-2xl sm:text-3xl font-extrabold text-emerald-400" data-i18n="stat_offline_num">100%</div>
-                    <div class="text-xs text-slate-400 mt-1 font-medium" data-i18n="stat_offline_label">ทำงานออฟไลน์ไม่ง้อเน็ต</div>
+                <div class="text-center lg:text-left py-6 px-4 sm:px-6 border-l border-white/15">
+                    <div class="font-mono text-3xl sm:text-4xl font-extrabold text-emerald-400" data-i18n="stat_offline_num">100%</div>
+                    <div class="text-xs text-white/55 mt-1.5 font-medium" data-i18n="stat_offline_label">ทำงานออฟไลน์ไม่ง้อเน็ต</div>
                 </div>
-                <div class="text-center p-2 border-l border-white/10">
-                    <div class="font-heading text-xl sm:text-2xl font-extrabold text-sky-400" data-i18n="stat_precision_num">พิกัด & ระยะ</div>
-                    <div class="text-xs text-slate-400 mt-1 font-medium" data-i18n="stat_precision_label">คำนวณพิกัดและระยะทางความแม่นยำสูง</div>
+                <div class="text-center lg:text-left py-6 px-4 sm:px-6 border-t md:border-t-0 md:border-l border-white/15">
+                    <div class="font-heading text-2xl sm:text-3xl font-extrabold text-amber-300" data-i18n="stat_precision_num">พิกัด & ระยะ</div>
+                    <div class="text-xs text-white/55 mt-1.5 font-medium" data-i18n="stat_precision_label">คำนวณพิกัดและระยะทางความแม่นยำสูง</div>
                 </div>
-                <div class="text-center p-2 border-l border-white/10">
-                    <div class="font-heading text-xl sm:text-2xl font-extrabold text-amber-400" data-i18n="stat_iso_num">รายงานสรุป</div>
-                    <div class="text-xs text-slate-400 mt-1 font-medium" data-i18n="stat_iso_label">รายงานสรุปผลการคำนวณและตรวจสอบ</div>
+                <div class="text-center lg:text-left py-6 px-4 sm:px-6 border-t md:border-t-0 border-l border-white/15">
+                    <div class="font-heading text-2xl sm:text-3xl font-extrabold text-[#E04F26]" data-i18n="stat_iso_num">รายงานสรุป</div>
+                    <div class="text-xs text-white/55 mt-1.5 font-medium" data-i18n="stat_iso_label">รายงานสรุปผลการคำนวณและตรวจสอบ</div>
                 </div>
             </div>
 
-        </div>
-        
-        <!-- Bottom Curve Divider -->
-        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none pointer-events-none">
-            <svg class="relative block w-full h-12 sm:h-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="fill-white"></path>
-            </svg>
         </div>
     </header>
 
     <!-- ==========================================
-         Manuals Hub: 21 Survey Tools Catalog
+         Manuals Hub: 21 Survey Tools Catalog (Editorial Collection Grid)
          ========================================== -->
-    <section id="manuals" class="py-20 bg-white relative">
-        <div class="container mx-auto px-4 sm:px-6">
+    <section id="manuals" class="py-24 lg:py-32 bg-[#FAF8F5] relative border-b border-[#E6E0D6]">
+        <div class="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12">
             
-            <!-- Section Header -->
-            <div class="text-center max-w-3xl mx-auto mb-10" data-aos="fade-up">
-                <span class="text-[#FF5722] font-heading font-bold tracking-widest uppercase text-xs sm:text-sm" data-i18n="manual_badge">
-                    GUIDES & DOCUMENTATION
-                </span>
-                <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 tracking-tight" data-i18n="manual_title">
-                    คู่มือการใช้งาน 21 เครื่องมือสำรวจ
-                </h2>
-                <div class="w-16 h-1.5 bg-[#FF5722] mx-auto mt-4 rounded-full"></div>
-                <p class="text-slate-500 text-sm sm:text-base mt-4" data-i18n="manual_subtitle">
-                    เอกสารคู่มือทางเทคนิค คำอธิบายฟังก์ชัน พารามิเตอร์ และขั้นตอนการทำงาน
-                </p>
-            </div>
-
-            <!-- Instant Live Search Bar -->
-            <div class="max-w-2xl mx-auto mb-8 relative" data-aos="fade-up">
-                <div class="relative flex items-center">
-                    <i class="fa-solid fa-magnifying-glass absolute left-4 text-slate-400 text-base"></i>
-                    <input 
-                        type="text" 
-                        id="tool-search-input"
-                        placeholder="ค้นหาเครื่องมือสำรวจ (เช่น รีเช็คชั่น, โค้งราบ, Azimuth, พิกัด, Collimation, #1 - #21)..." 
-                        class="w-full pl-12 pr-28 py-3.5 bg-slate-50 border border-slate-200 rounded-2xl shadow-sm text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#FF5722] focus:bg-white transition-all font-medium"
-                    >
-                    <button 
-                        id="search-clear-btn" 
-                        class="hidden absolute right-3 px-3 py-1 bg-slate-200 hover:bg-slate-300 text-slate-700 text-xs font-semibold rounded-lg transition-colors"
-                        data-i18n="search_clear"
-                    >
-                        ล้าง
-                    </button>
+            <!-- Section Header & Search Split -->
+            <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-12 gap-8" data-aos="fade-up">
+                <div class="max-w-2xl">
+                    <span class="text-[#E04F26] font-mono font-bold tracking-[0.22em] uppercase text-xs sm:text-sm block mb-3" data-i18n="manual_badge">
+                        GUIDES & DOCUMENTATION
+                    </span>
+                    <h2 class="font-heading text-3xl sm:text-5xl font-extrabold text-[#0E1013] tracking-[-0.03em] leading-[1.08]" data-i18n="manual_title">
+                        คู่มือการใช้งาน 21 เครื่องมือสำรวจ
+                    </h2>
+                    <p class="text-[#5C5852] text-sm sm:text-base mt-4 leading-relaxed" data-i18n="manual_subtitle">
+                        เอกสารคู่มือทางเทคนิค คำอธิบายฟังก์ชัน พารามิเตอร์ และขั้นตอนการทำงาน
+                    </p>
                 </div>
-                <div class="flex items-center justify-between text-xs text-slate-400 mt-2 px-2 font-medium">
-                    <span id="search-count-chip">แสดง 21 เครื่องมือสำรวจ</span>
-                    <span data-i18n="search_hint">คลิกการ์ดเพื่อดูคู่มือการใช้งาน</span>
+
+                <!-- Instant Live Search Bar -->
+                <div class="w-full lg:w-[28rem] relative" data-aos="fade-up">
+                    <div class="relative flex items-center">
+                        <i class="fa-solid fa-magnifying-glass absolute left-4 text-[#8C857B] text-base"></i>
+                        <input 
+                            type="text" 
+                            id="tool-search-input"
+                            placeholder="ค้นหาเครื่องมือสำรวจ (เช่น รีเช็คชั่น, โค้งราบ, Azimuth, พิกัด, Collimation, #1 - #21)..." 
+                            class="w-full pl-12 pr-28 py-3.5 bg-white border border-[#E6E0D6] rounded-full shadow-sm text-sm text-[#0E1013] placeholder-[#8C857B] focus:outline-none focus:border-[#0E1013] transition-all font-medium"
+                        >
+                        <button 
+                            id="search-clear-btn" 
+                            class="hidden absolute right-3 px-3 py-1 bg-[#EFECE6] hover:bg-[#E6E0D6] text-[#0E1013] text-xs font-semibold rounded-full transition-colors"
+                            data-i18n="search_clear"
+                        >
+                            ล้าง
+                        </button>
+                    </div>
+                    <div class="flex items-center justify-between text-xs text-[#8C857B] mt-2.5 px-3 font-medium">
+                        <span id="search-count-chip" class="font-mono text-[#0E1013] font-semibold">แสดง 21 เครื่องมือสำรวจ</span>
+                        <span data-i18n="search_hint">คลิกการ์ดเพื่อดูคู่มือการใช้งาน</span>
+                    </div>
                 </div>
             </div>
 
             <!-- Category Filter Pills Bar (Horizontal scroll on mobile) -->
-            <div class="mb-10 overflow-x-auto no-scrollbar py-2" data-aos="fade-up">
-                <div id="category-pills-container" class="flex items-center justify-start lg:justify-center gap-2 sm:gap-3 min-w-max px-2">
+            <div class="mb-12 overflow-x-auto no-scrollbar py-3 border-y border-[#E6E0D6]" data-aos="fade-up">
+                <div id="category-pills-container" class="flex items-center justify-start gap-2.5 sm:gap-3 min-w-max">
                     <!-- Populated dynamically by app.js -->
                 </div>
             </div>
 
             <!-- Empty Search Results State -->
-            <div id="tools-empty-state" class="hidden text-center py-16 bg-slate-50 border border-dashed border-slate-300 rounded-2xl p-8 max-w-lg mx-auto">
-                <div class="w-16 h-16 rounded-full bg-slate-200 text-slate-400 flex items-center justify-center text-2xl mx-auto mb-4">
+            <div id="tools-empty-state" class="hidden text-center py-20 bg-white border border-[#E6E0D6] rounded-3xl p-8 max-w-lg mx-auto">
+                <div class="w-16 h-16 rounded-full bg-[#FAF8F5] text-[#8C857B] flex items-center justify-center text-2xl mx-auto mb-4 border border-[#E6E0D6]">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
-                <h3 class="font-heading font-bold text-slate-800 text-lg mb-2" data-i18n="search_empty_title">ไม่พบเครื่องมือที่ค้นหา</h3>
-                <p class="text-xs text-slate-500 mb-6 leading-relaxed" data-i18n="search_empty_desc">ลองค้นหาด้วยคำอื่น หรือเลือกหมวดหมู่ "ทั้งหมด" เพื่อดูเครื่องมือครบทั้ง 21 รายการ</p>
-                <button onclick="selectCategory('all'); document.getElementById('search-clear-btn').click();" class="px-5 py-2.5 bg-[#FF5722] text-white text-xs font-bold rounded-xl shadow-sm hover:bg-[#E64A19] transition-all">
+                <h3 class="font-heading font-bold text-[#0E1013] text-lg mb-2" data-i18n="search_empty_title">ไม่พบเครื่องมือที่ค้นหา</h3>
+                <p class="text-xs text-[#5C5852] mb-6 leading-relaxed" data-i18n="search_empty_desc">ลองค้นหาด้วยคำอื่น หรือเลือกหมวดหมู่ "ทั้งหมด" เพื่อดูเครื่องมือครบทั้ง 21 รายการ</p>
+                <button onclick="selectCategory('all'); document.getElementById('search-clear-btn').click();" class="px-6 py-3 bg-[#0E1013] text-white text-xs font-bold rounded-full shadow-sm hover:bg-[#E04F26] transition-all">
                     กลับไปดูทั้งหมด 21 เครื่องมือ
                 </button>
             </div>
@@ -325,27 +324,26 @@
     </section>
 
     <!-- ==========================================
-         Video Showcase Section
+         Video Showcase Section (Cinema Screening Room)
          ========================================== -->
-    <section id="video-showcase" class="py-20 bg-slate-900 text-white relative overflow-hidden border-t border-slate-800">
-        <div class="absolute top-0 right-0 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="absolute bottom-0 left-0 w-96 h-96 bg-orange-600/10 rounded-full blur-3xl pointer-events-none"></div>
+    <section id="video-showcase" class="py-24 lg:py-32 bg-[#090A0C] text-[#FAF8F5] relative overflow-hidden">
+        <div class="absolute top-0 right-1/4 w-[28rem] h-[28rem] bg-[#E04F26]/10 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="absolute bottom-0 left-1/4 w-[28rem] h-[28rem] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none"></div>
 
-        <div class="container mx-auto px-4 sm:px-6 relative z-10 text-center">
+        <div class="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12 relative z-10 text-center">
             
-            <div class="max-w-3xl mx-auto mb-10" data-aos="fade-up">
-                <span class="text-orange-400 font-heading font-bold tracking-widest uppercase text-xs">VIDEO SHOWCASE</span>
-                <h2 class="font-heading text-3xl sm:text-4xl font-extrabold mt-2 tracking-tight text-white" data-i18n="video_title">
+            <div class="max-w-3xl mx-auto mb-12" data-aos="fade-up">
+                <span class="text-[#E04F26] font-mono font-bold tracking-[0.22em] uppercase text-xs block mb-3">VIDEO SHOWCASE</span>
+                <h2 class="font-heading text-3xl sm:text-5xl font-extrabold tracking-[-0.03em] text-[#FAF8F5]" data-i18n="video_title">
                     วิดีโอแนะนำและสาธิตการใช้งาน Survey Toolbox
                 </h2>
-                <div class="w-16 h-1.5 bg-[#FF5722] mx-auto mt-4 rounded-full"></div>
-                <p class="text-slate-400 text-sm mt-3" data-i18n="video_desc">
+                <p class="text-white/60 text-sm sm:text-base mt-4 leading-relaxed" data-i18n="video_desc">
                     ชมตัวอย่างการคำนวณหน้างานจริง สะดวก รวดเร็ว แม่นยำทุกขั้นตอน ใช้งานได้ทุกที่แม้ไม่มีอินเทอร์เน็ต
                 </p>
             </div>
             
-            <div class="max-w-4xl mx-auto rounded-3xl overflow-hidden shadow-2xl border-4 border-slate-700 bg-black" data-aos="zoom-in">
-                <div class="relative w-full" style="padding-bottom: 56.25%;">
+            <div class="max-w-5xl mx-auto rounded-[2rem] overflow-hidden shadow-[0_40px_100px_-20px_rgba(0,0,0,0.85)] border border-white/15 bg-black p-2 sm:p-3" data-aos="zoom-in">
+                <div class="relative w-full rounded-[1.5rem] overflow-hidden" style="padding-bottom: 56.25%;">
                     <iframe 
                         class="absolute top-0 left-0 w-full h-full" 
                         src="https://www.youtube.com/embed/j4anR0CmI0A?rel=0&modestbranding=1" 
@@ -358,15 +356,15 @@
             </div>
             
             <!-- Video Fallback Link & Feature Badges -->
-            <div class="mt-8 space-y-4">
+            <div class="mt-10 space-y-5">
                 <div class="flex flex-wrap justify-center gap-3 text-xs">
-                    <span class="px-3.5 py-1.5 rounded-full bg-slate-800 border border-slate-700 text-slate-300 flex items-center gap-1.5">
-                        <i class="fa-solid fa-play text-orange-400"></i> สาธิตการใช้งานจริงในสนาม
+                    <span class="px-4 py-2 rounded-full bg-white/[0.05] border border-white/15 text-white/80 flex items-center gap-2">
+                        <i class="fa-solid fa-play text-[#E04F26]"></i> สาธิตการใช้งานจริงในสนาม
                     </span>
-                    <span class="px-3.5 py-1.5 rounded-full bg-slate-800 border border-slate-700 text-slate-300 flex items-center gap-1.5">
-                        <i class="fa-solid fa-calculator text-blue-400"></i> เทคนิคการตั้งค่าพิกัด
+                    <span class="px-4 py-2 rounded-full bg-white/[0.05] border border-white/15 text-white/80 flex items-center gap-2">
+                        <i class="fa-solid fa-calculator text-amber-300"></i> เทคนิคการตั้งค่าพิกัด
                     </span>
-                    <span class="px-3.5 py-1.5 rounded-full bg-slate-800 border border-slate-700 text-slate-300 flex items-center gap-1.5">
+                    <span class="px-4 py-2 rounded-full bg-white/[0.05] border border-white/15 text-white/80 flex items-center gap-2">
                         <i class="fa-solid fa-file-pdf text-emerald-400"></i> การส่งออกรายงาน A4 PDF
                     </span>
                 </div>
@@ -375,10 +373,10 @@
                         href="https://youtu.be/j4anR0CmI0A" 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        class="inline-flex items-center text-xs text-orange-400 hover:text-white transition-colors underline"
+                        class="inline-flex items-center text-xs text-white/60 hover:text-white transition-colors underline underline-offset-4"
                         data-i18n="video_fallback"
                     >
-                        <i class="fa-brands fa-youtube mr-2 text-sm"></i> หากดูวิดีโอไม่ได้ คลิกที่นี่เพื่อชมบน YouTube
+                        <i class="fa-brands fa-youtube mr-2 text-sm text-[#E04F26]"></i> หากดูวิดีโอไม่ได้ คลิกที่นี่เพื่อชมบน YouTube
                     </a>
                 </div>
             </div>
@@ -387,53 +385,68 @@
     </section>
 
     <!-- ==========================================
-         Features Section
+         Features Section (Interactive Origin-Style Color-Shifting Showcase)
          ========================================== -->
-    <section id="features" class="py-20 bg-slate-50 relative">
-        <div class="container mx-auto px-4 sm:px-6">
+    <section id="features" data-watermark="AZIMUTH" class="origin-showcase-section py-24 lg:py-32 text-[#FAF8F5] relative overflow-hidden" style="background-color: #8B3A2B;">
+        <div class="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12 relative z-10">
             
-            <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
-                <span class="text-[#FF5722] font-heading font-bold tracking-widest uppercase text-xs" data-i18n="feat_header">
-                    FEATURE HIGHLIGHTS
-                </span>
-                <h2 class="font-heading text-3xl font-extrabold text-slate-900 mt-2" data-i18n="feat_title">
-                    ฟังก์ชันทรงพลังสำหรับมืออาชีพ
-                </h2>
-                <div class="w-16 h-1.5 bg-[#FF5722] mx-auto mt-3 rounded-full"></div>
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6" data-aos="fade-up">
+                <div>
+                    <span class="text-white/75 font-mono font-bold tracking-[0.22em] uppercase text-xs block mb-3" data-i18n="feat_header">
+                        FEATURE HIGHLIGHTS
+                    </span>
+                    <h2 class="font-heading text-3xl sm:text-5xl font-extrabold text-white tracking-[-0.03em]" data-i18n="feat_title">
+                        ฟังก์ชันทรงพลังสำหรับมืออาชีพ
+                    </h2>
+                </div>
+                <!-- Interactive Switcher Dots (Video 00:08-00:14 style) -->
+                <div class="flex items-center gap-2.5">
+                    <button type="button" onclick="setFeatureOrigin(0)" id="origin-dot-0" aria-label="Feature 1" class="w-8 h-2.5 rounded-full bg-white transition-all duration-300"></button>
+                    <button type="button" onclick="setFeatureOrigin(1)" id="origin-dot-1" aria-label="Feature 2" class="w-2.5 h-2.5 rounded-full bg-white/40 hover:bg-white/70 transition-all duration-300"></button>
+                    <button type="button" onclick="setFeatureOrigin(2)" id="origin-dot-2" aria-label="Feature 3" class="w-2.5 h-2.5 rounded-full bg-white/40 hover:bg-white/70 transition-all duration-300"></button>
+                    <button type="button" onclick="setFeatureOrigin(3)" id="origin-dot-3" aria-label="Feature 4" class="w-2.5 h-2.5 rounded-full bg-white/40 hover:bg-white/70 transition-all duration-300"></button>
+                </div>
+            </div>
+
+            <!-- Interactive Centerpiece Visual Artifact -->
+            <div class="flex justify-center my-10 lg:my-14">
+                <div id="feature-spotlight-artifact" class="origin-center-card w-28 h-28 sm:w-36 sm:h-36 rounded-[2rem] bg-[#0E1013]/85 backdrop-blur-xl border border-white/25 shadow-[0_35px_80px_-15px_rgba(0,0,0,0.55)] text-white flex items-center justify-center">
+                    <i id="feature-spotlight-icon" class="fa-solid fa-compass text-4xl sm:text-5xl text-amber-300"></i>
+                </div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- Feature 1 -->
-                <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 group" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-12 h-12 bg-orange-50 rounded-xl flex items-center justify-center mb-5 group-hover:bg-[#FF5722] transition-colors">
-                        <i class="fa-solid fa-compass text-xl text-[#FF5722] group-hover:text-white transition-colors"></i>
+                <div onclick="setFeatureOrigin(0)" onmouseenter="setFeatureOrigin(0)" data-feature-idx="0" class="origin-feature-card active-feature p-7 rounded-3xl bg-white/10 backdrop-blur-md border border-white/20 cursor-pointer group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-12 h-12 bg-white/15 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-white transition-colors">
+                        <i class="fa-solid fa-compass text-xl text-white group-hover:text-[#0E1013] transition-colors"></i>
                     </div>
-                    <h3 class="font-heading text-lg font-bold text-slate-900 mb-2" data-i18n="f1_title">Azimuth & Distance</h3>
-                    <p class="text-slate-500 text-xs leading-relaxed" data-i18n="f1_desc">คำนวณหาทิศทางและระยะทางอย่างแม่นยำ (Inverse Geometry) สลับหน่วย DMS ทศนิยม</p>
+                    <h3 class="font-heading text-lg font-bold text-white mb-2.5" data-i18n="f1_title">Azimuth & Distance</h3>
+                    <p class="text-white/80 text-xs leading-relaxed" data-i18n="f1_desc">คำนวณหาทิศทางและระยะทางอย่างแม่นยำ (Inverse Geometry) สลับหน่วย DMS ทศนิยม</p>
                 </div>
                 <!-- Feature 2 -->
-                <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 group" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-5 group-hover:bg-[#1E88E5] transition-colors">
-                        <i class="fa-solid fa-check-double text-xl text-[#1E88E5] group-hover:text-white transition-colors"></i>
+                <div onclick="setFeatureOrigin(1)" onmouseenter="setFeatureOrigin(1)" data-feature-idx="1" class="origin-feature-card p-7 rounded-3xl bg-white/10 backdrop-blur-md border border-white/20 cursor-pointer group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-12 h-12 bg-white/15 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-white transition-colors">
+                        <i class="fa-solid fa-check-double text-xl text-white group-hover:text-[#0E1013] transition-colors"></i>
                     </div>
-                    <h3 class="font-heading text-lg font-bold text-slate-900 mb-2" data-i18n="f2_title">Deviation Check</h3>
-                    <p class="text-slate-500 text-xs leading-relaxed" data-i18n="f2_desc">ตรวจสอบค่าความคลาดเคลื่อนเทียบกับแบบ (Design vs Actual) พร้อมแยกแนวแกนและไฮไลต์เตือนสีแดง</p>
+                    <h3 class="font-heading text-lg font-bold text-white mb-2.5" data-i18n="f2_title">Deviation Check</h3>
+                    <p class="text-white/80 text-xs leading-relaxed" data-i18n="f2_desc">ตรวจสอบค่าความคลาดเคลื่อนเทียบกับแบบ (Design vs Actual) พร้อมแยกแนวแกนและไฮไลต์เตือนสีแดง</p>
                 </div>
                 <!-- Feature 3 -->
-                <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 group" data-aos="fade-up" data-aos-delay="300">
-                    <div class="w-12 h-12 bg-purple-50 rounded-xl flex items-center justify-center mb-5 group-hover:bg-purple-600 transition-colors">
-                        <i class="fa-solid fa-route text-xl text-purple-600 group-hover:text-white transition-colors"></i>
+                <div onclick="setFeatureOrigin(2)" onmouseenter="setFeatureOrigin(2)" data-feature-idx="2" class="origin-feature-card p-7 rounded-3xl bg-white/10 backdrop-blur-md border border-white/20 cursor-pointer group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-12 h-12 bg-white/15 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-white transition-colors">
+                        <i class="fa-solid fa-route text-xl text-white group-hover:text-[#0E1013] transition-colors"></i>
                     </div>
-                    <h3 class="font-heading text-lg font-bold text-slate-900 mb-2" data-i18n="f3_title">Smart Field Geometry</h3>
-                    <p class="text-slate-500 text-xs leading-relaxed" data-i18n="f3_desc">วางโค้งราบ H-Curve, โค้งดิ่ง V-Curve, รีเช็คชั่น 2 จุด และออฟเซ็ตผังคอกอย่างรวดเร็ว</p>
+                    <h3 class="font-heading text-lg font-bold text-white mb-2.5" data-i18n="f3_title">Smart Field Geometry</h3>
+                    <p class="text-white/80 text-xs leading-relaxed" data-i18n="f3_desc">วางโค้งราบ H-Curve, โค้งดิ่ง V-Curve, รีเช็คชั่น 2 จุด และออฟเซ็ตผังคอกอย่างรวดเร็ว</p>
                 </div>
                 <!-- Feature 4 -->
-                <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 group" data-aos="fade-up" data-aos-delay="400">
-                    <div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center mb-5 group-hover:bg-emerald-600 transition-colors">
-                        <i class="fa-solid fa-file-circle-check text-xl text-emerald-600 group-hover:text-white transition-colors"></i>
+                <div onclick="setFeatureOrigin(3)" onmouseenter="setFeatureOrigin(3)" data-feature-idx="3" class="origin-feature-card p-7 rounded-3xl bg-white/10 backdrop-blur-md border border-white/20 cursor-pointer group" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-12 h-12 bg-white/15 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-white transition-colors">
+                        <i class="fa-solid fa-file-circle-check text-xl text-white group-hover:text-[#0E1013] transition-colors"></i>
                     </div>
-                    <h3 class="font-heading text-lg font-bold text-slate-900 mb-2" data-i18n="f4_title">Export & Compliance</h3>
-                    <p class="text-slate-500 text-xs leading-relaxed" data-i18n="f4_desc">ส่งออกรายงาน PDF พร้อมบล็อกลงนาม 3 ฝ่าย, แผนภาพ CAD และใบรับรองสอบเทียบ ISO 17123-5</p>
+                    <h3 class="font-heading text-lg font-bold text-white mb-2.5" data-i18n="f4_title">Export & Compliance</h3>
+                    <p class="text-white/80 text-xs leading-relaxed" data-i18n="f4_desc">ส่งออกรายงาน PDF พร้อมบล็อกลงนาม 3 ฝ่าย, แผนภาพ CAD และใบรับรองสอบเทียบ ISO 17123-5</p>
                 </div>
             </div>
 
@@ -441,74 +454,82 @@
     </section>
 
     <!-- ==========================================
-         Audience & Value Propositions
+         Audience & Value Propositions (Interactive Storefront Widget Style)
          ========================================== -->
-    <section id="audience" class="py-20 bg-white relative overflow-hidden">
-        <div class="container mx-auto px-4 sm:px-6 relative z-10">
+    <section id="audience" class="py-24 lg:py-32 bg-[#FAF8F5] relative overflow-hidden border-b border-[#E6E0D6]">
+        <div class="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12 relative z-10">
             
-            <div class="flex flex-col lg:flex-row items-center gap-12">
+            <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
                 <div class="lg:w-1/2" data-aos="fade-right">
-                    <span class="text-[#FF5722] font-heading font-bold tracking-widest uppercase text-xs">WHO IT'S FOR</span>
-                    <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 mb-4 leading-tight" data-i18n="aud_title">
+                    <span class="text-[#E04F26] font-mono font-bold tracking-[0.22em] uppercase text-xs block mb-3">WHO IT'S FOR</span>
+                    <h2 class="font-heading text-3xl sm:text-5xl font-extrabold text-[#0E1013] mb-4 leading-[1.08] tracking-[-0.03em]" data-i18n="aud_title">
                         Survey Toolbox เหมาะกับใคร?
                     </h2>
-                    <p class="text-slate-500 mb-8 text-sm sm:text-base leading-relaxed" data-i18n="aud_subtitle">
+                    <p class="text-[#5C5852] mb-10 text-sm sm:text-base leading-relaxed" data-i18n="aud_subtitle">
                         ออกแบบเพื่อรองรับทุกลำดับขั้นในงานวิศวกรรมสำรวจและก่อสร้าง ไม่ว่าจะเป็นงานภาคสนามหรือควบคุมงาน
                     </p>
                     
                     <div class="space-y-4">
                         <!-- Card 1 -->
-                        <div class="flex items-start bg-slate-50 p-4 sm:p-5 rounded-2xl border-l-4 border-[#FF5722] border-t border-r border-b border-slate-200">
-                            <div class="bg-orange-100 p-2.5 rounded-xl mr-4 text-[#FF5722] shrink-0">
+                        <div onclick="setAudiencePersona(0)" onmouseenter="setAudiencePersona(0)" data-persona-idx="0" class="persona-card-item active-persona flex items-start bg-white p-6 rounded-3xl border border-[#E6E0D6]">
+                            <div class="bg-[#E04F26]/15 p-3 rounded-2xl mr-4 text-[#E04F26] shrink-0">
                                 <i class="fa-solid fa-helmet-safety text-lg"></i>
                             </div>
                             <div>
-                                <h4 class="font-heading font-bold text-slate-900 text-sm sm:text-base" data-i18n="p1_title">ช่างสำรวจภาคสนาม (Field Surveyors)</h4>
-                                <p class="text-xs text-slate-500 mt-1 leading-relaxed" data-i18n="p1_desc">ลดภาระการพกสมุดจด ตรวจสอบค่าได้ทันทีหน้างาน ไม่ต้องเสี่ยงกับการกดเครื่องคิดเลขผิดพลาดกลางแดดร้อน รังวัดเสร็จ ตรวจสอบความคลาดเคลื่อนและเซ็นอนุมัติส่งงานได้ทันที</p>
+                                <h4 class="font-heading font-bold text-[#0E1013] text-sm sm:text-base" data-i18n="p1_title">ช่างสำรวจภาคสนาม (Field Surveyors)</h4>
+                                <p class="text-xs text-[#5C5852] mt-1.5 leading-relaxed" data-i18n="p1_desc">ลดภาระการพกสมุดจด ตรวจสอบค่าได้ทันทีหน้างาน ไม่ต้องเสี่ยงกับการกดเครื่องคิดเลขผิดพลาดกลางแดดร้อน รังวัดเสร็จ ตรวจสอบความคลาดเคลื่อนและเซ็นอนุมัติส่งงานได้ทันที</p>
                             </div>
                         </div>
 
                         <!-- Card 2 -->
-                        <div class="flex items-start bg-slate-50 p-4 sm:p-5 rounded-2xl border-l-4 border-blue-500 border-t border-r border-b border-slate-200">
-                            <div class="bg-blue-100 p-2.5 rounded-xl mr-4 text-blue-600 shrink-0">
+                        <div onclick="setAudiencePersona(1)" onmouseenter="setAudiencePersona(1)" data-persona-idx="1" class="persona-card-item flex items-start bg-white p-6 rounded-3xl border border-[#E6E0D6]">
+                            <div class="bg-blue-500/15 p-3 rounded-2xl mr-4 text-blue-500 shrink-0">
                                 <i class="fa-solid fa-clipboard-check text-lg"></i>
                             </div>
                             <div>
-                                <h4 class="font-heading font-bold text-slate-900 text-sm sm:text-base" data-i18n="p2_title">วิศวกรและผู้ควบคุมงาน</h4>
-                                <p class="text-xs text-slate-500 mt-1 leading-relaxed" data-i18n="p2_desc">ตรวจสอบงานวางผังเสาเข็ม งานระดับดิน และแนวสายทาง LandXML ได้ด้วยตนเอง ไม่ต้องรอไฟล์ CAD พร้อมรายงาน PDF มาตรฐานสำหรับแนบส่งตรวจ</p>
+                                <h4 class="font-heading font-bold text-[#0E1013] text-sm sm:text-base" data-i18n="p2_title">วิศวกรและผู้ควบคุมงาน</h4>
+                                <p class="text-xs text-[#5C5852] mt-1.5 leading-relaxed" data-i18n="p2_desc">ตรวจสอบงานวางผังเสาเข็ม งานระดับดิน และแนวสายทาง LandXML ได้ด้วยตนเอง ไม่ต้องรอไฟล์ CAD พร้อมรายงาน PDF มาตรฐานสำหรับแนบส่งตรวจ</p>
                             </div>
                         </div>
 
                         <!-- Card 3 -->
-                        <div class="flex items-start bg-slate-50 p-4 sm:p-5 rounded-2xl border-l-4 border-emerald-500 border-t border-r border-b border-slate-200">
-                            <div class="bg-emerald-100 p-2.5 rounded-xl mr-4 text-emerald-600 shrink-0">
+                        <div onclick="setAudiencePersona(2)" onmouseenter="setAudiencePersona(2)" data-persona-idx="2" class="persona-card-item flex items-start bg-white p-6 rounded-3xl border border-[#E6E0D6]">
+                            <div class="bg-emerald-500/15 p-3 rounded-2xl mr-4 text-emerald-500 shrink-0">
                                 <i class="fa-solid fa-graduation-cap text-lg"></i>
                             </div>
                             <div>
-                                <h4 class="font-heading font-bold text-slate-900 text-sm sm:text-base" data-i18n="p3_title">นักศึกษา</h4>
-                                <p class="text-xs text-slate-500 mt-1 leading-relaxed" data-i18n="p3_desc">เครื่องมือจำลองและเรียนรู้ทฤษฎีเรขาคณิตสำรวจ การฉายแผนที่ WGS84/UTM และกระบวนการสอบเทียบเครื่องมือวัดตามมาตรฐานสากล ISO</p>
+                                <h4 class="font-heading font-bold text-[#0E1013] text-sm sm:text-base" data-i18n="p3_title">นักศึกษา</h4>
+                                <p class="text-xs text-[#5C5852] mt-1.5 leading-relaxed" data-i18n="p3_desc">เครื่องมือจำลองและเรียนรู้ทฤษฎีเรขาคณิตสำรวจ การฉายแผนที่ WGS84/UTM และกระบวนการสอบเทียบเครื่องมือวัดตามมาตรฐานสากล ISO</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Testimonial & App Interface Snapshot -->
+                <!-- Testimonial & App Interface Snapshot (Video 00:15-00:19 Storefront Widget Style) -->
                 <div class="lg:w-1/2 flex justify-center" data-aos="fade-left">
-                    <div class="relative w-full max-w-sm rounded-3xl shadow-2xl overflow-hidden border-8 border-slate-100 bg-slate-900">
-                        <img 
-                            src="https://lh3.googleusercontent.com/d/141n8Bb95ppb4IJb5rcTJjlRQOWRv0gX2" 
-                            referrerpolicy="no-referrer" 
-                            alt="Survey Toolbox Mobile User Interface" 
-                            class="w-full h-auto object-cover"
-                        >
-                        <div class="absolute bottom-0 w-full bg-slate-900/90 backdrop-blur-md p-4 text-white border-t border-slate-800">
-                            <div class="flex items-center gap-3">
-                                <div class="w-10 h-10 bg-[#FF5722] rounded-full flex items-center justify-center text-white font-bold shrink-0">
-                                    <i class="fa-solid fa-quote-left text-sm"></i>
+                    <div id="audience-visual-frame" class="relative w-full max-w-md rounded-[2.25rem] shadow-2xl overflow-hidden border border-[#E6E0D6] bg-[#0E1013] p-4 transition-colors duration-700">
+                        <div class="relative rounded-[1.75rem] overflow-hidden">
+                            <img 
+                                id="audience-scene-img"
+                                src="https://lh3.googleusercontent.com/d/141n8Bb95ppb4IJb5rcTJjlRQOWRv0gX2" 
+                                referrerpolicy="no-referrer" 
+                                alt="Survey Toolbox Mobile User Interface" 
+                                class="storefront-scene-img w-full h-auto object-cover"
+                            >
+                            <div class="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-xl p-5 rounded-2xl text-[#0E1013] border border-[#E6E0D6] shadow-2xl">
+                                <div class="flex items-center justify-end gap-1.5 mb-3 pb-2.5 border-b border-[#E6E0D6]">
+                                    <button type="button" onclick="setAudiencePersona(0)" id="aud-dot-0" aria-label="Persona 1" class="w-6 h-2 rounded-full bg-[#0E1013] transition-all"></button>
+                                    <button type="button" onclick="setAudiencePersona(1)" id="aud-dot-1" aria-label="Persona 2" class="w-2 h-2 rounded-full bg-[#0E1013]/25 hover:bg-[#0E1013]/50 transition-all"></button>
+                                    <button type="button" onclick="setAudiencePersona(2)" id="aud-dot-2" aria-label="Persona 3" class="w-2 h-2 rounded-full bg-[#0E1013]/25 hover:bg-[#0E1013]/50 transition-all"></button>
                                 </div>
-                                <div>
-                                    <p class="text-xs italic text-slate-200 leading-snug">"ใช้งานง่าย แม่นยำ ตรวจสอบเสาเข็มเยื้องศูนย์และออกรายงาน PDF ได้ทันทีหน้างาน"</p>
-                                    <p class="text-[10px] text-orange-400 font-bold mt-1">ผู้ใช้งานวิศวกรสำรวจภาคสนาม • Survey Toolbox</p>
+                                <div class="flex items-center gap-3.5">
+                                    <div class="w-10 h-10 bg-[#E04F26] rounded-full flex items-center justify-center text-white font-bold shrink-0">
+                                        <i class="fa-solid fa-quote-left text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs italic text-[#0E1013] leading-snug font-medium">"ใช้งานง่าย แม่นยำ ตรวจสอบเสาเข็มเยื้องศูนย์และออกรายงาน PDF ได้ทันทีหน้างาน"</p>
+                                        <p class="text-[10px] text-[#E04F26] font-bold mt-1.5">ผู้ใช้งานวิศวกรสำรวจภาคสนาม • Survey Toolbox</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -522,78 +543,77 @@
     <!-- ==========================================
          FAQ Section
          ========================================== -->
-    <section id="faq" class="py-20 bg-slate-50 border-t border-slate-200">
-        <div class="container mx-auto px-4 sm:px-6 max-w-3xl">
+    <section id="faq" class="py-24 lg:py-32 bg-[#FAF8F5] border-b border-[#E6E0D6]">
+        <div class="container mx-auto px-5 sm:px-8 max-w-4xl">
             
-            <div class="text-center mb-12" data-aos="fade-up">
-                <span class="text-[#FF5722] font-heading font-bold tracking-widest uppercase text-xs" data-i18n="faq_header">FAQ</span>
-                <h2 class="font-heading text-3xl font-extrabold text-slate-900 mt-2" data-i18n="faq_title">คำถามที่พบบ่อย</h2>
-                <div class="w-16 h-1 bg-[#FF5722] mx-auto mt-3 rounded-full"></div>
+            <div class="text-center mb-14" data-aos="fade-up">
+                <span class="text-[#E04F26] font-mono font-bold tracking-[0.22em] uppercase text-xs block mb-3" data-i18n="faq_header">FAQ</span>
+                <h2 class="font-heading text-3xl sm:text-5xl font-extrabold text-[#0E1013] tracking-[-0.03em]" data-i18n="faq_title">คำถามที่พบบ่อย</h2>
             </div>
 
             <div class="space-y-4" data-aos="fade-up">
                 <!-- Question 1 -->
-                <details class="group bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden" open>
-                    <summary class="flex justify-between items-center font-heading font-bold text-slate-900 cursor-pointer list-none p-5 sm:p-6 text-sm sm:text-base">
+                <details class="group bg-white rounded-3xl border border-[#E6E0D6] overflow-hidden transition-all duration-300 hover:border-[#0E1013]" open>
+                    <summary class="flex justify-between items-center font-heading font-bold text-[#0E1013] cursor-pointer list-none p-6 sm:p-7 text-sm sm:text-base">
                         <span data-i18n="q1">แอปพลิเคชันต้องเชื่อมต่ออินเทอร์เน็ตหรือไม่?</span>
-                        <span class="transition-transform group-open:rotate-180 text-[#FF5722] ml-2"><i class="fa-solid fa-chevron-down"></i></span>
+                        <span class="w-8 h-8 rounded-full bg-[#FAF8F5] border border-[#E6E0D6] flex items-center justify-center transition-transform duration-300 group-open:rotate-180 group-open:bg-[#0E1013] group-open:text-white text-[#0E1013] ml-3 shrink-0"><i class="fa-solid fa-chevron-down text-xs"></i></span>
                     </summary>
-                    <div class="text-slate-600 px-5 sm:px-6 pb-6 text-xs sm:text-sm leading-relaxed border-t border-slate-100 pt-4" data-i18n="a1">
+                    <div class="text-[#5C5852] px-6 sm:px-7 pb-7 text-xs sm:text-sm leading-relaxed border-t border-[#FAF8F5] pt-4" data-i18n="a1">
                         ไม่จำเป็นครับ ฟังก์ชันการคำนวณทางเรขาคณิตและวิศวกรรมทั้ง 21 ฟังก์ชันถูกออกแบบมาให้ทำงานแบบ Offline 100% ในตัวอุปกรณ์ เพื่อรองรับการทำงานในพื้นที่ห่างไกล ชายป่า ไซส์งานอุโมงค์ หรือพื้นที่อับสัญญาณ อินเทอร์เน็ตจำเป็นเฉพาะการเปิดโหลดแผนที่ดาวเทียมออนไลน์เท่านั้น
                     </div>
                 </details>
 
                 <!-- Question 2 -->
-                <details class="group bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
-                    <summary class="flex justify-between items-center font-heading font-bold text-slate-900 cursor-pointer list-none p-5 sm:p-6 text-sm sm:text-base">
+                <details class="group bg-white rounded-3xl border border-[#E6E0D6] overflow-hidden transition-all duration-300 hover:border-[#0E1013]">
+                    <summary class="flex justify-between items-center font-heading font-bold text-[#0E1013] cursor-pointer list-none p-6 sm:p-7 text-sm sm:text-base">
                         <span data-i18n="q2">มีเวอร์ชันสำหรับระบบปฏิบัติการใดบ้าง?</span>
-                        <span class="transition-transform group-open:rotate-180 text-[#FF5722] ml-2"><i class="fa-solid fa-chevron-down"></i></span>
+                        <span class="w-8 h-8 rounded-full bg-[#FAF8F5] border border-[#E6E0D6] flex items-center justify-center transition-transform duration-300 group-open:rotate-180 group-open:bg-[#0E1013] group-open:text-white text-[#0E1013] ml-3 shrink-0"><i class="fa-solid fa-chevron-down text-xs"></i></span>
                     </summary>
-                    <div class="text-slate-600 px-5 sm:px-6 pb-6 text-xs sm:text-sm leading-relaxed border-t border-slate-100 pt-4" data-i18n="a2">
+                    <div class="text-[#5C5852] px-6 sm:px-7 pb-7 text-xs sm:text-sm leading-relaxed border-t border-[#FAF8F5] pt-4" data-i18n="a2">
                         Survey Toolbox รองรับทั้งระบบ iOS (iPhone & iPad บน App Store) และ Android (สมาร์ทโฟนและแท็บเล็ตบน Google Play Store) โดยมีฟังก์ชันและการคำนวณเหมือนกันทุกประการ
                     </div>
                 </details>
 
                 <!-- Question 3 -->
-                <details class="group bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
-                    <summary class="flex justify-between items-center font-heading font-bold text-slate-900 cursor-pointer list-none p-5 sm:p-6 text-sm sm:text-base">
+                <details class="group bg-white rounded-3xl border border-[#E6E0D6] overflow-hidden transition-all duration-300 hover:border-[#0E1013]">
+                    <summary class="flex justify-between items-center font-heading font-bold text-[#0E1013] cursor-pointer list-none p-6 sm:p-7 text-sm sm:text-base">
                         <span data-i18n="q3">สามารถส่งออกข้อมูล (Export) เป็นไฟล์อะไรได้บ้าง?</span>
-                        <span class="transition-transform group-open:rotate-180 text-[#FF5722] ml-2"><i class="fa-solid fa-chevron-down"></i></span>
+                        <span class="w-8 h-8 rounded-full bg-[#FAF8F5] border border-[#E6E0D6] flex items-center justify-center transition-transform duration-300 group-open:rotate-180 group-open:bg-[#0E1013] group-open:text-white text-[#0E1013] ml-3 shrink-0"><i class="fa-solid fa-chevron-down text-xs"></i></span>
                     </summary>
-                    <div class="text-slate-600 px-5 sm:px-6 pb-6 text-xs sm:text-sm leading-relaxed border-t border-slate-100 pt-4" data-i18n="a3">
+                    <div class="text-[#5C5852] px-6 sm:px-7 pb-7 text-xs sm:text-sm leading-relaxed border-t border-[#FAF8F5] pt-4" data-i18n="a3">
                         รองรับการส่งออก 3 รูปแบบหลัก: 1) เอกสาร PDF ขนาด A4 คุณภาพสูง พร้อมตารางสรุป ภาพร่าง CAD และบล็อกลงนาม 3 ฝ่าย, 2) ไฟล์ CSV สำหรับเปิดใน Microsoft Excel, และ 3) สำรองโครงการ JSON Backup
                     </div>
                 </details>
 
                 <!-- Question 4 -->
-                <details class="group bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
-                    <summary class="flex justify-between items-center font-heading font-bold text-slate-900 cursor-pointer list-none p-5 sm:p-6 text-sm sm:text-base">
+                <details class="group bg-white rounded-3xl border border-[#E6E0D6] overflow-hidden transition-all duration-300 hover:border-[#0E1013]">
+                    <summary class="flex justify-between items-center font-heading font-bold text-[#0E1013] cursor-pointer list-none p-6 sm:p-7 text-sm sm:text-base">
                         <span data-i18n="q4">มีความแม่นยำและถูกต้องตามหลักวิศวกรรมแค่ไหน?</span>
-                        <span class="transition-transform group-open:rotate-180 text-[#FF5722] ml-2"><i class="fa-solid fa-chevron-down"></i></span>
+                        <span class="w-8 h-8 rounded-full bg-[#FAF8F5] border border-[#E6E0D6] flex items-center justify-center transition-transform duration-300 group-open:rotate-180 group-open:bg-[#0E1013] group-open:text-white text-[#0E1013] ml-3 shrink-0"><i class="fa-solid fa-chevron-down text-xs"></i></span>
                     </summary>
-                    <div class="text-slate-600 px-5 sm:px-6 pb-6 text-xs sm:text-sm leading-relaxed border-t border-slate-100 pt-4" data-i18n="a4">
+                    <div class="text-[#5C5852] px-6 sm:px-7 pb-7 text-xs sm:text-sm leading-relaxed border-t border-[#FAF8F5] pt-4" data-i18n="a4">
                         ทุกสมการคำนวณพัฒนาขึ้นตรงตามมาตรฐานวิศวกรรมสำรวจสากล อ้างอิงทรงรี WGS84, ทฤษฎี Redfearn Series สำหรับการแปลงพิกัด UTM, การปรับแก้สมดุลเส้นโครงสร้าง Compass Rule และเกณฑ์การทดสอบเครื่องมือวัดตามมาตรฐาน ISO 17123-5 รับประกันความถูกต้องระดับมิลลิเมตร
                     </div>
                 </details>
 
                 <!-- Question 5 -->
-                <details class="group bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
-                    <summary class="flex justify-between items-center font-heading font-bold text-slate-900 cursor-pointer list-none p-5 sm:p-6 text-sm sm:text-base">
+                <details class="group bg-white rounded-3xl border border-[#E6E0D6] overflow-hidden transition-all duration-300 hover:border-[#0E1013]">
+                    <summary class="flex justify-between items-center font-heading font-bold text-[#0E1013] cursor-pointer list-none p-6 sm:p-7 text-sm sm:text-base">
                         <span data-i18n="q5">ฟังก์ชันฟรีและฟังก์ชัน Pro แตกต่างกันอย่างไร?</span>
-                        <span class="transition-transform group-open:rotate-180 text-[#FF5722] ml-2"><i class="fa-solid fa-chevron-down"></i></span>
+                        <span class="w-8 h-8 rounded-full bg-[#FAF8F5] border border-[#E6E0D6] flex items-center justify-center transition-transform duration-300 group-open:rotate-180 group-open:bg-[#0E1013] group-open:text-white text-[#0E1013] ml-3 shrink-0"><i class="fa-solid fa-chevron-down text-xs"></i></span>
                     </summary>
-                    <div class="text-slate-600 px-5 sm:px-6 pb-6 text-xs sm:text-sm leading-relaxed border-t border-slate-100 pt-4" data-i18n="a5">
+                    <div class="text-[#5C5852] px-6 sm:px-7 pb-7 text-xs sm:text-sm leading-relaxed border-t border-[#FAF8F5] pt-4" data-i18n="a5">
                         ฟังก์ชันพื้นฐาน เช่น Azimuth & Distance, Resection, Online Offset, Finder, และ Equipment List เปิดให้ใช้งานได้ฟรีตลอดชีพ ส่วนฟังก์ชันขั้นสูง เช่น โค้งราบ H-Curve, โค้งดิ่ง V-Curve, แปลงพิกัด GeoUTM, LandXML Alignment, สมุดสนาม 2 หน้ากล้อง, และการออกใบเซอร์ ISO 17123-5 สามารถปลดล็อกได้ผ่านการสมัครสมาชิก Pro
                     </div>
                 </details>
 
                 <!-- Question 6 -->
-                <details class="group bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
-                    <summary class="flex justify-between items-center font-heading font-bold text-slate-900 cursor-pointer list-none p-5 sm:p-6 text-sm sm:text-base">
+                <details class="group bg-white rounded-3xl border border-[#E6E0D6] overflow-hidden transition-all duration-300 hover:border-[#0E1013]">
+                    <summary class="flex justify-between items-center font-heading font-bold text-[#0E1013] cursor-pointer list-none p-6 sm:p-7 text-sm sm:text-base">
                         <span data-i18n="q6">ข้อมูลพิกัดโครงการมีความปลอดภัยหรือไม่?</span>
-                        <span class="transition-transform group-open:rotate-180 text-[#FF5722] ml-2"><i class="fa-solid fa-chevron-down"></i></span>
+                        <span class="w-8 h-8 rounded-full bg-[#FAF8F5] border border-[#E6E0D6] flex items-center justify-center transition-transform duration-300 group-open:rotate-180 group-open:bg-[#0E1013] group-open:text-white text-[#0E1013] ml-3 shrink-0"><i class="fa-solid fa-chevron-down text-xs"></i></span>
                     </summary>
-                    <div class="text-slate-600 px-5 sm:px-6 pb-6 text-xs sm:text-sm leading-relaxed border-t border-slate-100 pt-4" data-i18n="a6">
+                    <div class="text-[#5C5852] px-6 sm:px-7 pb-7 text-xs sm:text-sm leading-relaxed border-t border-[#FAF8F5] pt-4" data-i18n="a6">
                         ปลอดภัย 100% ครับ แอปพลิเคชันไม่มีระบบเก็บข้อมูลขึ้นคลาวด์ภายนอก ข้อมูลโครงการและพิกัดรังวัดทั้งหมดจะถูกจัดเก็บอยู่ภายในหน่วยความจำของโทรศัพท์คุณเท่านั้น และไม่มีการติดตามข้อมูลส่วนบุคคลใดๆ
                     </div>
                 </details>
@@ -603,20 +623,21 @@
     </section>
 
     <!-- ==========================================
-         Mobile App Download Callout Section
+         Mobile App Download Callout Section (Full-Bleed Editorial Finale)
          ========================================== -->
-    <section id="download-cta" class="py-20 bg-white">
-        <div class="container mx-auto px-4 sm:px-6">
-            <div class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 text-white rounded-3xl p-8 sm:p-14 shadow-2xl relative overflow-hidden border border-slate-700" data-aos="zoom-in">
+    <section id="download-cta" class="py-24 lg:py-32 bg-[#090A0C] text-[#FAF8F5] relative overflow-hidden">
+        <div class="absolute inset-0 bg-hero-pattern opacity-80 pointer-events-none"></div>
+        <div class="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12 relative z-10">
+            <div class="rounded-[2.5rem] p-8 sm:p-16 lg:p-20 bg-white/[0.03] backdrop-blur-xl border border-white/15 shadow-2xl relative overflow-hidden" data-aos="zoom-in">
                 
-                <div class="absolute -top-24 -right-24 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="absolute -top-24 -right-24 w-96 h-96 bg-[#E04F26]/20 rounded-full blur-[120px] pointer-events-none"></div>
 
-                <div class="flex flex-col lg:flex-row items-center justify-between gap-10 relative z-10">
+                <div class="flex flex-col lg:flex-row items-center justify-between gap-12 relative z-10">
                     <div class="lg:w-7/12 text-center lg:text-left">
-                        <h2 class="font-heading text-3xl sm:text-4xl font-extrabold mb-4 tracking-tight leading-tight" data-i18n="cta_title">
+                        <h2 class="font-heading text-3xl sm:text-5xl lg:text-6xl font-extrabold mb-6 tracking-[-0.03em] leading-[1.06] text-[#FAF8F5]" data-i18n="cta_title">
                             พร้อมยกระดับงานสำรวจของคุณแล้วหรือยัง?
                         </h2>
-                        <p class="text-slate-300 text-sm sm:text-base mb-8 max-w-xl leading-relaxed" data-i18n="cta_desc">
+                        <p class="text-white/65 text-sm sm:text-base lg:text-lg mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed" data-i18n="cta_desc">
                             ดาวน์โหลด Survey Toolbox วันนี้ ทั้งบน iOS และ Android แล้วสัมผัสความเร็ว แม่นยำ และเป็นมืออาชีพในทุกไซต์งาน
                         </p>
 
@@ -627,11 +648,11 @@
                                 href="https://apps.apple.com/th/app/survey-toolbox/id6754455677?l=th" 
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                class="flex items-center gap-3 bg-white text-slate-900 px-6 py-3 rounded-2xl font-bold shadow-lg hover:bg-orange-500 hover:text-white transition-all transform hover:scale-105"
+                                class="flex items-center gap-3.5 bg-[#FAF8F5] text-[#0E1013] px-7 py-4 rounded-full font-bold shadow-xl hover:bg-[#E04F26] hover:text-white transition-all duration-300 transform hover:-translate-y-0.5"
                             >
                                 <i class="fa-brands fa-apple text-2xl"></i>
                                 <div class="text-left leading-tight">
-                                    <span class="text-[10px] block font-normal uppercase opacity-75">Download on the</span>
+                                    <span class="text-[10px] block font-mono uppercase opacity-75">Download on the</span>
                                     <span class="text-sm font-extrabold font-heading">App Store</span>
                                 </div>
                             </a>
@@ -641,11 +662,11 @@
                                 href="https://play.google.com/store/apps/details?id=com.kongkrit.surveytoolbox&pcampaignid=web_share" 
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                class="flex items-center gap-3 bg-emerald-600 text-white px-6 py-3 rounded-2xl font-bold shadow-lg hover:bg-emerald-500 transition-all transform hover:scale-105"
+                                class="flex items-center gap-3.5 bg-white/10 text-white border border-white/25 px-7 py-4 rounded-full font-bold shadow-xl hover:bg-emerald-600 hover:border-emerald-500 transition-all duration-300 transform hover:-translate-y-0.5"
                             >
                                 <i class="fa-brands fa-google-play text-2xl"></i>
                                 <div class="text-left leading-tight">
-                                    <span class="text-[10px] block font-normal uppercase opacity-75">Get it on</span>
+                                    <span class="text-[10px] block font-mono uppercase opacity-75">Get it on</span>
                                     <span class="text-sm font-extrabold font-heading">Google Play</span>
                                 </div>
                             </a>
@@ -658,18 +679,18 @@
                             href="https://lin.ee/zKbPNUD" 
                             target="_blank" 
                             rel="noopener noreferrer" 
-                            class="bg-white p-3 rounded-2xl shadow-xl flex items-center justify-center border-4 border-slate-700 hover:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 focus:ring-offset-slate-900 transition-colors group cursor-pointer"
+                            class="bg-[#FAF8F5] p-4 rounded-3xl shadow-2xl flex items-center justify-center border border-white/20 hover:scale-105 transition-transform duration-300 group cursor-pointer"
                             title="LINE Official Account Support"
                         >
-                            <img src="https://img2.pic.in.th/IMG_1936.png" alt="LINE Support QR" title="LINE Official Account Support" width="112" height="112" loading="lazy" class="w-28 h-28 object-cover rounded-lg group-hover:opacity-95 transition-opacity">
+                            <img src="https://img2.pic.in.th/IMG_1936.png" alt="LINE Support QR" title="LINE Official Account Support" width="112" height="112" loading="lazy" class="w-28 h-28 object-cover rounded-xl group-hover:opacity-95 transition-opacity">
                         </a>
                         <a 
                             href="https://lin.ee/zKbPNUD" 
                             target="_blank" 
                             rel="noopener noreferrer" 
-                            class="text-xs text-slate-400 hover:text-emerald-400 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 focus:ring-offset-slate-900 rounded-md mt-3 font-medium flex items-center gap-1.5 transition-colors"
+                            class="text-xs text-white/65 hover:text-emerald-400 rounded-md mt-4 font-medium flex items-center gap-1.5 transition-colors"
                         >
-                            <i class="fa-brands fa-line text-emerald-500" aria-hidden="true"></i> <span data-i18n="cta_qr_label">สแกนเพื่อติดต่อ/สอบถามผ่าน LINE</span>
+                            <i class="fa-brands fa-line text-emerald-400" aria-hidden="true"></i> <span data-i18n="cta_qr_label">สแกนเพื่อติดต่อ/สอบถามผ่าน LINE</span>
                         </a>
                     </div>
                 </div>
@@ -681,30 +702,30 @@
     <!-- ==========================================
          Legal Privacy & Terms
          ========================================== -->
-    <section id="legal" class="py-16 bg-slate-50 border-t border-slate-200" aria-label="นโยบายความเป็นส่วนตัวและข้อตกลงการใช้งาน">
-        <div class="container mx-auto px-4 sm:px-6 max-w-4xl space-y-10">
+    <section id="legal" class="py-20 bg-[#FAF8F5] border-t border-[#E6E0D6]" aria-label="นโยบายความเป็นส่วนตัวและข้อตกลงการใช้งาน">
+        <div class="container mx-auto px-5 sm:px-8 max-w-4xl space-y-8">
             
             <!-- Privacy Policy -->
-            <div id="privacy" class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm scroll-mt-24">
-                <div class="flex items-center gap-3 mb-4">
-                    <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-lg shrink-0">
+            <div id="privacy" class="bg-white p-7 sm:p-9 rounded-3xl border border-[#E6E0D6] scroll-mt-24">
+                <div class="flex items-center gap-3.5 mb-4">
+                    <div class="w-10 h-10 rounded-full bg-[#FAF8F5] border border-[#E6E0D6] text-[#0E1013] flex items-center justify-center text-lg shrink-0">
                         <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
                     </div>
-                    <h3 class="font-heading text-lg font-bold text-slate-900" data-i18n="privacy_title">นโยบายความเป็นส่วนตัว (Privacy Policy)</h3>
+                    <h3 class="font-heading text-lg font-bold text-[#0E1013]" data-i18n="privacy_title">นโยบายความเป็นส่วนตัว (Privacy Policy)</h3>
                 </div>
-                <p class="text-slate-700 leading-relaxed text-sm sm:text-base font-normal" data-i18n="privacy_h1">เพื่อปรับปรุงประสิทธิภาพและพัฒนาฟังก์ชันการทำงานของแอปพลิเคชัน แอปจะมีการเก็บรวบรวมข้อมูลการใช้งานเชิงเทคนิคแบบไม่ระบุตัวตน (Anonymous Data) เช่น สถิติการเปิดใช้งานเครื่องมือต่างๆ รุ่นของอุปกรณ์ และเวอร์ชันของแอปพลิเคชัน โดยข้อมูลดังกล่าวจะถูกนำไปใช้เพื่อการวิเคราะห์และพัฒนาแอปพลิเคชันเท่านั้น</p>
+                <p class="text-[#5C5852] leading-relaxed text-sm sm:text-base font-normal" data-i18n="privacy_h1">เพื่อปรับปรุงประสิทธิภาพและพัฒนาฟังก์ชันการทำงานของแอปพลิเคชัน แอปจะมีการเก็บรวบรวมข้อมูลการใช้งานเชิงเทคนิคแบบไม่ระบุตัวตน (Anonymous Data) เช่น สถิติการเปิดใช้งานเครื่องมือต่างๆ รุ่นของอุปกรณ์ และเวอร์ชันของแอปพลิเคชัน โดยข้อมูลดังกล่าวจะถูกนำไปใช้เพื่อการวิเคราะห์และพัฒนาแอปพลิเคชันเท่านั้น</p>
             </div>
 
             <!-- Terms of Use -->
-            <div id="terms" class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm scroll-mt-24">
-                <div class="flex items-center gap-3 mb-4">
-                    <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center text-lg shrink-0">
+            <div id="terms" class="bg-white p-7 sm:p-9 rounded-3xl border border-[#E6E0D6] scroll-mt-24">
+                <div class="flex items-center gap-3.5 mb-4">
+                    <div class="w-10 h-10 rounded-full bg-[#FAF8F5] border border-[#E6E0D6] text-[#0E1013] flex items-center justify-center text-lg shrink-0">
                         <i class="fa-solid fa-file-contract" aria-hidden="true"></i>
                     </div>
-                    <h3 class="font-heading text-lg font-bold text-slate-900" data-i18n="terms_title">ข้อตกลงการใช้งาน (EULA)</h3>
+                    <h3 class="font-heading text-lg font-bold text-[#0E1013]" data-i18n="terms_title">ข้อตกลงการใช้งาน (EULA)</h3>
                 </div>
-                <p class="text-slate-700 leading-relaxed text-sm sm:text-base font-medium mb-3" data-i18n="terms_intro">เมื่อผู้ใช้ใช้งานแอปพลิเคชัน Survey Toolbox ถือว่าผู้ใช้ยอมรับข้อตกลงดังต่อไปนี้:</p>
-                <ol class="list-decimal pl-5 space-y-2 leading-relaxed text-slate-700 text-sm sm:text-base font-normal">
+                <p class="text-[#0E1013] leading-relaxed text-sm sm:text-base font-medium mb-3" data-i18n="terms_intro">เมื่อผู้ใช้ใช้งานแอปพลิเคชัน Survey Toolbox ถือว่าผู้ใช้ยอมรับข้อตกลงดังต่อไปนี้:</p>
+                <ol class="list-decimal pl-5 space-y-2 leading-relaxed text-[#5C5852] text-sm sm:text-base font-normal">
                     <li data-i18n="term_1">แอปและเนื้อหาทั้งหมดเป็นทรัพย์สินทางปัญญาของผู้พัฒนา</li>
                     <li data-i18n="term_2">ฟังก์ชันขั้นสูงบางส่วน (Survey Toolbox Pro) ต้องสมัครสมาชิกแบบต่ออายุอัตโนมัติ</li>
                     <li data-i18n="term_3">การชำระเงินและการจัดการการสมัครสมาชิกทั้งหมดดำเนินการผ่านระบบของ Apple/Google อย่างปลอดภัย</li>
@@ -719,29 +740,29 @@
     <!-- ==========================================
          Footer
          ========================================== -->
-    <footer class="bg-slate-950 text-slate-400 py-14 border-t border-slate-900 text-xs">
-        <div class="container mx-auto px-4 sm:px-6">
+    <footer class="bg-[#090A0C] text-white/50 py-16 border-t border-white/10 text-xs">
+        <div class="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12">
             
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-10 pb-8 border-b border-slate-800">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-10 pb-10 border-b border-white/10">
                 <div>
-                    <div class="flex items-center space-x-3 mb-2">
+                    <div class="flex items-center space-x-3 mb-2.5">
                         <img 
                             src="https://lh3.googleusercontent.com/d/1sgI54U4A9Pbb3hy7ahxayP-0X07mF8M5" 
                             referrerpolicy="no-referrer" 
                             alt="Survey Toolbox Footer Logo" 
-                            class="h-8 w-8 rounded-lg shadow-sm opacity-90 border border-slate-700"
+                            class="h-8 w-8 rounded-full shadow-sm opacity-90 border border-white/20"
                         >
-                        <span class="text-xl font-heading font-extrabold text-white">Survey Toolbox</span>
+                        <span class="text-xl font-heading font-extrabold text-[#FAF8F5]">Survey Toolbox</span>
                     </div>
-                    <p class="text-slate-400" data-i18n="footer_tag">Professional Engineering Tools for iOS & Android</p>
+                    <p class="text-white/50" data-i18n="footer_tag">Professional Engineering Tools for iOS & Android</p>
                 </div>
 
                 <div class="flex flex-wrap items-center gap-4 sm:gap-6">
                     <!-- Quick Legal Links -->
-                    <div class="flex items-center gap-3 text-xs text-slate-400">
-                        <a href="#privacy" onclick="scrollToSection('privacy', event)" class="hover:text-[#FF5722] transition-colors cursor-pointer" data-i18n="nav_privacy">นโยบายความเป็นส่วนตัว</a>
-                        <span class="text-slate-700">•</span>
-                        <a href="#terms" onclick="scrollToSection('terms', event)" class="hover:text-[#FF5722] transition-colors cursor-pointer" data-i18n="nav_terms">ข้อตกลงการใช้งาน</a>
+                    <div class="flex items-center gap-3 text-xs text-white/60">
+                        <a href="#privacy" onclick="scrollToSection('privacy', event)" class="hover:text-white transition-colors cursor-pointer" data-i18n="nav_privacy">นโยบายความเป็นส่วนตัว</a>
+                        <span class="text-white/20">•</span>
+                        <a href="#terms" onclick="scrollToSection('terms', event)" class="hover:text-white transition-colors cursor-pointer" data-i18n="nav_terms">ข้อตกลงการใช้งาน</a>
                     </div>
 
                     <!-- Feedback Form -->
@@ -749,7 +770,7 @@
                         href="https://docs.google.com/forms/d/1FvWeoEembNsGc-zDJtgqUQufl44BhDf29OKPV_Hll5s/edit?usp=drivesdk" 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        class="flex items-center text-xs text-slate-300 hover:text-[#FF5722] transition-colors border border-slate-700 rounded-full px-4 py-2 hover:border-[#FF5722]"
+                        class="flex items-center text-xs text-white/80 hover:text-white transition-colors border border-white/20 rounded-full px-5 py-2.5 hover:border-[#E04F26] hover:bg-[#E04F26]"
                     >
                         <i class="fa-regular fa-comment-dots mr-2 text-sm"></i>
                         <span data-i18n="btn_feedback">แจ้งปัญหา / แนะนำติชม</span>
@@ -757,13 +778,13 @@
 
                     <!-- Social Icons -->
                     <div class="flex space-x-3">
-                        <a href="https://www.facebook.com/profile.php?id=61580648713614" target="_blank" rel="noopener noreferrer" aria-label="Facebook Page" title="Facebook Page" class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center text-white hover:bg-[#1877F2] transition-all">
+                        <a href="https://www.facebook.com/profile.php?id=61580648713614" target="_blank" rel="noopener noreferrer" aria-label="Facebook Page" title="Facebook Page" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#1877F2] transition-all">
                             <i class="fa-brands fa-facebook-f text-sm"></i>
                         </a>
-                        <a href="https://lin.ee/zKbPNUD" target="_blank" rel="noopener noreferrer" aria-label="LINE Official Account" title="LINE Official Account" class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center text-white hover:bg-[#06C755] transition-all">
+                        <a href="https://lin.ee/zKbPNUD" target="_blank" rel="noopener noreferrer" aria-label="LINE Official Account" title="LINE Official Account" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#06C755] transition-all">
                             <i class="fa-brands fa-line text-base"></i>
                         </a>
-                        <a href="https://www.tiktok.com/@survey.toolbox?_r=1&_t=ZS-92lh3eUAopV" target="_blank" rel="noopener noreferrer" aria-label="TikTok Channel" title="TikTok Channel" class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center text-white hover:bg-black hover:text-cyan-400 transition-all">
+                        <a href="https://www.tiktok.com/@survey.toolbox?_r=1&_t=ZS-92lh3eUAopV" target="_blank" rel="noopener noreferrer" aria-label="TikTok Channel" title="TikTok Channel" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white hover:text-[#0E1013] transition-all">
                             <i class="fa-brands fa-tiktok text-sm"></i>
                         </a>
                     </div>
@@ -771,7 +792,7 @@
             </div>
 
             <!-- Copyright -->
-            <div class="text-center text-slate-500" data-i18n="copyright">
+            <div class="text-center text-white/40 font-mono text-[11px]" data-i18n="copyright">
                 &copy; 2026 Survey Toolbox. All rights reserved. Developed with Engineering Precision.
             </div>
 
@@ -781,38 +802,38 @@
     <!-- ==========================================
          3-Tab Tool Detail Modal / Sliding Drawer
          ========================================== -->
-    <div id="tool-modal" class="hidden fixed inset-0 z-50 modal-backdrop bg-slate-950/75 items-center justify-center p-3 sm:p-6 overflow-y-auto" role="dialog" aria-modal="true">
-        <div id="modal-box" class="relative bg-white w-full max-w-4xl rounded-3xl shadow-2xl border border-slate-200 flex flex-col max-h-[92vh] overflow-hidden my-auto animate-fadeIn">
+    <div id="tool-modal" class="hidden fixed inset-0 z-50 modal-backdrop bg-[#090A0C]/80 items-center justify-center p-3 sm:p-6 overflow-y-auto" role="dialog" aria-modal="true">
+        <div id="modal-box" class="relative bg-[#FAF8F5] w-full max-w-4xl rounded-[2rem] shadow-2xl border border-[#E6E0D6] flex flex-col max-h-[92vh] overflow-hidden my-auto animate-fadeIn">
             
             <!-- Sticky Modal Header -->
-            <div class="px-4 py-3 sm:px-6 sm:py-4 border-b border-slate-100 flex items-center justify-between bg-slate-50/80 shrink-0">
+            <div class="px-5 py-4 sm:px-7 sm:py-5 border-b border-[#E6E0D6] flex items-center justify-between bg-white shrink-0">
                 <div class="flex items-center gap-3 min-w-0">
-                    <span id="modal-tool-num" class="font-mono text-xs font-bold text-slate-500 bg-slate-200 px-2.5 py-1 rounded-md shrink-0">#01</span>
-                    <span id="modal-tool-cat" class="text-xs font-semibold px-2.5 py-0.5 rounded-full border bg-blue-50 text-blue-700 border-blue-200 shrink-0">หมวด</span>
+                    <span id="modal-tool-num" class="font-mono text-xs font-bold text-[#0E1013] bg-[#EFECE6] px-2.5 py-1 rounded-full shrink-0">#01</span>
+                    <span id="modal-tool-cat" class="text-xs font-semibold px-3 py-0.5 rounded-full border bg-blue-50 text-blue-700 border-blue-200 shrink-0">หมวด</span>
                     <div id="modal-tool-tier" class="shrink-0"></div>
                     <div class="min-w-0">
-                        <h3 id="modal-tool-title" class="font-heading font-extrabold text-slate-900 text-base sm:text-lg truncate">ชื่อเครื่องมือ</h3>
-                        <p id="modal-tool-subtitle" class="text-xs text-slate-400 truncate">Subtitle in English</p>
+                        <h3 id="modal-tool-title" class="font-heading font-extrabold text-[#0E1013] text-base sm:text-lg truncate">ชื่อเครื่องมือ</h3>
+                        <p id="modal-tool-subtitle" class="text-xs text-[#8C857B] truncate">Subtitle in English</p>
                     </div>
                 </div>
 
                 <div class="flex items-center gap-2 modal-header-actions shrink-0">
                     <!-- In-Modal Language Switcher -->
-                    <div class="flex bg-slate-200/80 rounded-lg p-0.5 border border-slate-300/70 text-[11px]">
-                        <button type="button" onclick="setLanguage('th')" id="modal-btn-th" class="px-2 py-1 rounded-md transition-colors bg-white text-slate-900 shadow-xs font-bold">TH</button>
-                        <button type="button" onclick="setLanguage('en')" id="modal-btn-en" class="px-2 py-1 rounded-md transition-colors text-slate-600 hover:text-slate-900 font-medium">EN</button>
+                    <div class="flex bg-[#EFECE6] rounded-full p-0.5 border border-[#E6E0D6] text-[11px]">
+                        <button type="button" onclick="setLanguage('th')" id="modal-btn-th" class="px-2.5 py-1 rounded-full transition-colors bg-[#0E1013] text-white font-bold">TH</button>
+                        <button type="button" onclick="setLanguage('en')" id="modal-btn-en" class="px-2.5 py-1 rounded-full transition-colors text-[#5C5852] hover:text-[#0E1013] font-medium">EN</button>
                     </div>
 
                     <button 
                         onclick="printToolManual()" 
-                        class="p-2 text-slate-500 hover:text-slate-800 rounded-xl hover:bg-slate-200/60 transition-colors"
+                        class="p-2 text-[#5C5852] hover:text-[#0E1013] rounded-full hover:bg-[#EFECE6] transition-colors"
                         title="พิมพ์คู่มือ / พิมพ์รายงาน A4 PDF"
                     >
                         <i class="fa-solid fa-print text-sm"></i>
                     </button>
                     <button 
                         id="modal-close-btn" 
-                        class="p-2 text-slate-400 hover:text-slate-800 rounded-xl hover:bg-slate-200/60 transition-colors"
+                        class="p-2 text-[#5C5852] hover:text-[#0E1013] rounded-full hover:bg-[#EFECE6] transition-colors"
                         title="ปิดหน้าต่าง (ESC)"
                     >
                         <i class="fa-solid fa-xmark text-lg"></i>
@@ -821,29 +842,29 @@
             </div>
 
             <!-- Horizontal Tab Navigation Bar -->
-            <div class="modal-tab-nav flex border-b border-slate-200 bg-slate-100/60 px-4 overflow-x-auto no-scrollbar text-xs font-semibold shrink-0">
-                <button onclick="switchModalTab('overview')" data-tab="overview" class="modal-tab-btn active px-4 py-3 whitespace-nowrap shrink-0" data-i18n="modal_tab_overview">
+            <div class="modal-tab-nav flex border-b border-[#E6E0D6] bg-[#FAF8F5] px-5 overflow-x-auto no-scrollbar text-xs font-semibold shrink-0">
+                <button onclick="switchModalTab('overview')" data-tab="overview" class="modal-tab-btn active px-5 py-3.5 whitespace-nowrap shrink-0" data-i18n="modal_tab_overview">
                     ข้อ 1. คำอธิบายฟังก์ชัน
                 </button>
-                <button onclick="switchModalTab('params')" data-tab="params" class="modal-tab-btn px-4 py-3 whitespace-nowrap shrink-0" data-i18n="modal_tab_params">
+                <button onclick="switchModalTab('params')" data-tab="params" class="modal-tab-btn px-5 py-3.5 whitespace-nowrap shrink-0" data-i18n="modal_tab_params">
                     ข้อ 2. พารามิเตอร์ (Input/Output)
                 </button>
-                <button onclick="switchModalTab('steps')" data-tab="steps" class="modal-tab-btn px-4 py-3 whitespace-nowrap shrink-0" data-i18n="modal_tab_steps">
+                <button onclick="switchModalTab('steps')" data-tab="steps" class="modal-tab-btn px-5 py-3.5 whitespace-nowrap shrink-0" data-i18n="modal_tab_steps">
                     ข้อ 3. ขั้นตอนการทำงาน (Step-by-Step)
                 </button>
             </div>
 
             <!-- Modal Content Body -->
-            <div id="modal-tab-body" class="p-4 sm:p-6 overflow-y-auto flex-1 min-h-0 modal-content-container">
+            <div id="modal-tab-body" class="p-5 sm:p-7 overflow-y-auto flex-1 min-h-0 modal-content-container bg-white">
                 <!-- Tab contents injected dynamically -->
             </div>
 
             <!-- Modal Footer Action Bar -->
-            <div class="modal-footer-bar px-4 py-3 sm:px-6 sm:py-3.5 bg-slate-50 border-t border-slate-100 flex items-center justify-between text-xs shrink-0">
+            <div class="modal-footer-bar px-5 py-3.5 sm:px-7 sm:py-4 bg-[#FAF8F5] border-t border-[#E6E0D6] flex items-center justify-between text-xs shrink-0">
                 <div class="flex items-center gap-3">
                     <button 
                         onclick="closeToolModal()" 
-                        class="px-4 py-2 bg-slate-200 hover:bg-slate-300 text-slate-700 font-semibold rounded-xl transition-colors"
+                        class="px-5 py-2 bg-[#EFECE6] hover:bg-[#E6E0D6] text-[#0E1013] font-semibold rounded-full transition-colors"
                         data-i18n="modal_btn_close"
                     >
                         ปิดหน้าต่าง
@@ -851,16 +872,16 @@
                     <a 
                         href="#privacy" 
                         onclick="closeToolModal(); scrollToSection('privacy', event)" 
-                        class="text-slate-500 hover:text-[#FF5722] transition-colors cursor-pointer text-xs hidden sm:inline-flex items-center gap-1.5"
+                        class="text-[#5C5852] hover:text-[#E04F26] transition-colors cursor-pointer text-xs hidden sm:inline-flex items-center gap-1.5"
                     >
                         <i class="fa-solid fa-shield-halved text-xs text-emerald-600" aria-hidden="true"></i>
                         <span data-i18n="nav_privacy">นโยบายความเป็นส่วนตัว</span>
                     </a>
-                    <span class="text-slate-300 hidden sm:inline">•</span>
+                    <span class="text-[#E6E0D6] hidden sm:inline">•</span>
                     <a 
                         href="#terms" 
                         onclick="closeToolModal(); scrollToSection('terms', event)" 
-                        class="text-slate-500 hover:text-[#FF5722] transition-colors cursor-pointer text-xs hidden sm:inline-flex items-center gap-1.5"
+                        class="text-[#5C5852] hover:text-[#E04F26] transition-colors cursor-pointer text-xs hidden sm:inline-flex items-center gap-1.5"
                     >
                         <i class="fa-solid fa-file-contract text-xs text-blue-600" aria-hidden="true"></i>
                         <span data-i18n="nav_terms">ข้อตกลงการใช้งาน</span>
@@ -871,7 +892,7 @@
                         href="https://apps.apple.com/th/app/survey-toolbox/id6754455677?l=th" 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        class="px-4 py-2 bg-slate-900 hover:bg-black text-white font-semibold rounded-xl shadow-sm transition-all flex items-center gap-1.5"
+                        class="px-4 py-2 bg-[#0E1013] hover:bg-[#E04F26] text-white font-semibold rounded-full shadow-sm transition-all flex items-center gap-1.5"
                     >
                         <i class="fa-brands fa-apple"></i>
                         <span>iOS</span>
@@ -880,7 +901,7 @@
                         href="https://play.google.com/store/apps/details?id=com.kongkrit.surveytoolbox&pcampaignid=web_share" 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold rounded-xl shadow-sm transition-all flex items-center gap-1.5"
+                        class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold rounded-full shadow-sm transition-all flex items-center gap-1.5"
                     >
                         <i class="fa-brands fa-android"></i>
                         <span>Android</span>
@@ -892,7 +913,7 @@
     </div>
 
     <!-- Toast Notification Element -->
-    <div id="toast-notification" class="toast-msg bg-slate-900 text-white px-5 py-3 rounded-2xl shadow-2xl flex items-center gap-3 border border-slate-700">
+    <div id="toast-notification" class="toast-msg bg-[#0E1013] text-[#FAF8F5] px-6 py-3.5 rounded-full shadow-2xl flex items-center gap-3 border border-white/15">
         <i class="fa-solid fa-circle-check text-emerald-400 text-base"></i>
         <span id="toast-notification-text" class="text-xs font-semibold">สำเร็จ</span>
     </div>
